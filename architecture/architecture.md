@@ -39,8 +39,15 @@ Communicatie en Loggen
 
 Open-Feign: Wordt gebruikt om asynchrone communicatie tussen microservices zoals de PostService en ReviewService mogelijk te maken. Dit biedt een declaratieve manier om REST-clients te maken, waarbij requests en responses asynchroon kunnen worden afgehandeld. Dit verhoogt de modulariteit en zorgt ervoor dat services efficiënter met elkaar communiceren zonder elkaars prestaties te beïnvloeden.
 
-Message Bus: De Event Bus zorgt ervoor dat berichten asynchroon worden verstuurd tussen services, wat zorgt voor losse koppeling en hogere schaalbaarheid.
+De Message Bus zorgt voor asynchrone communicatie tussen de PostService, ReviewService, en CommentService om directe afhankelijkheden te vermijden:
 
+PostService: Verstuurt berichten naar de Event Bus bij het aanmaken, aanpassen, goedkeuren, of afwijzen van een post. Dit stelt de ReviewService en notificatieservices in staat om op de hoogte te blijven van wijzigingen in posts.
+
+ReviewService: Stuurt berichten wanneer een post wordt goedgekeurd of afgewezen, waardoor de PostService kan bijwerken of publiceren, en redacteurs meldingen ontvangen over de status van hun posts.
+
+CommentService: Verstuurt berichten bij nieuwe reacties of updates aan reacties, zodat de PostService of notificatieservices gebruikers kunnen informeren over nieuwe interacties op posts.
+
+Deze opzet zorgt voor losse koppeling en schaalbaarheid van de services.
 LogBack: LogBack moet geïmplementeerd worden in elke microservice om loginformatie zowel op het scherm als naar een bestand te schrijven. Dit maakt debugging en monitoring gemakkelijker.
 
 Test Coverage
