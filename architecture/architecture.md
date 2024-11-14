@@ -2,7 +2,7 @@
 
 :heavy_check_mark:_(COMMENT) Add a description of the architecture of your application and create a diagram like the one below. Link to the diagram in this document._
 
-![image](https://github.com/user-attachments/assets/b6c0eff8-7d89-4d48-a770-c9431b54041b)
+![image](https://github.com/user-attachments/assets/778ec23f-2c6a-45da-84df-2d40dbc56791)
 
 
 Client Apps
