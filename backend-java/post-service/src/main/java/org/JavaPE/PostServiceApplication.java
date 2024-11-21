@@ -1,13 +1,17 @@
 package org.JavaPE;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 /**
- * Hello world!
+ * PostServiceApplication
  *
  */
-public class App 
+@SpringBootApplication
+public class PostServiceApplication
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        SpringApplication.run(PostServiceApplication.class, args);
     }
 }

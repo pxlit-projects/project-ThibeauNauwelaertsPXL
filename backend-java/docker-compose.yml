@@ -1,12 +1,11 @@
-version: '3.8'
 services:
   mysql:
-    image: mysql:latest
+    image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: employeeservice_db
+      MYSQL_DATABASE: postservice_db
       MYSQL_USER: student
       MYSQL_PASSWORD: student
     ports:
-     - "3306:3306"
-    container_name: mysql-container
+      - "3306:3306"
+    container_name: mysql-containerPE

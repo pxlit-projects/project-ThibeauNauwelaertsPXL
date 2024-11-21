@@ -1,10 +1,11 @@
 package org.JavaPE.services;
 
-import lombok.RequiredArgsConstructor;
+import jakarta.transaction.Transactional;
 import org.JavaPE.controller.converter.PostDTOConverter;
+import org.JavaPE.controller.dto.PostDTO;
 import org.JavaPE.domain.Post;
 import org.JavaPE.domain.PostStatus;
-import org.JavaPE.controller.dto.PostDTO;
+import org.JavaPE.exception.PostNotFoundException;
 import org.JavaPE.repository.PostRepository;
 import org.springframework.stereotype.Service;
 
@@ -13,40 +14,82 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@RequiredArgsConstructor
-public class PostService {
-    private final PostRepository postRepository;
-    private final PostDTOConverter postDTOConverter;
+@Transactional
+public class PostServiceImpl implements PostService {
 
-    public PostDTO createPost(Post post) {
-        post.setStatus(PostStatus.DRAFT); // Default to draft
-        post.setCreatedDate(LocalDate.now());
+    private PostRepository postRepository;
+    private PostDTOConverter postDTOConverter;
+
+    public PostServiceImpl(PostRepository postRepository, PostDTOConverter postDTOConverter) {
+        this.postRepository = postRepository;
+        this.postDTOConverter = postDTOConverter;
+    }
+
+    @Override
+    public PostDTO createPost(PostDTO postDTO) {
+        Post post = postDTOConverter.convertToEntity(postDTO);
+
         Post savedPost = postRepository.save(post);
+
         return postDTOConverter.convertToDTO(savedPost);
     }
 
-    public PostDTO updatePost(Long id, Post updatedPost) {
+    @Override
+    public PostDTO saveDraft(PostDTO postDTO) {
+        Post post = postDTOConverter.convertToEntity(postDTO);
+
+        // Stel de status in op DRAFT
+        post.setStatus(PostStatus.DRAFT);
+        post.setCreatedDate(LocalDate.now());
+        post.setLastModifiedDate(LocalDate.now());
+
+        // Sla de conceptpost op
+        Post savedPost = postRepository.save(post);
+
+        return postDTOConverter.convertToDTO(savedPost);
+    }
+
+    @Override
+    public PostDTO editPost(Long id, PostDTO postDTO) {
         Post existingPost = postRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Post not found"));
+                .orElseThrow(() -> new PostNotFoundException("Post with ID " + id + " not found."));
 
-        existingPost.setTitle(updatedPost.getTitle());
-        existingPost.setContent(updatedPost.getContent());
+        if (postDTO.getTitle() != null && !postDTO.getTitle().isBlank()) {
+            existingPost.setTitle(postDTO.getTitle());
+        }
+        if (postDTO.getContent() != null && !postDTO.getContent().isBlank()) {
+            existingPost.setContent(postDTO.getContent());
+        }
         existingPost.setLastModifiedDate(LocalDate.now());
-        Post savedPost = postRepository.save(existingPost);
-        return postDTOConverter.convertToDTO(savedPost);
+
+        Post updatedPost = postRepository.save(existingPost);
+
+        return postDTOConverter.convertToDTO(updatedPost);
     }
 
+    @Override
     public List<PostDTO> getPublishedPosts() {
-        List<Post> posts = postRepository.findByStatus(PostStatus.PUBLISHED);
-        return posts.stream()
+        // Fetch posts with status PUBLISHED from the database
+        List<Post> publishedPosts = postRepository.findByStatus(PostStatus.PUBLISHED);
+
+        // Convert the list of entities to a list of DTOs
+        return publishedPosts.stream()
                 .map(postDTOConverter::convertToDTO)
                 .collect(Collectors.toList());
     }
 
-    public List<PostDTO> filterPosts(String title, String author) {
-        // Filtering logic can be added here later
-        List<Post> posts = postRepository.findAll();
-        return posts.stream()
+    @Override
+    public List<PostDTO> getPostsFiltered(PostDTO filterDTO) {
+        String content = filterDTO.getContent();
+        String author = filterDTO.getAuthor();
+        LocalDate startDate = filterDTO.getCreatedDate();
+        LocalDate endDate = filterDTO.getLastModifiedDate();
+
+        List<Post> filteredPosts = postRepository.findPostsByFilters(
+                content, author, startDate, endDate
+        );
+
+        return filteredPosts.stream()
                 .map(postDTOConverter::convertToDTO)
                 .collect(Collectors.toList());
     }

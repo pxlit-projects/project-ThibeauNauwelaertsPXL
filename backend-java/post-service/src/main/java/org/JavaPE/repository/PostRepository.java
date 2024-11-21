@@ -1,2 +1,29 @@
-package org.JavaPE.repository;public class PostRepository {
+package org.JavaPE.repository;
+
+import org.JavaPE.domain.Post;
+import org.JavaPE.domain.PostStatus;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import java.time.LocalDate;
+import java.util.List;
+
+public interface PostRepository extends JpaRepository<Post, Long> {
+    @Query("SELECT p FROM Post p WHERE p.status = :status")
+    List<Post> findByStatus(@Param("status") PostStatus status);
+
+    @Query("SELECT p FROM Post p WHERE " +
+            "(:content IS NULL OR p.content LIKE %:content%) AND " +
+            "(:author IS NULL OR p.author LIKE %:author%) AND " +
+            "(:startDate IS NULL OR p.createdDate >= :startDate) AND " +
+            "(:endDate IS NULL OR p.createdDate <= :endDate)")
+    List<Post> findPostsByFilters(
+            @Param("content") String content,
+            @Param("author") String author,
+            @Param("startDate") LocalDate startDate,
+            @Param("endDate") LocalDate endDate
+    );
+
 }
