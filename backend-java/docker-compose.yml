@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: employeeservice_db
+      MYSQL_USER: student
+      MYSQL_PASSWORD: student
+    ports:
+     - "3306:3306"
+    container_name: mysql-container
