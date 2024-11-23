@@ -29,6 +29,10 @@ public class PostServiceImpl implements PostService {
     public PostDTO createPost(PostDTO postDTO) {
         Post post = postDTOConverter.convertToEntity(postDTO);
 
+        if (post.getStatus() == null) {
+            post.setStatus(PostStatus.PUBLISHED);
+        }
+
         Post savedPost = postRepository.save(post);
 
         return postDTOConverter.convertToDTO(savedPost);
@@ -38,12 +42,10 @@ public class PostServiceImpl implements PostService {
     public PostDTO saveDraft(PostDTO postDTO) {
         Post post = postDTOConverter.convertToEntity(postDTO);
 
-        // Stel de status in op DRAFT
         post.setStatus(PostStatus.DRAFT);
         post.setCreatedDate(LocalDate.now());
         post.setLastModifiedDate(LocalDate.now());
 
-        // Sla de conceptpost op
         Post savedPost = postRepository.save(post);
 
         return postDTOConverter.convertToDTO(savedPost);
