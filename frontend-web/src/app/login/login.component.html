@@ -1,23 +1,51 @@
-<div class="login-container">
-    <h2>Login</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <div>
-        <label for="username">Username</label>
-        <input id="username" formControlName="username" />
-        <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
-          <small>Username is required</small>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Login Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-500 to-blue-300 min-h-screen flex items-center justify-center">
+  <!-- Login Form -->
+  <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-sm">
+    <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Login</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+      <div class="mb-4">
+        <label for="username" class="block text-sm font-medium text-gray-600">Username</label>
+        <input
+          id="username"
+          type="text"
+          formControlName="username"
+          class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Enter your username"
+        />
       </div>
-      
-      <div>
-        <label for="password">Password</label>
-        <input id="password" type="password" formControlName="password" />
-        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
-          <small>Password is required</small>
-        </div>
+
+      <div class="mb-4">
+        <label for="password" class="block text-sm font-medium text-gray-600">Password</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Enter your password"
+        />
       </div>
-  
-      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+
+      <!-- Error Message -->
+      <div *ngIf="loginFailed" class="text-red-500 text-center text-sm mb-4">
+        Invalid username or password. Please try again.
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition"
+        [disabled]="loginForm.invalid"
+      >
+        Login
+      </button>
     </form>
   </div>
-  
+</body>
+</html>

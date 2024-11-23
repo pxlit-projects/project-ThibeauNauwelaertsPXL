@@ -1,23 +1,52 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://your-backend-api-url/auth/login'; // Your backend login endpoint
+  private accounts = [
+    { username: 'admin', password: 'admin123', role: 'admin' },
+    { username: 'user', password: 'user123', role: 'user' },
+  ];
 
-  constructor(private http: HttpClient) {}
+  private currentUser: string | null = null;
+  private currentRole: string = 'user';
 
-  login(username: string, password: string): Observable<any> {
-    const loginData = { username, password };
-    return this.http.post(this.apiUrl, loginData).pipe(
-      catchError((error) => {
-        // Handle error
-        throw error;
-      })
+  constructor() {}
+
+  login(username: string, password: string): boolean {
+    const account = this.accounts.find(
+      (acc) => acc.username === username && acc.password === password
     );
+
+    if (account) {
+      this.currentUser = account.username;
+      this.currentRole = account.role;
+
+      // Set authToken in localStorage to simulate authentication
+      localStorage.setItem('authToken', 'true');
+      localStorage.setItem('userRole', account.role);
+
+      return true;
+    }
+
+    return false; // Return false if login fails
+  }
+
+  logout(): void {
+    this.currentUser = null;
+    this.currentRole = 'user';
+
+    // Clear authToken from localStorage
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('userRole');
+  }
+
+  getRole(): string {
+    return localStorage.getItem('userRole') || 'user';
+  }
+
+  isAuthenticated(): boolean {
+    return localStorage.getItem('authToken') === 'true';
   }
 }
