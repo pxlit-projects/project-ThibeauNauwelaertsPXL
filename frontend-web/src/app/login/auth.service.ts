@@ -23,9 +23,10 @@ export class AuthService {
       this.currentUser = account.username;
       this.currentRole = account.role;
 
-      // Set authToken in localStorage to simulate authentication
+      // Set authToken and username in localStorage to simulate authentication
       localStorage.setItem('authToken', 'true');
       localStorage.setItem('userRole', account.role);
+      localStorage.setItem('currentUser', account.username); // Store the username
 
       return true;
     }
@@ -37,9 +38,14 @@ export class AuthService {
     this.currentUser = null;
     this.currentRole = 'user';
 
-    // Clear authToken from localStorage
+    // Clear authToken and username from localStorage
     localStorage.removeItem('authToken');
     localStorage.removeItem('userRole');
+    localStorage.removeItem('currentUser'); // Clear the username
+  }
+
+  getUsername(): string | null {
+    return localStorage.getItem('currentUser'); // Retrieve the username from localStorage
   }
 
   getRole(): string {

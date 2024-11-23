@@ -1,59 +1,33 @@
-<div class="container mx-auto p-6">
-  <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Posts Page</h1>
+<div class="container mx-auto p-6 bg-blue-500 min-h-screen">
+  <h1 class="text-4xl font-bold text-center mb-12 text-white">Posts</h1>
+
+  <!-- Create New Post Button -->
+  <div class="text-center mb-6">
+    <button
+      class="bg-blue-500 text-white px-4 py-2 rounded"
+      (click)="navigateToCreatePost()"
+    >
+      Create New Post
+    </button>
+  </div>
+  
 
   <!-- Published Posts Section -->
-  <div *ngIf="!isEditor" class="mb-6">
-    <h2 class="text-xl font-semibold text-gray-700 mb-4">Published Posts</h2>
-    <ul class="space-y-4">
-      <li *ngFor="let post of posts" class="p-4 border border-gray-300 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-        <h3 class="text-lg font-bold text-gray-800">{{ post.title }}</h3>
-        <p class="text-gray-600">{{ post.content }}</p>
-      </li>
-    </ul>
+  <div *ngIf="posts.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div *ngFor="let post of posts" class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300">
+      <h3 class="text-2xl font-bold text-blue-600 mb-4">{{ post.title }}</h3>
+      <p class="text-gray-700 mb-6">{{ post.content }}</p>
+      <div class="text-sm text-gray-500">
+        <p>Author: <span class="font-medium">{{ post.author || "Unknown" }}</span></p>
+        <p>Created: <time>{{ post.createdDate }}</time></p>
+        <p>Last Modified: <time>{{ post.lastModifiedDate }}</time></p>
+      </div>
+    </div>
   </div>
 
-  <!-- Create a New Post Section -->
-  <div *ngIf="isEditor" class="mt-8">
-    <h2 class="text-xl font-semibold text-gray-700 mb-4">Create a New Post</h2>
-    <form [formGroup]="postForm" (ngSubmit)="createPost()" class="space-y-6">
-      <div>
-        <label for="title" class="block text-sm font-medium text-gray-600 mb-1">Title</label>
-        <input
-          id="title"
-          type="text"
-          formControlName="title"
-          class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
-          placeholder="Enter the post title"
-        />
-      </div>
-      <div>
-        <label for="content" class="block text-sm font-medium text-gray-600 mb-1">Content</label>
-        <textarea
-          id="content"
-          formControlName="content"
-          rows="5"
-          class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
-          placeholder="Write your post content here"
-        ></textarea>
-      </div>
-      <div>
-        <label for="status" class="block text-sm font-medium text-gray-600 mb-1">Status</label>
-        <select
-          id="status"
-          formControlName="status"
-          class="block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
-        >
-          <option value="DRAFT">Draft</option>
-          <option value="PUBLISHED">Published</option>
-        </select>
-      </div>
-      <button
-        type="submit"
-        class="w-full bg-blue-500 text-white py-3 rounded-lg shadow-md hover:bg-blue-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
-        [disabled]="postForm.invalid"
-      >
-        Create Post
-      </button>
-    </form>
+  <!-- Message when no posts are available -->
+  <div *ngIf="posts.length === 0" class="text-center mt-12">
+    <p class="text-2xl font-semibold text-white">No published posts available.</p>
+    <p class="text-gray-200 mt-4">Check back later for more content!</p>
   </div>
 </div>
