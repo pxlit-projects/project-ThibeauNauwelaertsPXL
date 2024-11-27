@@ -43,7 +43,7 @@ export class CreatePostComponent implements OnInit {
 
     const role = 'EDITOR'; // Use appropriate role logic
 
-    this.postService.createPost(role, newPost).subscribe(
+    this.postService.createPost(newPost).subscribe(
       (post) => {
         console.log('Post created:', post);
         this.router.navigate(['/posts']); // Navigate back to the posts page after creation

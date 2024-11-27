@@ -1,50 +1,40 @@
-<div class="container mx-auto p-6 bg-blue-500 min-h-screen">
-    <h1 class="text-4xl font-bold text-center mb-12 text-white">
-      Create a New Post
-    </h1>
+<div class="min-h-screen w-full bg-blue-500">
+    <div class="container mx-auto p-6">
+        <h1 class="text-4xl font-bold text-center mb-12 text-white">
+            Create a New Post
+        </h1>
   
-    <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
-      <form [formGroup]="postForm" (ngSubmit)="createPost()">
-        <div class="mb-4">
-          <label for="title" class="block text-gray-700 font-medium">Title</label>
-          <input
-            id="title"
-            formControlName="title"
-            class="w-full p-3 mt-2 border border-gray-300 rounded-lg"
-            placeholder="Enter post title"
-          />
+        <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
+            <form [formGroup]="postForm" (ngSubmit)="createPost()">
+                <div class="mb-4">
+                    <label for="title" class="block text-gray-700 font-medium">Title</label>
+                    <input
+                        id="title"
+                        formControlName="title"
+                        class="w-full p-3 mt-2 border border-gray-300 rounded-lg"
+                        placeholder="Enter post title"
+                    />
+                </div>
+  
+                <div class="mb-4">
+                    <label for="content" class="block text-gray-700 font-medium">Content</label>
+                    <textarea
+                        id="content"
+                        formControlName="content"
+                        class="w-full p-3 mt-2 border border-gray-300 rounded-lg"
+                        placeholder="Enter post content"
+                    ></textarea>
+                </div>
+  
+                <button
+                    type="submit"
+                    class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+                    [disabled]="postForm.invalid"
+                >
+                    Create Post
+                </button>
+            </form>
         </div>
-  
-        <div class="mb-4">
-          <label for="content" class="block text-gray-700 font-medium">Content</label>
-          <textarea
-            id="content"
-            formControlName="content"
-            class="w-full p-3 mt-2 border border-gray-300 rounded-lg"
-            placeholder="Enter post content"
-          ></textarea>
-        </div>
-  
-        <div class="mb-4">
-          <label for="status" class="block text-gray-700 font-medium">Status</label>
-          <select
-            id="status"
-            formControlName="status"
-            class="w-full p-3 mt-2 border border-gray-300 rounded-lg"
-          >
-            <option value="DRAFT">Draft</option>
-            <option value="PUBLISHED">Published</option>
-          </select>
-        </div>
-  
-        <button
-          type="submit"
-          class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
-          [disabled]="postForm.invalid"
-        >
-          Create Post
-        </button>
-      </form>
     </div>
   </div>
   

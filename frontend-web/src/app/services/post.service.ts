@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
 export interface Post {
-  id?: number;
+  id: number;
   title: string;
   content: string;
   status: string; // e.g., "PUBLISHED", "DRAFT"
@@ -23,48 +23,96 @@ export class PostService {
 
   constructor(private http: HttpClient) {}
 
-  /**
-   * Get Published Posts
-   * @param role The user role
-   * @returns Observable<Post[]>
-   */
-  getPublishedPosts(role: string): Observable<Post[]> {
-    const headers = this.createHeaders(role);
-    return this.http.get<Post[]>(`${this.baseUrl}/published`, { headers }).pipe(
-      map((response: Post[]) => response), // Optional: Transform data
-      catchError((error) => {
-        console.error('Error fetching published posts:', error);
-        return throwError(() => new Error('Failed to fetch published posts.'));
-      })
-    );
+  getPublishedPosts(): Observable<Post[]> {
+    const headers = this.createHeaders();
+    return this.http
+      .get<Post[]>(`${this.baseUrl}/published`, { headers })
+      .pipe(
+        catchError((error) =>
+          this.handleError(error, 'Failed to fetch published posts.')
+        )
+      );
+  }
+  
+  getDraftPosts(): Observable<Post[]> {
+    const headers = this.createHeaders();
+    return this.http
+      .get<Post[]>(`${this.baseUrl}/drafts`, { headers }) // Call the new /drafts endpoint
+      .pipe(
+        catchError((error) =>
+          this.handleError(error, 'Failed to fetch draft posts.')
+        )
+      );
   }
 
-  /**
-   * Create a New Post
-   * @param role The user role
-   * @param post The post data
-   * @returns Observable<Post>
-   */
-  createPost(role: string, post: Post): Observable<Post> {
-    const headers = this.createHeaders(role);
-    return this.http.post<Post>(this.baseUrl, post, { headers }).pipe(
-      map((response: Post) => response), // Optional: Transform data
-      catchError((error) => {
-        console.error('Error creating post:', error);
-        return throwError(() => new Error('Failed to create the post.'));
-      })
-    );
+  createPost(post: Post): Observable<Post> {
+    const headers = this.createHeaders();
+    return this.http
+      .post<Post>(this.baseUrl, post, { headers })
+      .pipe(
+        catchError((error) =>
+          this.handleError(error, 'Failed to create the post.')
+        )
+      );
+  }
+  
+  getPostById(id: number): Observable<Post> {
+    const headers = this.createHeaders();
+    return this.http
+      .get<Post>(`${this.baseUrl}/${id}`, { headers })
+      .pipe(
+        catchError((error) =>
+          this.handleError(error, `Failed to fetch post with ID ${id}.`)
+        )
+      );
+  }
+  
+  updatePost(id: number, post: Post): Observable<Post> {
+    const headers = this.createHeaders();
+    return this.http
+      .put<Post>(`${this.baseUrl}/${id}`, post, { headers })
+      .pipe(
+        catchError((error) =>
+          this.handleError(error, `Failed to update post with ID ${id}.`)
+        )
+      );
   }
 
-  /**
-   * Create HTTP headers with Authorization and Role
-   * @param role The user role
-   * @returns HttpHeaders
-   */
-  private createHeaders(role: string): HttpHeaders {
+  getFilteredPosts(filters: Partial<Post>): Observable<Post[]> {
+    const headers = this.createHeaders();
+  
+    // Build query parameters from the filters object
+    const params = new URLSearchParams();
+    if (filters.content) params.append('content', filters.content);
+    if (filters.author) params.append('author', filters.author);
+    if (filters.createdDate) params.append('createdDate', filters.createdDate);
+    if (filters.lastModifiedDate) params.append('lastModifiedDate', filters.lastModifiedDate);
+  
+    return this.http
+      .get<Post[]>(`${this.baseUrl}/filtered?${params.toString()}`, { headers }) // Use GET with query params
+      .pipe(
+        catchError((error) =>
+          this.handleError(error, 'Failed to fetch filtered posts.')
+        )
+      );
+  }
+  
+
+  private createHeaders(): HttpHeaders {
     return new HttpHeaders({
-      Authorization: this.authToken, // Token added here
-      'X-User-Role': role,
+      'Content-Type': 'application/json',
+      'X-User-Role': 'EDITOR',
     });
+  }
+
+  /**
+   * Handle HTTP errors
+   * @param error The HTTP error
+   * @param message A custom error message
+   * @returns Observable<never>
+   */
+  private handleError(error: any, message: string): Observable<never> {
+    console.error(message, error);
+    return throwError(() => new Error(message));
   }
 }

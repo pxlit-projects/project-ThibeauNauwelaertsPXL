@@ -5,14 +5,14 @@ import { CommonModule, NgForOf } from '@angular/common'; // Angular modules
 import { FormsModule } from '@angular/forms'; // For [(ngModel)]
 
 @Component({
-  selector: 'app-posts',
-  templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.css'],
+  selector: 'app-draft-posts',
+  templateUrl: './drafts.component.html',
+  styleUrls: ['./drafts.component.css'],
   standalone: true,
   imports: [CommonModule, NgForOf, FormsModule], // Include FormsModule for ngModel
 })
-export class PostsComponent implements OnInit {
-  posts: Post[] = []; // Array to store posts
+export class DraftPostsComponent implements OnInit {
+  draftPosts: Post[] = []; // Array to store draft posts
   filterCriteria: Partial<Post> = {
     content: '',
     author: '',
@@ -27,34 +27,33 @@ export class PostsComponent implements OnInit {
     const role = localStorage.getItem('userRole') || 'VIEWER';
     this.isEditor = role === 'EDITOR';
 
-    // Fetch all posts on initialization
-    this.fetchPosts();
+    // Fetch all draft posts on initialization
+    this.fetchDraftPosts();
   }
 
-  fetchPosts(filters: Partial<Post> = {}): void {
+  fetchDraftPosts(filters: Partial<Post> = {}): void {
     const hasFilters = Object.keys(filters).some(
       (key) => filters[key as keyof Post] !== '' && filters[key as keyof Post] !== undefined
     );
-  
+
     if (hasFilters) {
-      // Fetch filtered posts
+      // Fetch filtered draft posts
       this.postService.getFilteredPosts(filters).subscribe({
         next: (data) => {
-          this.posts = data; // Assign the response data to the posts array
+          this.draftPosts = data; // Assign the response data to the draftPosts array
         },
-        error: (err) => console.error('Failed to load filtered posts:', err),
+        error: (err) => console.error('Failed to load filtered draft posts:', err),
       });
     } else {
-      // Fetch all published posts
-      this.postService.getPublishedPosts().subscribe({
+      // Fetch all draft posts
+      this.postService.getDraftPosts().subscribe({
         next: (data) => {
-          this.posts = data; // Assign the response data to the posts array
+          this.draftPosts = data; // Assign the response data to the draftPosts array
         },
-        error: (err) => console.error('Failed to load posts:', err),
+        error: (err) => console.error('Failed to load draft posts:', err),
       });
     }
   }
-  
 
   applyFilters(): void {
     const filters = { ...this.filterCriteria };
@@ -63,7 +62,7 @@ export class PostsComponent implements OnInit {
     if (!filters.createdDate) delete filters.createdDate;
     if (!filters.lastModifiedDate) delete filters.lastModifiedDate;
 
-    this.fetchPosts(filters); // Fetch posts with filters
+    this.fetchDraftPosts(filters); // Fetch draft posts with filters
   }
 
   clearFilters(): void {
@@ -73,7 +72,7 @@ export class PostsComponent implements OnInit {
       createdDate: undefined,
       lastModifiedDate: undefined,
     }; // Reset filter criteria
-    this.fetchPosts(); // Fetch all posts without filters
+    this.fetchDraftPosts(); // Fetch all draft posts without filters
   }
 
   navigateToCreatePost(): void {

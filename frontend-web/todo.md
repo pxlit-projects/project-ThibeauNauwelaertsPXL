@@ -1,0 +1,3 @@
+- Fix die authentication bs zoda da fatsoenlijk werkt
+- Password nie opslaan in plaintext zoals k doe
+- token wss fixen want da werkte nie zoals t hoort bij update
