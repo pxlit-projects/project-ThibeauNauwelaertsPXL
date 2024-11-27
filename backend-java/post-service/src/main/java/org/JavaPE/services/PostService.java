@@ -10,5 +10,7 @@ public interface PostService {
     PostDTO saveDraft(PostDTO postDTO);
     PostDTO editPost(Long id, PostDTO postDTO);
     List<PostDTO> getPublishedPosts();
+    List<PostDTO> getDraftPosts();
     List<PostDTO> getPostsFiltered(PostDTO postDTO);
+    PostDTO getPostById(Long id);
 }

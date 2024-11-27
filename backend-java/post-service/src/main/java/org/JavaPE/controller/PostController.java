@@ -4,11 +4,13 @@ import org.JavaPE.controller.dto.PostDTO;
 import org.JavaPE.domain.PostStatus;
 import org.JavaPE.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -24,15 +26,8 @@ public class PostController {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
 
-        // If status is PUBLISHED, create the post as published
-        if (PostStatus.PUBLISHED.toString().equals(postDTO.getStatus())) {
-            PostDTO responseDTO = postService.createPost(postDTO);
-            return ResponseEntity.status(HttpStatus.CREATED).body(responseDTO);
-        } else {
-            // If status is DRAFT, save the post as draft
-            PostDTO responseDTO = postService.saveDraft(postDTO);
-            return ResponseEntity.status(HttpStatus.CREATED).body(responseDTO);
-        }
+        PostDTO responseDTO = postService.saveDraft(postDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(responseDTO);
     }
 
     @PutMapping("/{id}")
@@ -60,14 +55,49 @@ public class PostController {
         return ResponseEntity.ok(publishedPosts);
     }
 
+    @GetMapping("/drafts")
+    public ResponseEntity<List<PostDTO>> getDraftPosts(@RequestHeader(value = "X-User-Role", required = false) String role) {
+        if (role == null || role.isBlank()) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(null);
+        }
+
+        List<PostDTO> draftPosts = postService.getDraftPosts();
+        return ResponseEntity.ok(draftPosts);
+    }
+
     @GetMapping("/filtered")
-    public ResponseEntity<List<PostDTO>> getFilteredPosts(@RequestHeader(value = "X-User-Role", required = false) String role, @RequestBody PostDTO postDTO) {
+    public ResponseEntity<List<PostDTO>> getFilteredPosts(
+            @RequestHeader(value = "X-User-Role", required = false) String role,
+            @RequestParam(required = false) String content,
+            @RequestParam(required = false) String author,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate createdDate,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate lastModifiedDate) {
+
+        // Authorization check
         if (!"EDITOR".equals(role)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
 
-        List<PostDTO> filteredPosts = postService.getPostsFiltered(postDTO);
+        // Create a filter DTO from query parameters
+        PostDTO filterDTO = new PostDTO();
+        filterDTO.setContent(content);
+        filterDTO.setAuthor(author);
+        filterDTO.setCreatedDate(createdDate);
+        filterDTO.setLastModifiedDate(lastModifiedDate);
+
+        // Fetch filtered posts
+        List<PostDTO> filteredPosts = postService.getPostsFiltered(filterDTO);
         return ResponseEntity.ok(filteredPosts);
+    }
+
+
+    @GetMapping("/{id}")
+    public ResponseEntity<PostDTO> getPostById(@RequestHeader(value = "X-User-Role", required = false) String role, @PathVariable Long id) {
+        if (role == null || role.isBlank()) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(null);
+        }
+        PostDTO post = postService.getPostById(id);
+        return ResponseEntity.ok(post);
     }
 
 }

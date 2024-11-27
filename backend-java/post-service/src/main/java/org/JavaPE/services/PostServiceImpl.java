@@ -27,11 +27,9 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public PostDTO createPost(PostDTO postDTO) {
+        // Convert DTO to entity
         Post post = postDTOConverter.convertToEntity(postDTO);
-
-        if (post.getStatus() == null) {
-            post.setStatus(PostStatus.PUBLISHED);
-        }
+        post.setStatus(PostStatus.DRAFT);
 
         Post savedPost = postRepository.save(post);
 
@@ -80,6 +78,14 @@ public class PostServiceImpl implements PostService {
                 .collect(Collectors.toList());
     }
 
+    public List<PostDTO> getDraftPosts() {
+        List<Post> draftPosts = postRepository.findByStatus(PostStatus.DRAFT);
+
+        return draftPosts.stream()
+                .map(postDTOConverter::convertToDTO)
+                .collect(Collectors.toList());
+    }
+
     @Override
     public List<PostDTO> getPostsFiltered(PostDTO filterDTO) {
         String content = filterDTO.getContent();
@@ -94,5 +100,13 @@ public class PostServiceImpl implements PostService {
         return filteredPosts.stream()
                 .map(postDTOConverter::convertToDTO)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public PostDTO getPostById(Long id) {
+        Post post = postRepository.findById(id)
+                .orElseThrow(() -> new PostNotFoundException("Post with ID " + id + " not found."));
+
+        return postDTOConverter.convertToDTO(post);
     }
 }
