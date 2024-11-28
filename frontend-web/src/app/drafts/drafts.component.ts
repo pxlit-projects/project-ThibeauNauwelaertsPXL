@@ -1,68 +1,106 @@
 import { Component, OnInit } from '@angular/core';
 import { Post, PostService } from '../services/post.service';
-import { Router } from '@angular/router'; // Inject Router for navigation
-import { CommonModule, NgForOf } from '@angular/common'; // Angular modules
-import { FormsModule } from '@angular/forms'; // For [(ngModel)]
+import { Router } from '@angular/router';
+import { NotificationMessage } from '../models/notification-message.model';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-draft-posts',
   templateUrl: './drafts.component.html',
   styleUrls: ['./drafts.component.css'],
+  imports: [CommonModule, FormsModule],
   standalone: true,
-  imports: [CommonModule, NgForOf, FormsModule], // Include FormsModule for ngModel
 })
 export class DraftPostsComponent implements OnInit {
-  draftPosts: Post[] = []; // Array to store draft posts
+  draftPosts: Post[] = []; 
+  errorMessage: string | null = null; 
+  loading: boolean = false; 
+
   filterCriteria: Partial<Post> = {
     content: '',
     author: '',
     createdDate: undefined,
     lastModifiedDate: undefined,
-  }; // Holds filter inputs
-  isEditor: boolean = false;
+  };
 
-  constructor(private postService: PostService, private router: Router) {}
+  constructor(
+    private postService: PostService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    const role = localStorage.getItem('userRole') || 'VIEWER';
-    this.isEditor = role === 'EDITOR';
-
-    // Fetch all draft posts on initialization
     this.fetchDraftPosts();
+    this.listenToReviewUpdates();
   }
 
   fetchDraftPosts(filters: Partial<Post> = {}): void {
-    const hasFilters = Object.keys(filters).some(
-      (key) => filters[key as keyof Post] !== '' && filters[key as keyof Post] !== undefined
-    );
+    this.loading = true;
+    this.postService.getDraftPosts(filters).subscribe({
+      next: (data) => {
+        this.draftPosts = data;
+        this.loading = false;
+      },
+      error: (error) => {
+        console.error('Error fetching drafts', error);
+        this.errorMessage = 'Failed to load draft posts.';
+        this.loading = false;
+      },
+    });
+  }
+  
 
-    if (hasFilters) {
-      // Fetch filtered draft posts
-      this.postService.getFilteredPosts(filters).subscribe({
-        next: (data) => {
-          this.draftPosts = data; // Assign the response data to the draftPosts array
+  listenToReviewUpdates(): void {
+    const eventSource = new EventSource('http://localhost:8083/review/reviews/notifications');
+
+    eventSource.onmessage = (event) => {
+      const notification: NotificationMessage = JSON.parse(event.data);
+      console.log('Received notification:', notification);
+      this.updateDraftWithFeedback(notification); // Update draft post with feedback
+    };
+
+    eventSource.onerror = (error) => {
+      console.error("Error with SSE connection:", error);
+    };
+  }
+
+  updateDraftWithFeedback(notification: NotificationMessage): void {
+    const postId = notification.postId;
+    console.log('Received postId:', postId); // Check the received postId
+    console.log('Draft posts:', this.draftPosts); // Check the draft posts
+    
+    const post = this.draftPosts.find((p) => p.id === postId);
+    console.log('Draft post:', post); // Ensure the post is found
+    
+    if (post) {
+      // Check if remarks are received
+      post.remarks = notification.remarks || 'No remarks';  // If no remarks, set to 'No remarks'
+      console.log('Updated remarks:', post.remarks); // Log remarks to see what we received
+  
+      // Update the post status if it is rejected
+      post.status = notification.status === 'rejected' ? 'REJECTED' : post.status;
+  
+      // Save the updated post (API call to update the post in backend)
+      this.postService.updatePost(post.id, post).subscribe({
+        next: (updatedPost) => {
+          console.log('Draft updated with rejection feedback:', updatedPost);
         },
-        error: (err) => console.error('Failed to load filtered draft posts:', err),
-      });
-    } else {
-      // Fetch all draft posts
-      this.postService.getDraftPosts().subscribe({
-        next: (data) => {
-          this.draftPosts = data; // Assign the response data to the draftPosts array
+        error: (err) => {
+          console.error('Error updating post:', err);
         },
-        error: (err) => console.error('Failed to load draft posts:', err),
       });
     }
+  }
+  
+
+  addNewDraft(post: Post): void {
+    this.draftPosts.push(post); // Directly add the new post to the drafts list
+    console.log('New draft added:', post);
   }
 
   applyFilters(): void {
     const filters = { ...this.filterCriteria };
-
-    // If dates are empty, exclude them from the filters
-    if (!filters.createdDate) delete filters.createdDate;
-    if (!filters.lastModifiedDate) delete filters.lastModifiedDate;
-
-    this.fetchDraftPosts(filters); // Fetch draft posts with filters
+    this.fetchDraftPosts(filters); 
   }
 
   clearFilters(): void {
@@ -71,15 +109,15 @@ export class DraftPostsComponent implements OnInit {
       author: '',
       createdDate: undefined,
       lastModifiedDate: undefined,
-    }; // Reset filter criteria
-    this.fetchDraftPosts(); // Fetch all draft posts without filters
+    };
+    this.fetchDraftPosts(); 
   }
 
   navigateToCreatePost(): void {
-    this.router.navigate(['/create-post']); // Redirect to Create Post page
+    this.router.navigate(['/create-post']);
   }
 
   editPost(postId: number): void {
-    this.router.navigate(['/edit-post', postId]); // Navigate to the edit post route
+    this.router.navigate(['/edit-post', postId]);
   }
 }

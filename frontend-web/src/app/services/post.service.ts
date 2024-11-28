@@ -8,6 +8,7 @@ export interface Post {
   title: string;
   content: string;
   status: string; // e.g., "PUBLISHED", "DRAFT"
+  remarks?: string; 
   createdDate?: string;
   lastModifiedDate?: string;
   author?: string;
@@ -34,16 +35,25 @@ export class PostService {
       );
   }
   
-  getDraftPosts(): Observable<Post[]> {
+  getDraftPosts(filters: Partial<Post> = {}): Observable<Post[]> {
     const headers = this.createHeaders();
+    
+    // Build query parameters from the filters object
+    const params = new URLSearchParams();
+    if (filters.content) params.append('content', filters.content);
+    if (filters.author) params.append('author', filters.author);
+    if (filters.createdDate) params.append('createdDate', filters.createdDate);
+    if (filters.lastModifiedDate) params.append('lastModifiedDate', filters.lastModifiedDate);
+  
     return this.http
-      .get<Post[]>(`${this.baseUrl}/drafts`, { headers }) // Call the new /drafts endpoint
+      .get<Post[]>(`${this.baseUrl}/drafts?${params.toString()}`, { headers }) // Use GET with query params
       .pipe(
         catchError((error) =>
           this.handleError(error, 'Failed to fetch draft posts.')
         )
       );
   }
+  
 
   createPost(post: Post): Observable<Post> {
     const headers = this.createHeaders();

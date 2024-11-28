@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PostService } from '../services/post.service';
+import { Post, PostService } from '../services/post.service';
 import { Router } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
-import { CommonModule } from '@angular/common'; // Import CommonModule for standalone component
 import { AuthService } from '../login/auth.service';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-create-post',
-  standalone: true, // Mark the component as standalone
-  imports: [ReactiveFormsModule, CommonModule], // Add necessary modules here
+  standalone: true,
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './create-post.component.html',
   styleUrls: ['./create-post.component.css'],
 })
@@ -20,12 +20,12 @@ export class CreatePostComponent implements OnInit {
     private fb: FormBuilder,
     private postService: PostService,
     private router: Router,
-    private authService: AuthService // Inject AuthService
+    private authService: AuthService
   ) {
     this.postForm = this.fb.group({
       title: ['', Validators.required],
       content: ['', Validators.required],
-      status: ['DRAFT'], // Default status
+      status: ['DRAFT'],
     });
   }
 
@@ -36,17 +36,16 @@ export class CreatePostComponent implements OnInit {
       return;
     }
 
-    const newPost = {
+    const newPost: Post = {
       ...this.postForm.value,
-      author: this.authService.getUsername(), // Get the current username as author
+      author: this.authService.getUsername(), // Use the current username as author
     };
-
-    const role = 'EDITOR'; // Use appropriate role logic
 
     this.postService.createPost(newPost).subscribe(
       (post) => {
         console.log('Post created:', post);
-        this.router.navigate(['/posts']); // Navigate back to the posts page after creation
+        // Emit the post to the DraftPostsComponent
+        this.router.navigate(['/drafts']); // Navigate back to drafts
       },
       (error) => {
         console.error('Error creating post:', error);

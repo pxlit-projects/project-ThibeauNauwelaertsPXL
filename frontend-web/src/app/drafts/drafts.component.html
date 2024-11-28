@@ -1,99 +1,101 @@
 <div class="min-h-screen w-full bg-gray-100">
     <div class="container mx-auto p-6">
-        <h1 class="text-4xl font-bold text-center mb-8 text-gray-800">Draft Posts</h1>
+      <h1 class="text-4xl font-bold text-center mb-8 text-gray-800">Draft Posts</h1>
   
-        <!-- Filter Section -->
-        <div class="bg-white p-4 rounded-md shadow-sm mb-4 flex flex-wrap items-center space-y-2 sm:space-y-0 sm:space-x-4">
-            <div class="flex-1">
-                <label for="content" class="block text-gray-700 text-sm font-medium">Content</label>
-                <input
-                    id="content"
-                    type="text"
-                    class="p-1 border rounded text-sm w-full"
-                    placeholder="Search content"
-                    [(ngModel)]="filterCriteria.content"
-                />
-            </div>
-            <div class="flex-1">
-                <label for="author" class="block text-gray-700 text-sm font-medium">Author</label>
-                <input
-                    id="author"
-                    type="text"
-                    class="p-1 border rounded text-sm w-full"
-                    placeholder="Search author"
-                    [(ngModel)]="filterCriteria.author"
-                />
-            </div>
-            <div class="flex-1">
-                <label for="startDate" class="block text-gray-700 text-sm font-medium">Start Date</label>
-                <input
-                    id="startDate"
-                    type="date"
-                    class="p-1 border rounded text-sm w-full"
-                    [(ngModel)]="filterCriteria.createdDate"
-                />
-            </div>
-            <div class="flex-1">
-                <label for="endDate" class="block text-gray-700 text-sm font-medium">End Date</label>
-                <input
-                    id="endDate"
-                    type="date"
-                    class="p-1 border rounded text-sm w-full"
-                    [(ngModel)]="filterCriteria.lastModifiedDate"
-                />
-            </div>
-            <div class="flex space-x-2">
-                <button
-                    class="bg-blue-500 text-white px-3 py-1 rounded text-sm"
-                    (click)="applyFilters()"
-                >
-                    Apply
-                </button>
-                <button
-                    class="bg-gray-300 text-gray-700 px-3 py-1 rounded text-sm"
-                    (click)="clearFilters()"
-                >
-                    Clear
-                </button>
-            </div>
+      <!-- Filter Section -->
+      <div class="bg-white p-4 rounded-md shadow-sm mb-4 flex flex-wrap items-center space-y-2 sm:space-y-0 sm:space-x-4">
+        <div class="flex-1">
+          <label for="content" class="block text-gray-700 text-sm font-medium">Content</label>
+          <input
+            id="content"
+            type="text"
+            class="p-1 border rounded text-sm w-full"
+            placeholder="Search content"
+            [(ngModel)]="filterCriteria.content"
+          />
         </div>
+        <div class="flex-1">
+          <label for="author" class="block text-gray-700 text-sm font-medium">Author</label>
+          <input
+            id="author"
+            type="text"
+            class="p-1 border rounded text-sm w-full"
+            placeholder="Search author"
+            [(ngModel)]="filterCriteria.author"
+          />
+        </div>
+        <div class="flex-1">
+          <label for="startDate" class="block text-gray-700 text-sm font-medium">Start Date</label>
+          <input
+            id="startDate"
+            type="date"
+            class="p-1 border rounded text-sm w-full"
+            [(ngModel)]="filterCriteria.createdDate"
+          />
+        </div>
+        <div class="flex-1">
+          <label for="endDate" class="block text-gray-700 text-sm font-medium">End Date</label>
+          <input
+            id="endDate"
+            type="date"
+            class="p-1 border rounded text-sm w-full"
+            [(ngModel)]="filterCriteria.lastModifiedDate"
+          />
+        </div>
+        <div class="flex space-x-2">
+          <button
+            class="bg-blue-500 text-white px-3 py-1 rounded text-sm"
+            (click)="applyFilters()"
+          >
+            Apply
+          </button>
+          <button
+            class="bg-gray-300 text-gray-700 px-3 py-1 rounded text-sm"
+            (click)="clearFilters()"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
   
-        <!-- Create New Post Button -->
-        <div class="text-center mb-6">
-            <button
-                class="bg-green-500 text-white px-4 py-2 rounded shadow hover:bg-green-600 transition duration-300"
-                (click)="navigateToCreatePost()"
-            >
-                Create New Post
-            </button>
-        </div>
+      <!-- Create New Post Button -->
+      <div class="text-center mb-6">
+        <button
+          class="bg-green-500 text-white px-4 py-2 rounded shadow hover:bg-green-600 transition duration-300"
+          (click)="navigateToCreatePost()"
+        >
+          Create New Post
+        </button>
+      </div>
   
-        <!-- Draft Posts Section -->
-        <div *ngIf="draftPosts.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div
-                *ngFor="let post of draftPosts"
-                class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300"
-            >
-                <h3
-                    class="text-2xl text-blue-500 font-bold mb-4 cursor-pointer"
-                    (click)="editPost(post.id)"
-                >
-                    {{ post.title || 'Untitled Draft' }}
-                </h3>
-                <p class="text-gray-600 mb-6">{{ post.content || 'No content available.' }}</p>
-                <div class="text-sm text-gray-500">
-                    <p>
-                        Author: <span class="font-medium">{{ post.author || 'Unknown' }}</span>
-                    </p>
-                    <p>Created: <time>{{ post.createdDate || 'N/A' }}</time></p>
-                    <p>Last Modified: <time>{{ post.lastModifiedDate || 'N/A' }}</time></p>
-                </div>
-            </div>
+      <!-- Draft Posts Section -->
+      <div *ngIf="draftPosts.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          *ngFor="let post of draftPosts"
+          class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300"
+        >
+          <h3 class="text-2xl text-blue-500 font-bold mb-4 cursor-pointer" (click)="editPost(post.id)">
+            {{ post.title || 'Untitled Draft' }}
+          </h3>
+          <p class="text-gray-600 mb-6">{{ post.content || 'No content available.' }}</p>
+          <div class="text-sm text-gray-500">
+            <p>
+              Author: <span class="font-medium">{{ post.author || 'Unknown' }}</span>
+            </p>
+            <p>Created: <time>{{ post.createdDate || 'N/A' }}</time></p>
+            <p>Last Modified: <time>{{ post.lastModifiedDate || 'N/A' }}</time></p>
+            <!-- Display status and remarks -->
+            <p>Status: <span [ngClass]="{'text-red-500': post.status === 'REJECTED', 'text-green-500': post.status === 'APPROVED'}">{{ post.status || 'PENDING' }}</span></p>
+            <p>Remarks: <span class="text-red-500">{{ post.remarks || 'None' }}</span></p>
+          </div>
         </div>
+      </div>
   
-        <div *ngIf="draftPosts.length === 0" class="text-center mt-12">
-            <p class="text-2xl font-semibold text-gray-700">No draft posts available.</p>
-            <p class="text-gray-500 mt-4">Start creating draft posts to manage your content!</p>
-        </div>
+      <!-- No Drafts State -->
+      <div *ngIf="draftPosts.length === 0" class="text-center mt-12">
+        <p class="text-2xl font-semibold text-gray-700">No draft posts available.</p>
+        <p class="text-gray-500 mt-4">Start creating draft posts to manage your content!</p>
+      </div>
     </div>
-  </div>  
+  </div>
+  

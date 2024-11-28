@@ -5,12 +5,15 @@ import { AuthGuard } from './login/auth.guard';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { DraftPostsComponent } from './drafts/drafts.component';
+import { ReviewsComponent } from './reviews/reviews.component'; // Import the ReviewsComponent
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'posts', component: PostsComponent, canActivate: [AuthGuard] }, // Protect with AuthGuard
   { path: 'drafts', component: DraftPostsComponent, canActivate: [AuthGuard] }, // Protect with AuthGuard
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'create-post', component: CreatePostComponent, canActivate: [AuthGuard] },
-  { path: 'edit-post/:id', component: EditPostComponent },  // Add route for editing posts
+  { path: 'edit-post/:id', component: EditPostComponent },  // Route for editing posts
+  { path: 'reviews', component: ReviewsComponent, canActivate: [AuthGuard] }, // Add route for ReviewsComponent
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route
+  { path: '**', redirectTo: '/login' }, // Redirect unknown routes to login
 ];
