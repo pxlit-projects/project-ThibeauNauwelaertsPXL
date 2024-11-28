@@ -1,7 +1,6 @@
 package org.JavaPE.services;
 
 import org.JavaPE.controller.dto.PostDTO;
-import org.JavaPE.domain.Post;
 
 import java.util.List;
 
@@ -13,4 +12,6 @@ public interface PostService {
     List<PostDTO> getDraftPosts();
     List<PostDTO> getPostsFiltered(PostDTO postDTO);
     PostDTO getPostById(Long id);
+
+    void sendForReview(PostDTO updatedPost);
 }

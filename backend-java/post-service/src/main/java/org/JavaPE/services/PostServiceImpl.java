@@ -1,6 +1,8 @@
 package org.JavaPE.services;
 
 import jakarta.transaction.Transactional;
+import org.JavaPE.client.ReviewClient;
+import org.JavaPE.controller.Request.ReviewRequest;
 import org.JavaPE.controller.converter.PostDTOConverter;
 import org.JavaPE.controller.dto.PostDTO;
 import org.JavaPE.domain.Post;
@@ -19,10 +21,12 @@ public class PostServiceImpl implements PostService {
 
     private PostRepository postRepository;
     private PostDTOConverter postDTOConverter;
+    private ReviewClient reviewClient;
 
-    public PostServiceImpl(PostRepository postRepository, PostDTOConverter postDTOConverter) {
+    public PostServiceImpl(PostRepository postRepository, PostDTOConverter postDTOConverter, ReviewClient reviewClient) {
         this.postRepository = postRepository;
         this.postDTOConverter = postDTOConverter;
+        this.reviewClient = reviewClient;
     }
 
     @Override
@@ -45,8 +49,14 @@ public class PostServiceImpl implements PostService {
         post.setLastModifiedDate(LocalDate.now());
 
         Post savedPost = postRepository.save(post);
-
+        PostDTO savedPostDTO = postDTOConverter.convertToDTO(savedPost);
+        sendForReview(savedPostDTO);
         return postDTOConverter.convertToDTO(savedPost);
+    }
+
+    public void sendForReview(PostDTO post) {
+        ReviewRequest reviewRequest = new ReviewRequest(post.getId(), post.getAuthor());
+        reviewClient.submitPostForReview(reviewRequest);
     }
 
     @Override
@@ -109,4 +119,5 @@ public class PostServiceImpl implements PostService {
 
         return postDTOConverter.convertToDTO(post);
     }
+
 }

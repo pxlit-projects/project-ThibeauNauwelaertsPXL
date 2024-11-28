@@ -36,14 +36,20 @@ public class PostController {
             @PathVariable Long id,
             @RequestBody PostDTO postDTO
     ) {
-        // Authorization check
         if (!"EDITOR".equals(role)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
 
-        PostDTO responseDTO = postService.editPost(id, postDTO);
-        return ResponseEntity.ok(responseDTO);
+        PostDTO updatedPost = postService.editPost(id, postDTO);
+
+        // If the updated post is still a draft, send it for review
+        if (PostStatus.DRAFT.toString().equals(updatedPost.getStatus())) {
+            postService.sendForReview(updatedPost);
+        }
+
+        return ResponseEntity.ok(updatedPost);
     }
+
 
     @GetMapping("/published")
     public ResponseEntity<List<PostDTO>> getPublishedPosts(@RequestHeader(value = "X-User-Role", required = false) String role) {
