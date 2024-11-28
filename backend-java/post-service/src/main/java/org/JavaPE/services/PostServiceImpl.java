@@ -71,10 +71,21 @@ public class PostServiceImpl implements PostService {
             existingPost.setContent(postDTO.getContent());
         }
         existingPost.setLastModifiedDate(LocalDate.now());
+        existingPost.setRemarks(postDTO.getRemarks());
 
         Post updatedPost = postRepository.save(existingPost);
 
         return postDTOConverter.convertToDTO(updatedPost);
+    }
+
+    @Override
+    public void publishPost(Long postId) {
+        Post post = postRepository.findById(postId)
+                .orElseThrow(() -> new PostNotFoundException("Post with ID " + postId + " not found."));
+
+        post.setStatus(PostStatus.PUBLISHED);
+        post.setLastModifiedDate(LocalDate.now());
+        postRepository.save(post);
     }
 
     @Override

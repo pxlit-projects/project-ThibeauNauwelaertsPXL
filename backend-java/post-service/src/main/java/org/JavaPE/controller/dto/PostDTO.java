@@ -23,4 +23,5 @@ public class PostDTO {
 
     @NotNull(message = "Status cannot be null")
     private String status; // Should be "DRAFT" or "PUBLISHED"
+    private String remarks; // Add this field in your DTO
 }

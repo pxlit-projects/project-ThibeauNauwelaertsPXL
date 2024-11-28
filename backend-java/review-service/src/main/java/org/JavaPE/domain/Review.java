@@ -25,6 +25,7 @@ public class Review {
     private String author;
     private String status; // PENDING, APPROVED, REJECTED
     private String reviewer;
+    private String remarks;
     private LocalDateTime submittedAt;
     private LocalDateTime reviewedAt;
 }

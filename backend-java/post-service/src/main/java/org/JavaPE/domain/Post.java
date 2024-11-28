@@ -25,4 +25,5 @@ public class Post {
 
     @Enumerated(EnumType.STRING)
     private PostStatus status; // Status: DRAFT, PUBLISHED
+    private String remarks;
 }

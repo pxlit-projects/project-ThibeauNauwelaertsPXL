@@ -12,6 +12,6 @@ public interface PostService {
     List<PostDTO> getDraftPosts();
     List<PostDTO> getPostsFiltered(PostDTO postDTO);
     PostDTO getPostById(Long id);
-
+    void publishPost (Long id);
     void sendForReview(PostDTO updatedPost);
 }

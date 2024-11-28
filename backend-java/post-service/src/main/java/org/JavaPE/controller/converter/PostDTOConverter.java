@@ -18,6 +18,7 @@ public class PostDTOConverter {
         postDTO.setCreatedDate(post.getCreatedDate());
         postDTO.setLastModifiedDate(post.getLastModifiedDate());
         postDTO.setStatus(post.getStatus().name()); // Convert Enum to String
+        postDTO.setRemarks(post.getRemarks()); // Set the remarks
         return postDTO;
     }
 
@@ -29,6 +30,7 @@ public class PostDTOConverter {
         post.setStatus(PostStatus.PUBLISHED); // Automatically set status to PUBLISHED
         post.setCreatedDate(LocalDate.now()); // Set the creation date
         post.setLastModifiedDate(LocalDate.now()); // Set the last modified date
+        post.setRemarks(postDTO.getRemarks()); // Set the remarks
         return post;
     }
 }
