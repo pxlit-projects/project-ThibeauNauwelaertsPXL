@@ -1,67 +1,76 @@
-<div class="min-h-screen w-full bg-gray-100">
-    <div class="container mx-auto p-6">
-      <h1 class="text-4xl font-bold text-center mb-8">Reviews</h1>
-  
-      <!-- Loading State -->
-      <div *ngIf="loading" class="text-center text-gray-500">
-        Loading reviews...
-      </div>
-  
-      <!-- Error State -->
-      <div *ngIf="errorMessage" class="text-center text-red-500">
-        {{ errorMessage }}
-      </div>
-  
-      <!-- Reviews Section -->
-      <div *ngIf="reviews.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div
-          *ngFor="let review of reviews"
-          class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300"
-        >
-          <h3 class="text-2xl font-bold text-blue-500 mb-4">Post ID: {{ review.postId }}</h3>
-          <p class="text-gray-700 mb-4">
-            <strong>Status:</strong> {{ review.status }}
+<div class="min-h-screen bg-gray-100 py-10">
+  <div class="container mx-auto px-6">
+    <h1 class="text-3xl font-extrabold text-center text-gray-800 mb-8">Reviews</h1>
+
+    <!-- Reviews Section -->
+    <div *ngIf="reviews.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        *ngFor="let review of reviews"
+        class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+      >
+        <!-- Title -->
+        <h3 class="text-lg font-semibold text-blue-600 mb-2">{{ review.postTitle }}</h3>
+
+        <!-- Content -->
+        <p class="text-gray-800 text-sm mb-4">
+          <strong>Content:</strong> {{ review.postContent }}
+        </p>
+
+        <!-- Status -->
+        <p class="mb-3 text-sm">
+          <strong>Status:</strong>
+          <span
+            [ngClass]="{
+              'text-yellow-600': review.status === 'PENDING',
+              'text-green-600': review.status === 'APPROVED'
+            }"
+          >
+            {{ review.status }}
+          </span>
+        </p>
+
+        <!-- Remarks -->
+        <p class="text-gray-600 text-sm mb-4">
+          <strong>Remarks:</strong> {{ review.remarks || 'None' }}
+        </p>
+
+        <!-- Author and Metadata -->
+        <div class="text-gray-500 text-sm border-t pt-3">
+          <p>
+            <strong>Author:</strong> {{ review.author || 'Unknown' }}
           </p>
-          <div class="text-sm text-gray-500">
-            <p>Author: {{ review.author || 'Unknown' }}</p>
-            <p>
-              Submitted At:
-              <span>{{ review.submittedAt | date: 'MMM d, y, h:mm a' }}</span>
-            </p>
-            <p>
-              Reviewer: {{ review.reviewer || 'N/A' }}
-            </p>
-            <p>
-              Reviewed At:
-              <span>{{ review.reviewedAt | date: 'MMM d, y, h:mm a' }}</span>
-            </p>
-            <p class="text-red-500">
-              <strong>Remarks:</strong> {{ review.remarks || 'None' }}
-            </p>
-          </div>
-          <div class="mt-4 flex justify-between">
-            <button
-              class="bg-green-500 text-white px-3 py-1 rounded"
-              (click)="approveReview(review.id)"
-              *ngIf="review.status === 'PENDING'"
-            >
-              Approve
-            </button>
-            <button
-              class="bg-red-500 text-white px-3 py-1 rounded"
-              (click)="rejectReview(review.id)"
-              *ngIf="review.status === 'PENDING'"
-            >
-              Reject
-            </button>
-          </div>
+          <p>
+            <strong>Submitted At:</strong>
+            <span>{{ review.submittedAt | date: 'MMM d, y, h:mm a' }}</span>
+          </p>
+          <p>
+            <strong>Reviewer:</strong> {{ review.reviewer || 'N/A' }}
+          </p>
+        </div>
+
+        <!-- Actions -->
+        <div class="mt-4 flex items-center justify-between">
+          <button
+            *ngIf="review.status === 'PENDING'"
+            class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+            (click)="approveReview(review.reviewId)"
+          >
+            Approve
+          </button>
+          <button
+            *ngIf="review.status === 'PENDING'"
+            class="bg-red-500 text-white text-sm px-4 py-2 rounded-lg hover:bg-red-600 transition"
+            (click)="rejectReview(review.reviewId)"
+          >
+            Reject
+          </button>
         </div>
       </div>
-  
-      <!-- No Reviews State -->
-      <div *ngIf="!loading && reviews.length === 0" class="text-center text-gray-500">
-        No reviews available.
-      </div>
+    </div>
+
+    <!-- No Reviews State -->
+    <div *ngIf="!loading && reviews.length === 0" class="text-center text-gray-500 mt-10">
+      No reviews available.
     </div>
   </div>
-  
+</div>

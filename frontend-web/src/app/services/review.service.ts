@@ -54,16 +54,13 @@ export class ReviewService {
    * Get all reviews
    * @returns Observable<Review[]>
    */
-  getAllReviews(): Observable<Review[]> {
-    const headers = this.createHeaders();
+  getAllReviews(): Observable<any[]> {
     return this.http
-      .get<Review[]>(this.baseUrl, { headers })
+      .get<any[]>(`${this.baseUrl}`)
       .pipe(
-        catchError((error) =>
-          this.handleError(error, 'Failed to fetch all reviews.')
-        )
+        catchError((error) => this.handleError(error, 'Failed to fetch reviews'))
       );
-  }
+  }  
 
   /**
    * Approve a review

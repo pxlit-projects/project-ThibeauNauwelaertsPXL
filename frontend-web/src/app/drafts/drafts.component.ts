@@ -36,6 +36,10 @@ export class DraftPostsComponent implements OnInit {
 
   fetchDraftPosts(filters: Partial<Post> = {}): void {
     this.loading = true;
+  
+    // Filter drafts only
+    filters.status = 'DRAFT';
+  
     this.postService.getDraftPosts(filters).subscribe({
       next: (data) => {
         this.draftPosts = data;
@@ -48,6 +52,7 @@ export class DraftPostsComponent implements OnInit {
       },
     });
   }
+  
   
 
   listenToReviewUpdates(): void {

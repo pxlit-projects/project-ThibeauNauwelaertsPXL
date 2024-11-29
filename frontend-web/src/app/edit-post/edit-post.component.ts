@@ -34,8 +34,8 @@ export class EditPostComponent implements OnInit {
     this.postForm = this.fb.group({
       title: ['', Validators.required],
       content: ['', Validators.required],
-      status: ['DRAFT'], // Default status
     });
+    
   }
 
   ngOnInit(): void {

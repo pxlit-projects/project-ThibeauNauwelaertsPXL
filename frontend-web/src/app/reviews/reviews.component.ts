@@ -88,16 +88,20 @@ export class ReviewsComponent implements OnInit {
 
   // Handle review notification
   handleReviewNotification(notification: NotificationMessage): void {
-    const reviewId = notification.postId;
-    const review = this.reviews.find(r => r.id === reviewId);
-
+    const review = this.reviews.find((r) => r.id === notification.postId);
+  
     if (review) {
       review.status = notification.status.toUpperCase(); // Update status
       review.reviewer = notification.reviewer;
-      review.remarks = notification.remarks || 'None'; // Update remarks
+      review.remarks = notification.remarks || 'None';
+  
+      // Remove from the review list if rejected
+      if (review.status === 'REJECTED') {
+        this.reviews = this.reviews.filter((r) => r.id !== review.id);
+      }
     }
   }
-
+  
   // Navigate to Drafts
   private navigateToDrafts(): void {
     this.router.navigate(['/drafts']);
