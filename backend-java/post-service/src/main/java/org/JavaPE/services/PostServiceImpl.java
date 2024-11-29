@@ -65,6 +65,7 @@ public class PostServiceImpl implements PostService {
         return postDTOConverter.convertToDTO(savedPost);
     }
 
+
     // Helper method to determine if the post has been edited
     private boolean hasBeenEdited(Post post) {
         Post existingPost = postRepository.findById(post.getId()).orElse(null);
@@ -80,6 +81,18 @@ public class PostServiceImpl implements PostService {
     public void sendForReview(PostDTO post) {
         ReviewRequest reviewRequest = new ReviewRequest(post.getId(), post.getAuthor());
         reviewClient.submitPostForReview(reviewRequest);
+    }
+
+    @Override
+    public PostDTO getPublishedPostById(Long id) {
+        Post post = postRepository.findById(id)
+                .orElseThrow(() -> new PostNotFoundException("Post with ID " + id + " not found."));
+
+        if (!post.getStatus().toString().equalsIgnoreCase("PUBLISHED")) {
+            throw new PostNotFoundException("Post with ID " + id + " is not published.");
+        }
+
+        return postDTOConverter.convertToDTO(post);
     }
 
     @Override

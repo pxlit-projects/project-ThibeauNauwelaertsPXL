@@ -1,6 +1,7 @@
 package org.JavaPE.controller;
 
 import org.JavaPE.controller.dto.PostDTO;
+import org.JavaPE.domain.Post;
 import org.JavaPE.domain.PostStatus;
 import org.JavaPE.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -96,6 +97,11 @@ public class PostController {
         return ResponseEntity.ok(filteredPosts);
     }
 
+    @GetMapping("/published/{id}")
+    public ResponseEntity<PostDTO> getPublishedPostById(@PathVariable Long id) {
+        PostDTO postDTO = postService.getPublishedPostById(id);
+        return ResponseEntity.ok(postDTO);
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<PostDTO> getPostById(@RequestHeader(value = "X-User-Role", required = false) String role, @PathVariable Long id) {

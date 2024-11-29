@@ -14,4 +14,5 @@ public interface PostService {
     PostDTO getPostById(Long id);
     void publishPost (Long id);
     void sendForReview(PostDTO updatedPost);
+    PostDTO getPublishedPostById(Long id);
 }
