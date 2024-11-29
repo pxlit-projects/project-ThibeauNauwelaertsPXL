@@ -44,15 +44,38 @@ public class PostServiceImpl implements PostService {
     public PostDTO saveDraft(PostDTO postDTO) {
         Post post = postDTOConverter.convertToEntity(postDTO);
 
+        // Check if the post already exists in the database
+        boolean isNewPost = post.getId() == null;
+
+        // Set status and timestamps
         post.setStatus(PostStatus.DRAFT);
-        post.setCreatedDate(LocalDate.now());
         post.setLastModifiedDate(LocalDate.now());
 
+        if (isNewPost) {
+            post.setCreatedDate(LocalDate.now());
+        }
+
         Post savedPost = postRepository.save(post);
-        PostDTO savedPostDTO = postDTOConverter.convertToDTO(savedPost);
-        sendForReview(savedPostDTO);
+
+        // Only send for review if the post is new or has been edited
+        if (isNewPost || hasBeenEdited(savedPost)) {
+            sendForReview(postDTOConverter.convertToDTO(savedPost));
+        }
+
         return postDTOConverter.convertToDTO(savedPost);
     }
+
+    // Helper method to determine if the post has been edited
+    private boolean hasBeenEdited(Post post) {
+        Post existingPost = postRepository.findById(post.getId()).orElse(null);
+        if (existingPost == null) {
+            return true; // New post
+        }
+        // Compare relevant fields to detect changes
+        return !existingPost.getContent().equals(post.getContent()) ||
+                !existingPost.getTitle().equals(post.getTitle());
+    }
+
 
     public void sendForReview(PostDTO post) {
         ReviewRequest reviewRequest = new ReviewRequest(post.getId(), post.getAuthor());

@@ -2,6 +2,7 @@ package org.JavaPE.controller;
 
 import org.JavaPE.controller.Request.ReviewRequest;
 import org.JavaPE.controller.dto.RejectRequest;
+import org.JavaPE.controller.dto.ReviewWithPostDetailsDTO;
 import org.JavaPE.domain.Review;
 import org.JavaPE.services.ReviewService;
 import org.JavaPE.repository.ReviewRepository;
@@ -28,8 +29,8 @@ public class ReviewController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Review>> getAllReviews() {
-        return ResponseEntity.ok(reviewService.getAllReviews());
+    public ResponseEntity<List<ReviewWithPostDetailsDTO>> getAllReviews() {
+        return ResponseEntity.ok(reviewService.getAllReviewsWithPostDetails());
     }
 
     @PutMapping("/{reviewId}/approve")

@@ -1,6 +1,9 @@
 package org.JavaPE.services;
 
+import org.JavaPE.client.PostClient;
 import org.JavaPE.controller.dto.NotificationMessage;
+import org.JavaPE.controller.dto.PostResponse;
+import org.JavaPE.controller.dto.ReviewWithPostDetailsDTO;
 import org.JavaPE.domain.Review;
 import org.JavaPE.repository.ReviewRepository;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -12,21 +15,24 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.stream.Collectors;
 
 @Service
 public class ReviewServiceImpl implements ReviewService {
 
     private final ReviewRepository reviewRepository;
     private final PostService postService;
+    private final PostClient postClient;
     private final RabbitTemplate rabbitTemplate;
     private final ApplicationEventPublisher eventPublisher;
 
     // List to hold all SSE emitters (connected clients)
     private final List<SseEmitter> emitters = new CopyOnWriteArrayList<>();
 
-    public ReviewServiceImpl(ReviewRepository reviewRepository, PostService postService, RabbitTemplate rabbitTemplate, ApplicationEventPublisher eventPublisher) {
+    public ReviewServiceImpl(ReviewRepository reviewRepository, PostService postService, PostClient postClient, RabbitTemplate rabbitTemplate, ApplicationEventPublisher eventPublisher) {
         this.reviewRepository = reviewRepository;
         this.postService = postService;
+        this.postClient = postClient;
         this.rabbitTemplate = rabbitTemplate;
         this.eventPublisher = eventPublisher;
     }
@@ -60,14 +66,18 @@ public class ReviewServiceImpl implements ReviewService {
         Review review = reviewRepository.findById(reviewId)
                 .orElseThrow(() -> new RuntimeException("Review not found"));
 
+        // Update review status
         review.setStatus("REJECTED");
         review.setReviewer(reviewer);
-        review.setRemarks(remarks); // Save the remarks
+        review.setRemarks(remarks);
         review.setReviewedAt(LocalDateTime.now());
+
         reviewRepository.save(review);
 
         sendNotification(review.getPostId(), "rejected", reviewer, remarks);
+
     }
+
 
     // Send notification to RabbitMQ and to SSE clients
     private void sendNotification(Long postId, String status, String reviewer, String remarks) {
@@ -96,9 +106,27 @@ public class ReviewServiceImpl implements ReviewService {
         }
     }
 
-    // Get all reviews
-    public List<Review> getAllReviews() {
-        return reviewRepository.findAll();
+    public List<ReviewWithPostDetailsDTO> getAllReviewsWithPostDetails() {
+        List<Review> reviews = reviewRepository.findAll();
+
+        // Filter out rejected reviews and combine Review and Post Details
+        return reviews.stream()
+                .filter(review -> !"REJECTED".equalsIgnoreCase(review.getStatus()))
+                .map(review -> {
+                    PostResponse postResponse = postClient.getPostById(review.getPostId(), "EDITOR");
+                    return new ReviewWithPostDetailsDTO(
+                            review.getId(),
+                            review.getPostId(),
+                            review.getStatus(),
+                            review.getAuthor(),
+                            review.getReviewer(),
+                            review.getRemarks(),
+                            review.getSubmittedAt() != null ? review.getSubmittedAt().toString() : null,
+                            review.getReviewedAt() != null ? review.getReviewedAt().toString() : null,
+                            postResponse != null ? postResponse.getTitle() : "Unknown Title",
+                            postResponse != null ? postResponse.getContent() : "Unknown Content"
+                    );
+                }).collect(Collectors.toList());
     }
 
     // Register new SSE clients

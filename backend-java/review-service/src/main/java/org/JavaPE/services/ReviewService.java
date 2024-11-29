@@ -1,5 +1,6 @@
 package org.JavaPE.services;
 
+import org.JavaPE.controller.dto.ReviewWithPostDetailsDTO;
 import org.JavaPE.domain.Review;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
@@ -12,7 +13,7 @@ public interface ReviewService {
     void approveReview(Long reviewId, String reviewer);
 
     void rejectReview(Long reviewId, String reviewer, String remarks);
-    List<Review> getAllReviews();
+    List<ReviewWithPostDetailsDTO> getAllReviewsWithPostDetails();
 
     SseEmitter registerClient();
 }
