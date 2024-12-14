@@ -27,16 +27,9 @@ public class ReviewController {
 
     @PostMapping("/submit")
     public ResponseEntity<String> submitPostForReview(
-            @RequestHeader(value = "X-User-Role", required = false) String role,
             @RequestBody ReviewRequest reviewRequest) {
-        logger.info("Received request to submit post for review. Post ID: {}, Author: {}, Role: {}",
-                reviewRequest.getPostId(), reviewRequest.getAuthor(), role);
-
-        if (!"editor".equals(role)) {
-            logger.warn("Unauthorized attempt to submit post for review. Role: {}", role);
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-        }
-
+        logger.info("Received request to submit post for review. Post ID: {}, Author: {}",
+                reviewRequest.getPostId(), reviewRequest.getAuthor());
         try {
             reviewService.submitForReview(reviewRequest.getPostId(), reviewRequest.getAuthor());
             logger.info("Post with ID: {} successfully submitted for review by Author: {}",

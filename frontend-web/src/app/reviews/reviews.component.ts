@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule, NgForOf } from '@angular/common'; // Import CommonModule for date pipe
+import { CommonModule, NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
-import { Router } from '@angular/router'; // Import Router for navigation
-import { ReviewService, RejectRequest } from '../services/review.service'; // Adjust imports
-import { ReviewNotificationService } from '../services/review-notification.service'; // Import notification service
-import { NotificationMessage } from '../models/notification-message.model'; // Import notification model
-import { AuthService } from '../login/auth.service'; // Import AuthService
+import { Router } from '@angular/router'; 
+import { ReviewService, RejectRequest } from '../services/review.service'; 
+import { ReviewNotificationService } from '../services/review-notification.service'; 
+import { NotificationMessage } from '../models/notification-message.model'; 
+import { AuthService } from '../login/auth.service'; 
 
 @Component({
   selector: 'app-reviews',
   standalone: true,
   templateUrl: './reviews.component.html',
   styleUrls: ['./reviews.component.css'],
-  imports: [CommonModule, NgForOf, FormsModule], // Ensure CommonModule is included for the date pipe
+  imports: [CommonModule, NgForOf, FormsModule],
 })
 export class ReviewsComponent implements OnInit {
   reviews: any[] = [];
@@ -22,8 +22,8 @@ export class ReviewsComponent implements OnInit {
   constructor(
     private reviewService: ReviewService,
     private router: Router,
-    private reviewNotificationService: ReviewNotificationService,// Inject the notification service
-    private authService: AuthService // Inject AuthService here
+    private reviewNotificationService: ReviewNotificationService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -36,7 +36,6 @@ export class ReviewsComponent implements OnInit {
     });
   }
 
-  // Load reviews
   loadReviews(): void {
     this.loading = true;
     this.reviewService.getAllReviews().subscribe({
@@ -53,12 +52,12 @@ export class ReviewsComponent implements OnInit {
   }
 
   approveReview(reviewId: number): void {
-    const reviewer = this.authService.getUsername() || 'Unknown'; // Get the current logged-in username
+    const reviewer = this.authService.getUsername() || 'Unknown';
   
     this.reviewService.approveReview(reviewId, reviewer).subscribe({
       next: () => {
         console.log(`Review ${reviewId} approved by ${reviewer}.`);
-        this.navigateToDrafts(); // Navigate to Drafts after approval
+        this.removeReviewFromList(reviewId); // Remove review from list immediately
       },
       error: (error) => {
         console.error('Error approving review', error);
@@ -66,21 +65,18 @@ export class ReviewsComponent implements OnInit {
       },
     });
   }
-
+  
   rejectReview(reviewId: number): void {
-    const reviewer = this.authService.getUsername() || 'Unknown'; // Get the current logged-in username
+    const reviewer = this.authService.getUsername() || 'Unknown';
     const remarks = prompt('Enter remarks for rejection:');
     if (!remarks) return;
   
-    const rejectRequest: RejectRequest = {
-      reviewer,
-      remarks,
-    };
+    const rejectRequest: RejectRequest = { reviewer, remarks };
   
     this.reviewService.rejectReview(reviewId, rejectRequest).subscribe({
       next: () => {
         console.log(`Review ${reviewId} rejected by ${reviewer}.`);
-        this.navigateToDrafts(); // Navigate to Drafts after rejection
+        this.removeReviewFromList(reviewId); // Remove review from list immediately
       },
       error: (error) => {
         console.error('Error rejecting review', error);
@@ -88,25 +84,26 @@ export class ReviewsComponent implements OnInit {
       },
     });
   }
-  
 
-  // Handle review notification
   handleReviewNotification(notification: NotificationMessage): void {
-    const review = this.reviews.find((r) => r.id === notification.postId);
+    const review = this.reviews.find((r) => r.reviewId === notification.postId);
   
     if (review) {
-      review.status = notification.status.toUpperCase(); // Update status
+      review.status = notification.status.toUpperCase(); 
       review.reviewer = notification.reviewer;
       review.remarks = notification.remarks || 'None';
   
-      // Remove from the review list if rejected
       if (review.status === 'REJECTED') {
-        this.reviews = this.reviews.filter((r) => r.id !== review.id);
+        this.removeReviewFromList(review.reviewId);
       }
     }
   }
   
-  // Navigate to Drafts
+  private removeReviewFromList(reviewId: number): void {
+    console.log(`Removing review with reviewId: ${reviewId}`);
+    this.reviews = this.reviews.filter((r) => r.reviewId !== reviewId);
+  }
+
   private navigateToDrafts(): void {
     this.router.navigate(['/drafts']);
   }

@@ -28,7 +28,7 @@ export interface RejectRequest {
   providedIn: 'root',
 })
 export class ReviewService {
-  private baseUrl = 'http://localhost:8083/review/reviews'; // Base URL for ReviewController
+  private baseUrl = 'http://localhost:8083/review/reviews';
   private authToken =
     'Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9FRElUT1IifQ.WyhcB0Og8qV2HPLMlc5gG5wkl3F5oqhZ0R_Dd3pZeqo';
 
@@ -54,9 +54,10 @@ export class ReviewService {
    * Get all reviews
    * @returns Observable<Review[]>
    */
-  getAllReviews(): Observable<any[]> {
+  getAllReviews(): Observable<Review[]> {
+    const headers = this.createHeaders();
     return this.http
-      .get<any[]>(`${this.baseUrl}`)
+      .get<Review[]>(`${this.baseUrl}`, { headers })
       .pipe(
         catchError((error) => this.handleError(error, 'Failed to fetch reviews'))
       );
@@ -68,7 +69,7 @@ export class ReviewService {
    * @param reviewer The reviewer approving the review
    * @returns Observable<string>
    */
-  approveReview(reviewId: number, reviewer: string): Observable<any> {
+  approveReview(reviewId: number, reviewer: string): Observable<string> {
     const headers = this.createHeaders();
     return this.http
       .put(`${this.baseUrl}/${reviewId}/approve`, null, {
@@ -89,7 +90,7 @@ export class ReviewService {
    * @param rejectRequest The reject request payload
    * @returns Observable<string>
    */
-  rejectReview(reviewId: number, rejectRequest: RejectRequest): Observable<any> {
+  rejectReview(reviewId: number, rejectRequest: RejectRequest): Observable<string> {
     const headers = this.createHeaders();
     return this.http
       .put(`${this.baseUrl}/${reviewId}/reject`, rejectRequest, {
@@ -110,7 +111,7 @@ export class ReviewService {
   private createHeaders(): HttpHeaders {
     return new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': this.authToken,
+      'X-User-Role': 'editor',
     });
   }
 

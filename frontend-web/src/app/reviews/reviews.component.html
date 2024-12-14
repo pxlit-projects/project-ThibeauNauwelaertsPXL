@@ -2,21 +2,21 @@
   <div class="container mx-auto px-6">
     <h1 class="text-3xl font-extrabold text-center text-gray-800 mb-8">Reviews</h1>
 
-    <!-- Reviews Section -->
+    <!-- Display Reviews -->
     <div *ngIf="reviews.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
         *ngFor="let review of reviews"
         class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
       >
-        <!-- Title -->
+        <!-- Post Title -->
         <h3 class="text-lg font-semibold text-blue-600 mb-2">{{ review.postTitle }}</h3>
 
-        <!-- Content -->
+        <!-- Post Content -->
         <p class="text-gray-800 text-sm mb-4">
           <strong>Content:</strong> {{ review.postContent }}
         </p>
 
-        <!-- Status -->
+        <!-- Review Status -->
         <p class="mb-3 text-sm">
           <strong>Status:</strong>
           <span
@@ -36,20 +36,14 @@
 
         <!-- Author and Metadata -->
         <div class="text-gray-500 text-sm border-t pt-3">
-          <p>
-            <strong>Author:</strong> {{ review.author || 'Unknown' }}
-          </p>
-          <p>
-            <strong>Submitted At:</strong>
-            <span>{{ review.submittedAt | date: 'MMM d, y, h:mm a' }}</span>
-          </p>
-          <p>
-            <strong>Reviewer:</strong> {{ review.reviewer || 'N/A' }}
-          </p>
+          <p><strong>Author:</strong> {{ review.author || 'Unknown' }}</p>
+          <p><strong>Submitted At:</strong> {{ review.submittedAt | date: 'MMM d, y, h:mm a' }}</p>
+          <p><strong>Reviewer:</strong> {{ review.reviewer || 'N/A' }}</p>
         </div>
 
-        <!-- Actions -->
+        <!-- Action Buttons -->
         <div class="mt-4 flex items-center justify-between">
+          <!-- Approve Button -->
           <button
             *ngIf="review.status === 'PENDING'"
             class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition"
@@ -57,6 +51,8 @@
           >
             Approve
           </button>
+
+          <!-- Reject Button -->
           <button
             *ngIf="review.status === 'PENDING'"
             class="bg-red-500 text-white text-sm px-4 py-2 rounded-lg hover:bg-red-600 transition"
@@ -68,7 +64,7 @@
       </div>
     </div>
 
-    <!-- No Reviews State -->
+    <!-- No Reviews Available -->
     <div *ngIf="!loading && reviews.length === 0" class="text-center text-gray-500 mt-10">
       No reviews available.
     </div>

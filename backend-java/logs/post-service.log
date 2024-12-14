@@ -190,3 +190,1064 @@
 2024-12-14 20:17:28 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
 2024-12-14 20:17:28 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
 2024-12-14 20:17:28 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:21:18 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:21:27 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:21:31 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:26:18 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:26:27 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:26:31 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:27:35 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2024-12-14 20:27:35 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2024-12-14 20:27:35 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:27:35 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:27:40 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2024-12-14 20:27:40 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2024-12-14 20:27:40 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:27:40 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:28:59 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2024-12-14 20:28:59 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2024-12-14 20:28:59 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:28:59 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:29:11 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2024-12-14 20:29:11 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2024-12-14 20:29:11 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:29:11 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:29:15 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2024-12-14 20:29:15 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2024-12-14 20:29:15 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:29:15 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:29:50 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application REVIEW-SERVICE with eureka with status DOWN
+2024-12-14 20:29:50 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1734204590016, current=DOWN, previous=UP]
+2024-12-14 20:29:50 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_REVIEW-SERVICE/MSI:review-service:8085: registering service...
+2024-12-14 20:29:50 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_REVIEW-SERVICE/MSI:review-service:8085 - registration status: 204
+2024-12-14 20:29:50 INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2024-12-14 20:29:50 INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2024-12-14 20:29:50 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-14 20:29:50 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-14 20:29:50 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-14 20:29:50 INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2024-12-14 20:29:53 INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2024-12-14 20:29:53 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_REVIEW-SERVICE/MSI:review-service:8085 - deregister  status: 200
+2024-12-14 20:29:53 INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2024-12-14 20:30:04 INFO  org.JavaPE.ReviewServiceApplication - Starting ReviewServiceApplication using Java 21 with PID 20200 (C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\review-service\target\classes started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java)
+2024-12-14 20:30:04 INFO  org.JavaPE.ReviewServiceApplication - Starting ReviewServiceApplication using Java 21 with PID 20200 (C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\review-service\target\classes started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java)
+2024-12-14 20:30:04 DEBUG org.JavaPE.ReviewServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-14 20:30:04 DEBUG org.JavaPE.ReviewServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-14 20:30:04 INFO  org.JavaPE.ReviewServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-14 20:30:04 INFO  org.JavaPE.ReviewServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-14 20:30:04 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2024-12-14 20:30:04 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=review-service, profiles=[default], label=null, version=null, state=null
+2024-12-14 20:30:05 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-14 20:30:05 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 226 ms. Found 2 JPA repository interfaces.
+2024-12-14 20:30:05 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-14 20:30:05 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-14 20:30:06 INFO  o.JavaPE.controller.PostController - Successfully fetched 1 published posts
+2024-12-14 20:30:06 INFO  o.JavaPE.controller.PostController - Successfully fetched 1 published posts
+2024-12-14 20:30:06 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=46bbd909-4ba6-30d8-9148-07a134e28f9f
+2024-12-14 20:30:06 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-12-14 20:30:06 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2024-12-14 20:30:06 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8085 (http)
+2024-12-14 20:30:06 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+2024-12-14 20:30:06 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-14 20:30:06 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-14 20:30:06 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-14 20:30:06 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2480 ms
+2024-12-14 20:30:06 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-14 20:30:07 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-14 20:30:07 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-14 20:30:07 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-14 20:30:07 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-14 20:30:07 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@476a2819
+2024-12-14 20:30:07 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-14 20:30:07 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-14 20:30:07 WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-12-14 20:30:09 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-14 20:30:09 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-14 20:30:09 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-14 20:30:10 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-14 20:30:10 INFO  o.s.c.o.FeignClientFactoryBean - For 'review-service' URL not provided. Will try picking an instance via load-balancing.
+2024-12-14 20:30:10 INFO  o.s.c.o.FeignClientFactoryBean - For 'post-service' URL not provided. Will try picking an instance via load-balancing.
+2024-12-14 20:30:11 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2024-12-14 20:30:11 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-12-14 20:30:11 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-12-14 20:30:12 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2024-12-14 20:30:12 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:30:12 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2024-12-14 20:30:12 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2024-12-14 20:30:12 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2024-12-14 20:30:12 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2024-12-14 20:30:12 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2024-12-14 20:30:12 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2024-12-14 20:30:12 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2024-12-14 20:30:12 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2024-12-14 20:30:12 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2024-12-14 20:30:12 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-12-14 20:30:12 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1734204612357 with initial instances count: 3
+2024-12-14 20:30:12 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application REVIEW-SERVICE with eureka with status UP
+2024-12-14 20:30:12 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1734204612365, current=UP, previous=STARTING]
+2024-12-14 20:30:12 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+2024-12-14 20:30:12 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_REVIEW-SERVICE/MSI:review-service:8085: registering service...
+2024-12-14 20:30:12 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8085 (http) with context path '/'
+2024-12-14 20:30:12 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8085
+2024-12-14 20:30:12 INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2024-12-14 20:30:12 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_REVIEW-SERVICE/MSI:review-service:8085 - registration status: 204
+2024-12-14 20:30:12 INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#b536551:0/SimpleConnection@2c1e4d9e [delegate=amqp://guest@127.0.0.1:5672/, localPort=54205]
+2024-12-14 20:30:12 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-14 20:30:12 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-14 20:30:12 INFO  o.JavaPE.controller.PostController - Successfully fetched 1 draft posts
+2024-12-14 20:30:12 INFO  o.JavaPE.controller.PostController - Successfully fetched 1 draft posts
+2024-12-14 20:30:12 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-14 20:30:12 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-14 20:30:12 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-12-14 20:30:12 INFO  org.JavaPE.ReviewServiceApplication - Started ReviewServiceApplication in 10.042 seconds (process running for 11.031)
+2024-12-14 20:30:12 INFO  org.JavaPE.ReviewServiceApplication - Started ReviewServiceApplication in 10.042 seconds (process running for 11.031)
+2024-12-14 20:30:12 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-14 20:30:12 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-14 20:30:12 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-14 20:30:12 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-14 20:30:13 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-14 20:30:13 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-14 20:30:13 INFO  o.JavaPE.controller.PostController - Successfully fetched 1 published posts
+2024-12-14 20:30:13 INFO  o.JavaPE.controller.PostController - Successfully fetched 1 published posts
+2024-12-14 20:30:20 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:30:20 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:30:21 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: EDITOR
+2024-12-14 20:30:21 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: EDITOR
+2024-12-14 20:30:21 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:30:21 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:30:21 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 2 and role: EDITOR
+2024-12-14 20:30:21 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 2 and role: EDITOR
+2024-12-14 20:30:21 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 2
+2024-12-14 20:30:21 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 2
+2024-12-14 20:30:21 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-14 20:30:21 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-14 20:30:25 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'reviewId': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2024-12-14 20:30:43 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-14 20:31:18 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:31:27 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:31:36 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:31:36 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:31:36 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: EDITOR
+2024-12-14 20:31:36 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: EDITOR
+2024-12-14 20:31:36 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:31:36 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:31:36 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 2 and role: EDITOR
+2024-12-14 20:31:36 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 2 and role: EDITOR
+2024-12-14 20:31:36 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 2
+2024-12-14 20:31:36 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 2
+2024-12-14 20:31:36 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-14 20:31:36 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-14 20:31:37 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'reviewId': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2024-12-14 20:31:38 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'reviewId': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2024-12-14 20:31:39 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'reviewId': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "undefined"]
+2024-12-14 20:35:12 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:36:02 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:36:02 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:36:02 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: EDITOR
+2024-12-14 20:36:02 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: EDITOR
+2024-12-14 20:36:03 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:36:03 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:36:03 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 2 and role: EDITOR
+2024-12-14 20:36:03 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 2 and role: EDITOR
+2024-12-14 20:36:03 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 2
+2024-12-14 20:36:03 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 2
+2024-12-14 20:36:03 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-14 20:36:03 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-14 20:36:07 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:36:07 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:36:07 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: EDITOR
+2024-12-14 20:36:07 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: EDITOR
+2024-12-14 20:36:07 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:36:07 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2024-12-14 20:36:07 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 2 and role: EDITOR
+2024-12-14 20:36:07 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 2 and role: EDITOR
+2024-12-14 20:36:07 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 2
+2024-12-14 20:36:07 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 2
+2024-12-14 20:36:07 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-14 20:36:07 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-14 20:36:08 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 1, Reviewer: admin, Role: editor
+2024-12-14 20:36:08 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 1, Reviewer: admin, Role: editor
+2024-12-14 20:36:08 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 1 by Reviewer: admin
+2024-12-14 20:36:08 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 1 by Reviewer: admin
+2024-12-14 20:36:09 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 1, Reviewer: admin, Role: editor
+2024-12-14 20:36:09 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 1, Reviewer: admin, Role: editor
+2024-12-14 20:36:09 ERROR o.JavaPE.controller.ReviewController - Error approving review with ID: 1
+java.lang.RuntimeException: Review not found
+	at org.JavaPE.services.ReviewServiceImpl.lambda$approveReview$0(ReviewServiceImpl.java:53)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.JavaPE.services.ReviewServiceImpl.approveReview(ReviewServiceImpl.java:53)
+	at org.JavaPE.controller.ReviewController.approveReview(ReviewController.java:85)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-12-14 20:36:09 ERROR o.JavaPE.controller.ReviewController - Error approving review with ID: 1
+java.lang.RuntimeException: Review not found
+	at org.JavaPE.services.ReviewServiceImpl.lambda$approveReview$0(ReviewServiceImpl.java:53)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.JavaPE.services.ReviewServiceImpl.approveReview(ReviewServiceImpl.java:53)
+	at org.JavaPE.controller.ReviewController.approveReview(ReviewController.java:85)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-12-14 20:36:16 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 1, Reviewer: admin, Role: editor
+2024-12-14 20:36:16 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 1, Reviewer: admin, Role: editor
+2024-12-14 20:36:16 ERROR o.JavaPE.controller.ReviewController - Error approving review with ID: 1
+java.lang.RuntimeException: Review not found
+	at org.JavaPE.services.ReviewServiceImpl.lambda$approveReview$0(ReviewServiceImpl.java:53)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.JavaPE.services.ReviewServiceImpl.approveReview(ReviewServiceImpl.java:53)
+	at org.JavaPE.controller.ReviewController.approveReview(ReviewController.java:85)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-12-14 20:36:16 ERROR o.JavaPE.controller.ReviewController - Error approving review with ID: 1
+java.lang.RuntimeException: Review not found
+	at org.JavaPE.services.ReviewServiceImpl.lambda$approveReview$0(ReviewServiceImpl.java:53)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.JavaPE.services.ReviewServiceImpl.approveReview(ReviewServiceImpl.java:53)
+	at org.JavaPE.controller.ReviewController.approveReview(ReviewController.java:85)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-12-14 20:36:17 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 3, Reviewer: admin, Role: editor
+2024-12-14 20:36:17 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 3, Reviewer: admin, Role: editor
+2024-12-14 20:36:18 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 3 by Reviewer: admin
+2024-12-14 20:36:18 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 3 by Reviewer: admin
+2024-12-14 20:36:18 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:36:20 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 3, Reviewer: admin, Role: editor
+2024-12-14 20:36:20 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 3, Reviewer: admin, Role: editor
+2024-12-14 20:36:20 ERROR o.JavaPE.controller.ReviewController - Error approving review with ID: 3
+java.lang.RuntimeException: Review not found
+	at org.JavaPE.services.ReviewServiceImpl.lambda$approveReview$0(ReviewServiceImpl.java:53)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.JavaPE.services.ReviewServiceImpl.approveReview(ReviewServiceImpl.java:53)
+	at org.JavaPE.controller.ReviewController.approveReview(ReviewController.java:85)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-12-14 20:36:20 ERROR o.JavaPE.controller.ReviewController - Error approving review with ID: 3
+java.lang.RuntimeException: Review not found
+	at org.JavaPE.services.ReviewServiceImpl.lambda$approveReview$0(ReviewServiceImpl.java:53)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.JavaPE.services.ReviewServiceImpl.approveReview(ReviewServiceImpl.java:53)
+	at org.JavaPE.controller.ReviewController.approveReview(ReviewController.java:85)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-12-14 20:36:22 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:36:22 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:36:22 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 0 reviews.
+2024-12-14 20:36:22 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 0 reviews.
+2024-12-14 20:36:24 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-14 20:36:24 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-14 20:36:24 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2024-12-14 20:36:24 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2024-12-14 20:36:26 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:36:26 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:36:26 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 0 reviews.
+2024-12-14 20:36:26 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 0 reviews.
+2024-12-14 20:36:27 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:40:12 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:41:11 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:41:11 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:41:11 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 0 reviews.
+2024-12-14 20:41:11 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 0 reviews.
+2024-12-14 20:41:16 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:41:16 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:41:16 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 0 reviews.
+2024-12-14 20:41:16 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 0 reviews.
+2024-12-14 20:41:17 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-14 20:41:17 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-14 20:41:17 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-14 20:41:17 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-14 20:41:17 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-14 20:41:17 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-14 20:41:17 INFO  o.JavaPE.controller.PostController - Successfully fetched 0 draft posts
+2024-12-14 20:41:17 INFO  o.JavaPE.controller.PostController - Successfully fetched 0 draft posts
+2024-12-14 20:41:18 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-14 20:41:18 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-14 20:41:18 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2024-12-14 20:41:18 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2024-12-14 20:41:18 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:41:21 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-14 20:41:21 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-14 20:41:22 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 3, Author: admin, Role: null
+2024-12-14 20:41:22 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 3, Author: admin, Role: null
+2024-12-14 20:41:22 WARN  o.JavaPE.controller.ReviewController - Unauthorized attempt to submit post for review. Role: null
+2024-12-14 20:41:22 WARN  o.JavaPE.controller.ReviewController - Unauthorized attempt to submit post for review. Role: null
+2024-12-14 20:41:22 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: feign.FeignException$Forbidden: [403] during [POST] to [http://review-service/reviews/submit] [ReviewClient#submitPostForReview(ReviewRequest)]: []] with root cause
+feign.FeignException$Forbidden: [403] during [POST] to [http://review-service/reviews/submit] [ReviewClient#submitPostForReview(ReviewRequest)]: []
+	at feign.FeignException.clientErrorStatus(FeignException.java:226)
+	at feign.FeignException.errorStatus(FeignException.java:203)
+	at feign.FeignException.errorStatus(FeignException.java:194)
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103)
+	at feign.InvocationContext.decodeError(InvocationContext.java:126)
+	at feign.InvocationContext.proceed(InvocationContext.java:72)
+	at feign.ResponseHandler.handleResponse(ResponseHandler.java:63)
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:114)
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70)
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99)
+	at jdk.proxy2/jdk.proxy2.$Proxy146.submitPostForReview(Unknown Source)
+	at org.JavaPE.services.PostServiceImpl.sendForReview(PostServiceImpl.java:75)
+	at org.JavaPE.services.PostServiceImpl.saveDraft(PostServiceImpl.java:58)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at org.JavaPE.services.PostServiceImpl$$SpringCGLIB$$0.saveDraft(<generated>)
+	at org.JavaPE.controller.PostController.createPost(PostController.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-12-14 20:41:24 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-14 20:41:24 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-14 20:41:24 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 4, Author: admin, Role: null
+2024-12-14 20:41:24 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 4, Author: admin, Role: null
+2024-12-14 20:41:24 WARN  o.JavaPE.controller.ReviewController - Unauthorized attempt to submit post for review. Role: null
+2024-12-14 20:41:24 WARN  o.JavaPE.controller.ReviewController - Unauthorized attempt to submit post for review. Role: null
+2024-12-14 20:41:24 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: feign.FeignException$Forbidden: [403] during [POST] to [http://review-service/reviews/submit] [ReviewClient#submitPostForReview(ReviewRequest)]: []] with root cause
+feign.FeignException$Forbidden: [403] during [POST] to [http://review-service/reviews/submit] [ReviewClient#submitPostForReview(ReviewRequest)]: []
+	at feign.FeignException.clientErrorStatus(FeignException.java:226)
+	at feign.FeignException.errorStatus(FeignException.java:203)
+	at feign.FeignException.errorStatus(FeignException.java:194)
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103)
+	at feign.InvocationContext.decodeError(InvocationContext.java:126)
+	at feign.InvocationContext.proceed(InvocationContext.java:72)
+	at feign.ResponseHandler.handleResponse(ResponseHandler.java:63)
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:114)
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70)
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99)
+	at jdk.proxy2/jdk.proxy2.$Proxy146.submitPostForReview(Unknown Source)
+	at org.JavaPE.services.PostServiceImpl.sendForReview(PostServiceImpl.java:75)
+	at org.JavaPE.services.PostServiceImpl.saveDraft(PostServiceImpl.java:58)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at org.JavaPE.services.PostServiceImpl$$SpringCGLIB$$0.saveDraft(<generated>)
+	at org.JavaPE.controller.PostController.createPost(PostController.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-12-14 20:41:27 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:41:39 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-14 20:41:39 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-14 20:41:39 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2024-12-14 20:41:39 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2024-12-14 20:41:43 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-14 20:41:43 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-14 20:41:43 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 5, Author: admin, Role: null
+2024-12-14 20:41:43 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 5, Author: admin, Role: null
+2024-12-14 20:41:43 WARN  o.JavaPE.controller.ReviewController - Unauthorized attempt to submit post for review. Role: null
+2024-12-14 20:41:43 WARN  o.JavaPE.controller.ReviewController - Unauthorized attempt to submit post for review. Role: null
+2024-12-14 20:41:43 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: feign.FeignException$Forbidden: [403] during [POST] to [http://review-service/reviews/submit] [ReviewClient#submitPostForReview(ReviewRequest)]: []] with root cause
+feign.FeignException$Forbidden: [403] during [POST] to [http://review-service/reviews/submit] [ReviewClient#submitPostForReview(ReviewRequest)]: []
+	at feign.FeignException.clientErrorStatus(FeignException.java:226)
+	at feign.FeignException.errorStatus(FeignException.java:203)
+	at feign.FeignException.errorStatus(FeignException.java:194)
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103)
+	at feign.InvocationContext.decodeError(InvocationContext.java:126)
+	at feign.InvocationContext.proceed(InvocationContext.java:72)
+	at feign.ResponseHandler.handleResponse(ResponseHandler.java:63)
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:114)
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:70)
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:99)
+	at jdk.proxy2/jdk.proxy2.$Proxy146.submitPostForReview(Unknown Source)
+	at org.JavaPE.services.PostServiceImpl.sendForReview(PostServiceImpl.java:75)
+	at org.JavaPE.services.PostServiceImpl.saveDraft(PostServiceImpl.java:58)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at org.JavaPE.services.PostServiceImpl$$SpringCGLIB$$0.saveDraft(<generated>)
+	at org.JavaPE.controller.PostController.createPost(PostController.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-12-14 20:41:48 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-14 20:44:16 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application POST-SERVICE with eureka with status DOWN
+2024-12-14 20:44:16 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1734205456605, current=DOWN, previous=UP]
+2024-12-14 20:44:16 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_POST-SERVICE/MSI:post-service:8084: registering service...
+2024-12-14 20:44:16 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_POST-SERVICE/MSI:post-service:8084 - registration status: 204
+2024-12-14 20:44:16 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-14 20:44:16 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-14 20:44:16 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-14 20:44:16 INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2024-12-14 20:44:19 INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2024-12-14 20:44:19 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_POST-SERVICE/MSI:post-service:8084 - deregister  status: 200
+2024-12-14 20:44:19 INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2024-12-14 20:45:12 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:46:27 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:46:32 INFO  org.JavaPE.PostServiceApplication - Starting PostServiceApplication using Java 21 with PID 22640 (C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service\target\classes started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java)
+2024-12-14 20:46:32 INFO  org.JavaPE.PostServiceApplication - Starting PostServiceApplication using Java 21 with PID 22640 (C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service\target\classes started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java)
+2024-12-14 20:46:32 DEBUG org.JavaPE.PostServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-14 20:46:32 DEBUG org.JavaPE.PostServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-14 20:46:32 INFO  org.JavaPE.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-14 20:46:32 INFO  org.JavaPE.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-14 20:46:32 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2024-12-14 20:46:32 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=post-service, profiles=[default], label=null, version=null, state=null
+2024-12-14 20:46:34 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-14 20:46:34 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 272 ms. Found 1 JPA repository interface.
+2024-12-14 20:46:34 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=1a5a92c5-8d00-33fe-87b6-febea0d96c6e
+2024-12-14 20:46:34 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-12-14 20:46:34 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2024-12-14 20:46:35 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2024-12-14 20:46:35 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+2024-12-14 20:46:35 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-14 20:46:35 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-14 20:46:35 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-14 20:46:35 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2827 ms
+2024-12-14 20:46:36 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-14 20:46:36 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-14 20:46:36 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-14 20:46:37 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-14 20:46:37 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-14 20:46:38 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@153409b8
+2024-12-14 20:46:38 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-14 20:46:38 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-14 20:46:38 WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-12-14 20:46:39 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-14 20:46:39 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-14 20:46:40 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-14 20:46:41 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-14 20:46:41 INFO  o.s.c.o.FeignClientFactoryBean - For 'review-service' URL not provided. Will try picking an instance via load-balancing.
+2024-12-14 20:46:42 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2024-12-14 20:46:42 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-12-14 20:46:42 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2024-12-14 20:46:42 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2024-12-14 20:46:42 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1734205602741 with initial instances count: 3
+2024-12-14 20:46:42 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application POST-SERVICE with eureka with status UP
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1734205602747, current=UP, previous=STARTING]
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_POST-SERVICE/MSI:post-service:8084: registering service...
+2024-12-14 20:46:42 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
+2024-12-14 20:46:42 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8084
+2024-12-14 20:46:42 INFO  org.JavaPE.PostServiceApplication - Started PostServiceApplication in 11.564 seconds (process running for 12.746)
+2024-12-14 20:46:42 INFO  org.JavaPE.PostServiceApplication - Started PostServiceApplication in 11.564 seconds (process running for 12.746)
+2024-12-14 20:46:42 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application POST-SERVICE with eureka with status DOWN
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1734205602813, current=DOWN, previous=UP]
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_POST-SERVICE/MSI:post-service:8084 - registration status: 204
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_POST-SERVICE/MSI:post-service:8084: registering service...
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_POST-SERVICE/MSI:post-service:8084 - registration status: 204
+2024-12-14 20:46:42 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-14 20:46:42 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-14 20:46:42 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-14 20:46:42 INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2024-12-14 20:46:45 INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2024-12-14 20:46:45 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_POST-SERVICE/MSI:post-service:8084 - deregister  status: 200
+2024-12-14 20:46:45 INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2024-12-14 20:47:41 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application REVIEW-SERVICE with eureka with status DOWN
+2024-12-14 20:47:41 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1734205661167, current=DOWN, previous=UP]
+2024-12-14 20:47:41 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_REVIEW-SERVICE/MSI:review-service:8085: registering service...
+2024-12-14 20:47:41 INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2024-12-14 20:47:41 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_REVIEW-SERVICE/MSI:review-service:8085 - registration status: 204
+2024-12-14 20:47:41 INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2024-12-14 20:47:41 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-14 20:47:41 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-14 20:47:41 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-14 20:47:41 INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2024-12-14 20:47:41 INFO  org.JavaPE.PostServiceApplication - Starting PostServiceApplication using Java 21 with PID 25180 (C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service\target\classes started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java)
+2024-12-14 20:47:41 INFO  org.JavaPE.PostServiceApplication - Starting PostServiceApplication using Java 21 with PID 25180 (C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service\target\classes started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java)
+2024-12-14 20:47:41 DEBUG org.JavaPE.PostServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-14 20:47:41 DEBUG org.JavaPE.PostServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-14 20:47:41 INFO  org.JavaPE.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-14 20:47:41 INFO  org.JavaPE.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-14 20:47:41 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2024-12-14 20:47:41 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=post-service, profiles=[default], label=null, version=null, state=null
+2024-12-14 20:47:42 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-14 20:47:43 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 201 ms. Found 1 JPA repository interface.
+2024-12-14 20:47:43 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=1a5a92c5-8d00-33fe-87b6-febea0d96c6e
+2024-12-14 20:47:43 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-12-14 20:47:43 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2024-12-14 20:47:43 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2024-12-14 20:47:43 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+2024-12-14 20:47:43 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-14 20:47:43 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-14 20:47:44 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-14 20:47:44 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2139 ms
+2024-12-14 20:47:44 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-14 20:47:44 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-14 20:47:44 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-14 20:47:44 INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2024-12-14 20:47:44 WARN  c.n.discovery.TimedSupervisorTask - task supervisor shutting down, can't accept the task
+2024-12-14 20:47:44 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_REVIEW-SERVICE/MSI:review-service:8085 - deregister  status: 200
+2024-12-14 20:47:44 INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2024-12-14 20:47:44 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-14 20:47:44 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-14 20:47:45 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6549ce71
+2024-12-14 20:47:45 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-14 20:47:45 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-14 20:47:45 WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-12-14 20:47:46 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-14 20:47:46 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-14 20:47:46 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-14 20:47:47 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-14 20:47:47 INFO  o.s.c.o.FeignClientFactoryBean - For 'review-service' URL not provided. Will try picking an instance via load-balancing.
+2024-12-14 20:47:48 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2024-12-14 20:47:48 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-12-14 20:47:48 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-12-14 20:47:48 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2024-12-14 20:47:48 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:47:48 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2024-12-14 20:47:48 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2024-12-14 20:47:48 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2024-12-14 20:47:48 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2024-12-14 20:47:48 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2024-12-14 20:47:48 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2024-12-14 20:47:48 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2024-12-14 20:47:49 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2024-12-14 20:47:49 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2024-12-14 20:47:49 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-12-14 20:47:49 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1734205669063 with initial instances count: 3
+2024-12-14 20:47:49 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application POST-SERVICE with eureka with status UP
+2024-12-14 20:47:49 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1734205669069, current=UP, previous=STARTING]
+2024-12-14 20:47:49 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8084"]
+2024-12-14 20:47:49 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_POST-SERVICE/MSI:post-service:8084: registering service...
+2024-12-14 20:47:49 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/'
+2024-12-14 20:47:49 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8084
+2024-12-14 20:47:49 INFO  org.JavaPE.PostServiceApplication - Started PostServiceApplication in 8.742 seconds (process running for 9.724)
+2024-12-14 20:47:49 INFO  org.JavaPE.PostServiceApplication - Started PostServiceApplication in 8.742 seconds (process running for 9.724)
+2024-12-14 20:47:49 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_POST-SERVICE/MSI:post-service:8084 - registration status: 204
+2024-12-14 20:47:52 INFO  org.JavaPE.ReviewServiceApplication - Starting ReviewServiceApplication using Java 21 with PID 22196 (C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\review-service\target\classes started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java)
+2024-12-14 20:47:52 INFO  org.JavaPE.ReviewServiceApplication - Starting ReviewServiceApplication using Java 21 with PID 22196 (C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\review-service\target\classes started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java)
+2024-12-14 20:47:52 DEBUG org.JavaPE.ReviewServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-14 20:47:52 DEBUG org.JavaPE.ReviewServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-14 20:47:52 INFO  org.JavaPE.ReviewServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-14 20:47:52 INFO  org.JavaPE.ReviewServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-14 20:47:52 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2024-12-14 20:47:52 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=review-service, profiles=[default], label=null, version=null, state=null
+2024-12-14 20:47:53 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-14 20:47:54 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 233 ms. Found 2 JPA repository interfaces.
+2024-12-14 20:47:54 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=46bbd909-4ba6-30d8-9148-07a134e28f9f
+2024-12-14 20:47:54 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-12-14 20:47:54 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2024-12-14 20:47:55 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8085 (http)
+2024-12-14 20:47:55 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+2024-12-14 20:47:55 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-14 20:47:55 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-14 20:47:55 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-14 20:47:55 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2488 ms
+2024-12-14 20:47:55 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-14 20:47:55 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-14 20:47:55 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-12-14 20:47:56 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-14 20:47:56 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-14 20:47:56 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@706c062e
+2024-12-14 20:47:56 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-14 20:47:56 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-14 20:47:56 WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-12-14 20:47:57 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-14 20:47:57 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-14 20:47:58 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-14 20:47:59 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-14 20:47:59 INFO  o.s.c.o.FeignClientFactoryBean - For 'review-service' URL not provided. Will try picking an instance via load-balancing.
+2024-12-14 20:47:59 INFO  o.s.c.o.FeignClientFactoryBean - For 'post-service' URL not provided. Will try picking an instance via load-balancing.
+2024-12-14 20:48:00 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2024-12-14 20:48:00 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-12-14 20:48:00 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2024-12-14 20:48:00 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2024-12-14 20:48:00 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-14 20:48:00 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2024-12-14 20:48:00 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2024-12-14 20:48:00 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2024-12-14 20:48:00 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2024-12-14 20:48:00 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2024-12-14 20:48:00 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2024-12-14 20:48:00 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2024-12-14 20:48:01 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2024-12-14 20:48:01 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2024-12-14 20:48:01 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-12-14 20:48:01 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1734205681101 with initial instances count: 3
+2024-12-14 20:48:01 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application REVIEW-SERVICE with eureka with status UP
+2024-12-14 20:48:01 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1734205681108, current=UP, previous=STARTING]
+2024-12-14 20:48:01 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+2024-12-14 20:48:01 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_REVIEW-SERVICE/MSI:review-service:8085: registering service...
+2024-12-14 20:48:01 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8085 (http) with context path '/'
+2024-12-14 20:48:01 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8085
+2024-12-14 20:48:01 INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2024-12-14 20:48:01 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_REVIEW-SERVICE/MSI:review-service:8085 - registration status: 204
+2024-12-14 20:48:01 INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#12dac814:0/SimpleConnection@4fc6dcb7 [delegate=amqp://guest@127.0.0.1:5672/, localPort=58298]
+2024-12-14 20:48:01 INFO  org.JavaPE.ReviewServiceApplication - Started ReviewServiceApplication in 10.176 seconds (process running for 11.383)
+2024-12-14 20:48:01 INFO  org.JavaPE.ReviewServiceApplication - Started ReviewServiceApplication in 10.176 seconds (process running for 11.383)
+2024-12-14 20:48:12 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-14 20:48:12 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-14 20:48:12 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-14 20:48:13 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-14 20:48:13 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-14 20:48:13 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-14 20:48:13 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-12-14 20:48:13 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-12-14 20:48:13 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 6, Author: admin
+2024-12-14 20:48:13 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 6, Author: admin
+2024-12-14 20:48:13 INFO  o.JavaPE.controller.ReviewController - Post with ID: 6 successfully submitted for review by Author: admin
+2024-12-14 20:48:13 INFO  o.JavaPE.controller.ReviewController - Post with ID: 6 successfully submitted for review by Author: admin
+2024-12-14 20:48:13 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 6
+2024-12-14 20:48:13 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 6
+2024-12-14 20:48:13 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-14 20:48:13 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-14 20:48:13 INFO  o.JavaPE.controller.PostController - Successfully fetched 1 draft posts
+2024-12-14 20:48:13 INFO  o.JavaPE.controller.PostController - Successfully fetched 1 draft posts
+2024-12-14 20:48:48 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:48:48 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:48:49 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 6 and role: EDITOR
+2024-12-14 20:48:49 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 6 and role: EDITOR
+2024-12-14 20:48:49 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 6
+2024-12-14 20:48:49 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 6
+2024-12-14 20:48:49 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 1 reviews.
+2024-12-14 20:48:49 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 1 reviews.
+2024-12-14 20:48:50 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 4, Reviewer: admin, Role: editor
+2024-12-14 20:48:50 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 4, Reviewer: admin, Role: editor
+2024-12-14 20:48:50 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 4 by Reviewer: admin
+2024-12-14 20:48:50 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 4 by Reviewer: admin
+2024-12-14 20:48:56 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:48:56 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-14 20:48:56 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 0 reviews.
+2024-12-14 20:48:56 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 0 reviews.
+2024-12-14 20:50:30 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-14 20:50:30 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-14 20:50:30 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-14 20:50:30 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-14 20:50:30 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-14 20:50:30 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-14 20:50:30 INFO  o.JavaPE.controller.PostController - Successfully fetched 0 draft posts
+2024-12-14 20:50:30 INFO  o.JavaPE.controller.PostController - Successfully fetched 0 draft posts
+2024-12-14 20:50:31 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-14 20:50:31 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-14 20:50:31 INFO  o.JavaPE.controller.PostController - Successfully fetched 3 published posts
+2024-12-14 20:50:31 INFO  o.JavaPE.controller.PostController - Successfully fetched 3 published posts
