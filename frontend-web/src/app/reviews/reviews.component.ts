@@ -5,6 +5,7 @@ import { Router } from '@angular/router'; // Import Router for navigation
 import { ReviewService, RejectRequest } from '../services/review.service'; // Adjust imports
 import { ReviewNotificationService } from '../services/review-notification.service'; // Import notification service
 import { NotificationMessage } from '../models/notification-message.model'; // Import notification model
+import { AuthService } from '../login/auth.service'; // Import AuthService
 
 @Component({
   selector: 'app-reviews',
@@ -21,7 +22,8 @@ export class ReviewsComponent implements OnInit {
   constructor(
     private reviewService: ReviewService,
     private router: Router,
-    private reviewNotificationService: ReviewNotificationService // Inject the notification service
+    private reviewNotificationService: ReviewNotificationService,// Inject the notification service
+    private authService: AuthService // Inject AuthService here
   ) {}
 
   ngOnInit(): void {
@@ -50,11 +52,12 @@ export class ReviewsComponent implements OnInit {
     });
   }
 
-  // Approve review
   approveReview(reviewId: number): void {
-    this.reviewService.approveReview(reviewId, 'Editor123').subscribe({
+    const reviewer = this.authService.getUsername() || 'Unknown'; // Get the current logged-in username
+  
+    this.reviewService.approveReview(reviewId, reviewer).subscribe({
       next: () => {
-        console.log(`Review ${reviewId} approved.`);
+        console.log(`Review ${reviewId} approved by ${reviewer}.`);
         this.navigateToDrafts(); // Navigate to Drafts after approval
       },
       error: (error) => {
@@ -64,19 +67,19 @@ export class ReviewsComponent implements OnInit {
     });
   }
 
-  // Reject review
   rejectReview(reviewId: number): void {
+    const reviewer = this.authService.getUsername() || 'Unknown'; // Get the current logged-in username
     const remarks = prompt('Enter remarks for rejection:');
     if (!remarks) return;
-
+  
     const rejectRequest: RejectRequest = {
-      reviewer: 'Editor123',
+      reviewer,
       remarks,
     };
-
+  
     this.reviewService.rejectReview(reviewId, rejectRequest).subscribe({
       next: () => {
-        console.log(`Review ${reviewId} rejected.`);
+        console.log(`Review ${reviewId} rejected by ${reviewer}.`);
         this.navigateToDrafts(); // Navigate to Drafts after rejection
       },
       error: (error) => {
@@ -85,6 +88,7 @@ export class ReviewsComponent implements OnInit {
       },
     });
   }
+  
 
   // Handle review notification
   handleReviewNotification(notification: NotificationMessage): void {

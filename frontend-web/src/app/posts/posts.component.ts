@@ -43,18 +43,23 @@ export class PostsComponent implements OnInit {
   }
 
   applyFilters(): void {
-    const filters = { ...this.filterCriteria };
-
-    if (!filters.createdDate) delete filters.createdDate;
-    if (!filters.lastModifiedDate) delete filters.lastModifiedDate;
-
+    const filters: Partial<Post> = { ...this.filterCriteria };
+  
+    if (filters.createdDate) filters.createdDate = new Date(filters.createdDate).toISOString().split('T')[0];
+    if (filters.lastModifiedDate) filters.lastModifiedDate = new Date(filters.lastModifiedDate).toISOString().split('T')[0];
+  
+    Object.keys(filters).forEach(key => {
+      if (!filters[key as keyof Post]) delete filters[key as keyof Post];
+    });
+  
     this.fetchPosts(filters);
   }
-
+  
   clearFilters(): void {
     this.filterCriteria = {};
     this.fetchPosts();
   }
+  
 
   navigateToCreatePost(): void {
     this.router.navigate(['/create-post']);

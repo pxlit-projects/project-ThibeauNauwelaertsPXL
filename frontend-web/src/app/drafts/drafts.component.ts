@@ -13,21 +13,13 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
 })
 export class DraftPostsComponent implements OnInit {
-  draftPosts: Post[] = []; 
-  errorMessage: string | null = null; 
-  loading: boolean = false; 
+  draftPosts: Post[] = [];
+  errorMessage: string | null = null;
+  loading: boolean = false;
 
-  filterCriteria: Partial<Post> = {
-    content: '',
-    author: '',
-    createdDate: undefined,
-    lastModifiedDate: undefined,
-  };
+  filterCriteria: Partial<Post> = {};
 
-  constructor(
-    private postService: PostService,
-    private router: Router
-  ) {}
+  constructor(private postService: PostService, private router: Router) {}
 
   ngOnInit(): void {
     this.fetchDraftPosts();
@@ -36,86 +28,89 @@ export class DraftPostsComponent implements OnInit {
 
   fetchDraftPosts(filters: Partial<Post> = {}): void {
     this.loading = true;
-  
-    // Filter drafts only
+
+    // Add "DRAFT" status filter
     filters.status = 'DRAFT';
-  
+
+    // Convert date fields to ISO strings
+    if (filters.createdDate) {
+      filters.createdDate = new Date(filters.createdDate).toISOString().split('T')[0];
+    }
+    if (filters.lastModifiedDate) {
+      filters.lastModifiedDate = new Date(filters.lastModifiedDate).toISOString().split('T')[0];
+    }
+
     this.postService.getDraftPosts(filters).subscribe({
       next: (data) => {
         this.draftPosts = data;
         this.loading = false;
       },
       error: (error) => {
-        console.error('Error fetching drafts', error);
+        console.error('Error fetching drafts:', error);
         this.errorMessage = 'Failed to load draft posts.';
         this.loading = false;
       },
     });
   }
-  
-  
 
   listenToReviewUpdates(): void {
     const eventSource = new EventSource('http://localhost:8083/review/reviews/notifications');
 
     eventSource.onmessage = (event) => {
       const notification: NotificationMessage = JSON.parse(event.data);
-      console.log('Received notification:', notification);
-      this.updateDraftWithFeedback(notification); // Update draft post with feedback
+      this.updateDraftWithFeedback(notification);
     };
 
     eventSource.onerror = (error) => {
-      console.error("Error with SSE connection:", error);
+      console.error('Error with SSE connection:', error);
     };
   }
 
   updateDraftWithFeedback(notification: NotificationMessage): void {
-    const postId = notification.postId;
-    console.log('Received postId:', postId); // Check the received postId
-    console.log('Draft posts:', this.draftPosts); // Check the draft posts
-    
-    const post = this.draftPosts.find((p) => p.id === postId);
-    console.log('Draft post:', post); // Ensure the post is found
-    
+    const post = this.draftPosts.find((p) => p.id === notification.postId);
     if (post) {
-      // Check if remarks are received
-      post.remarks = notification.remarks || 'No remarks';  // If no remarks, set to 'No remarks'
-      console.log('Updated remarks:', post.remarks); // Log remarks to see what we received
-  
-      // Update the post status if it is rejected
+      post.remarks = notification.remarks || 'No remarks';
       post.status = notification.status === 'rejected' ? 'REJECTED' : post.status;
-  
-      // Save the updated post (API call to update the post in backend)
+
       this.postService.updatePost(post.id, post).subscribe({
         next: (updatedPost) => {
-          console.log('Draft updated with rejection feedback:', updatedPost);
+          console.log('Draft updated with feedback:', updatedPost);
         },
         error: (err) => {
-          console.error('Error updating post:', err);
+          console.error('Error updating draft post:', err);
         },
       });
     }
   }
-  
-
-  addNewDraft(post: Post): void {
-    this.draftPosts.push(post); // Directly add the new post to the drafts list
-    console.log('New draft added:', post);
-  }
 
   applyFilters(): void {
     const filters = { ...this.filterCriteria };
-    this.fetchDraftPosts(filters); 
+
+    // Convert dates to ISO strings
+    if (filters.createdDate) {
+      filters.createdDate = new Date(filters.createdDate).toISOString().split('T')[0];
+    }
+    if (filters.lastModifiedDate) {
+      filters.lastModifiedDate = new Date(filters.lastModifiedDate).toISOString().split('T')[0];
+    }
+
+    // Remove empty fields
+    Object.keys(filters).forEach((key) => {
+      if (!filters[key as keyof Post]) {
+        delete filters[key as keyof Post];
+      }
+    });
+
+    this.fetchDraftPosts(filters);
   }
 
   clearFilters(): void {
-    this.filterCriteria = {
-      content: '',
-      author: '',
-      createdDate: undefined,
-      lastModifiedDate: undefined,
-    };
-    this.fetchDraftPosts(); 
+    this.filterCriteria = {};
+    this.fetchDraftPosts();
+  }
+
+  addNewDraft(post: Post): void {
+    this.draftPosts.push(post);
   }
 
   navigateToCreatePost(): void {

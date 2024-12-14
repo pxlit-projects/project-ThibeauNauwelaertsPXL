@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { CommentService, Comment } from '../services/comment.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../login/auth.service';
+
 @Component({
   selector: 'app-comments',
   standalone: true,
@@ -14,15 +16,21 @@ export class CommentsListComponent implements OnInit {
   comments: Comment[] = [];
   postId!: number;
   newComment: Comment = { id: 0, postId: 0, author: '', content: '' };
+  currentUser: string | null = '';
 
   constructor(
     private commentService: CommentService,
+    private authService: AuthService, // Inject AuthService
     private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    // Fetch the currently logged-in username
+    this.currentUser = this.authService.getUsername();
+
+    // Extract the post ID from the route
     this.route.params.subscribe((params) => {
-      this.postId = +params['postId']; // Extract the post ID from the route
+      this.postId = +params['postId'];
       this.fetchComments();
     });
   }
@@ -45,12 +53,13 @@ export class CommentsListComponent implements OnInit {
    * Add a new comment to the current post
    */
   addComment(): void {
-    // Set the post ID in the new comment
+    const username = localStorage.getItem('currentUser') || 'Anonymous'; // Get username from AuthService or default to 'Anonymous'
     this.newComment.postId = this.postId;
-
+    this.newComment.author = username; // Set the author field
+  
     this.commentService.addCommentToPost(this.postId, this.newComment).subscribe({
       next: (comment) => {
-        this.comments.push(comment); // Add the new comment to the list
+        this.comments = [comment, ...this.comments]; // Prepend the new comment to the array
         this.newComment.content = ''; // Clear the input
       },
       error: (err) => {
@@ -58,13 +67,19 @@ export class CommentsListComponent implements OnInit {
       },
     });
   }
-
+  
   /**
    * Delete a comment by its ID
    * @param commentId - ID of the comment to delete
    */
   deleteComment(commentId: number): void {
-    const currentUser = localStorage.getItem('username') || 'guest'; // Adjust to your app's logic
+    console.log('Comment ID to delete:', commentId); // Debugging log
+    if (!commentId) {
+      console.error('Comment ID is null or undefined.');
+      return;
+    }
+  
+    const currentUser = this.authService.getUsername() || 'guest'; // Get the username from AuthService
     this.commentService.deleteComment(commentId, currentUser).subscribe({
       next: () => {
         this.comments = this.comments.filter((comment) => comment.id !== commentId); // Remove the deleted comment from the list
@@ -74,4 +89,5 @@ export class CommentsListComponent implements OnInit {
       },
     });
   }
+  
 }

@@ -90,16 +90,20 @@ export class PostService {
 
   getFilteredPosts(filters: Partial<Post>): Observable<Post[]> {
     const headers = this.createHeaders();
-  
-    // Build query parameters from the filters object
+    
     const params = new URLSearchParams();
-    if (filters.content) params.append('content', filters.content);
-    if (filters.author) params.append('author', filters.author);
-    if (filters.createdDate) params.append('createdDate', filters.createdDate);
-    if (filters.lastModifiedDate) params.append('lastModifiedDate', filters.lastModifiedDate);
+    Object.entries(filters).forEach(([key, value]) => {
+      if (value) {
+        if (key === 'createdDate' || key === 'lastModifiedDate') {
+          params.append(key, new Date(value as string).toISOString().split('T')[0]);
+        } else {
+          params.append(key, value as string);
+        }
+      }
+    });
   
     return this.http
-      .get<Post[]>(`${this.baseUrl}/filtered?${params.toString()}`, { headers }) // Use GET with query params
+      .get<Post[]>(`${this.baseUrl}/filtered?${params.toString()}`, { headers }) 
       .pipe(
         catchError((error) =>
           this.handleError(error, 'Failed to fetch filtered posts.')
@@ -107,11 +111,12 @@ export class PostService {
       );
   }
   
+  
 
   private createHeaders(): HttpHeaders {
     return new HttpHeaders({
       'Content-Type': 'application/json',
-      'X-User-Role': 'EDITOR',
+      'X-User-Role': 'editor',
     });
   }
 

@@ -1,62 +1,50 @@
-<div class="min-h-screen w-full bg-gray-100">
+<div class="min-h-screen w-full bg-gray-100 relative flex flex-col">
+    <!-- Title Section -->
     <div class="container mx-auto p-6">
       <h1 class="text-4xl font-bold text-center mb-8">Comments for Post #{{ postId }}</h1>
+    </div>
   
-      <!-- Add New Comment Section -->
-      <div class="bg-white p-4 rounded-md shadow-md mb-6">
-        <h2 class="text-2xl font-semibold mb-4">Add a Comment</h2>
-        <div class="space-y-4">
-          <div>
-            <label for="author" class="block text-gray-700 font-medium">Author</label>
-            <input
-              id="author"
-              [(ngModel)]="newComment.author"
-              type="text"
-              class="p-2 border rounded w-full"
-              placeholder="Your name"
-            />
-          </div>
-          <div>
-            <label for="content" class="block text-gray-700 font-medium">Comment</label>
-            <textarea
-              id="content"
-              [(ngModel)]="newComment.content"
-              class="p-2 border rounded w-full"
-              placeholder="Write your comment..."
-            ></textarea>
-          </div>
-          <button
-            class="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600 transition"
-            (click)="addComment()"
-          >
-            Submit Comment
-          </button>
-        </div>
+    <!-- Comments Section -->
+    <div
+      class="flex-grow container mx-auto p-6 overflow-y-auto space-y-4 bg-gray-50 rounded-md"
+      style="max-height: calc(100vh - 150px);"
+    >
+      <!-- Add New Comment -->
+      <div class="flex items-start bg-white p-4 rounded shadow space-x-4">
+        <textarea
+          [(ngModel)]="newComment.content"
+          placeholder="Write your comment..."
+          class="flex-grow p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 resize-none"
+          rows="2"
+        ></textarea>
+        <button
+          class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+          (click)="addComment()"
+        >
+          Send
+        </button>
       </div>
   
-      <!-- Comments List Section -->
-      <div *ngIf="comments.length > 0" class="space-y-4">
-        <h2 class="text-2xl font-semibold mb-4">Comments</h2>
-        <ul class="space-y-4">
-          <li *ngFor="let comment of comments" class="bg-white p-4 rounded shadow-md">
-            <div class="flex justify-between items-center mb-2">
-              <p class="font-medium text-blue-500">{{ comment.author }}</p>
-              <button
-                class="text-red-500 hover:underline"
-                (click)="deleteComment(comment.id)"
-              >
-                Delete
-              </button>
-            </div>
-            <p class="text-gray-700">{{ comment.content }}</p>
-            <p class="text-sm text-gray-500 mt-2">Created At: {{ comment.createdAt || 'N/A' }}</p>
-          </li>
-        </ul>
+      <!-- Comments List -->
+      <div *ngFor="let comment of comments" class="bg-white p-4 rounded shadow">
+        <div class="flex justify-between items-center mb-2">
+          <p class="font-medium text-blue-500">{{ comment.author }}</p>
+          <button
+            class="text-red-500 hover:underline"
+            (click)="deleteComment(comment.id)"
+          >
+            Delete
+          </button>
+        </div>
+        <p class="text-gray-700">{{ comment.content }}</p>
+        <p class="text-sm text-gray-500 mt-2">
+            Created At: {{ comment.createdAt | date: 'short' }}
+        </p>
       </div>
   
       <!-- No Comments Message -->
-      <div *ngIf="comments.length === 0" class="text-center mt-8">
-        <p class="text-xl text-gray-500">No comments available for this post.</p>
+      <div *ngIf="comments.length === 0" class="text-center text-gray-500">
+        <p>No comments available for this post.</p>
       </div>
     </div>
   </div>
