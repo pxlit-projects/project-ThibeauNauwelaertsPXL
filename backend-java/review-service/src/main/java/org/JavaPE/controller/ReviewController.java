@@ -3,18 +3,20 @@ package org.JavaPE.controller;
 import org.JavaPE.controller.Request.ReviewRequest;
 import org.JavaPE.controller.dto.RejectRequest;
 import org.JavaPE.controller.dto.ReviewWithPostDetailsDTO;
-import org.JavaPE.domain.Review;
 import org.JavaPE.services.ReviewService;
-import org.JavaPE.repository.ReviewRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import java.util.List;
-import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 @RestController
 @RequestMapping("/reviews")
 public class ReviewController {
+
+    private static final Logger logger = LoggerFactory.getLogger(ReviewController.class);
 
     private final ReviewService reviewService;
 
@@ -24,19 +26,43 @@ public class ReviewController {
 
     @PostMapping("/submit")
     public ResponseEntity<String> submitPostForReview(@RequestBody ReviewRequest reviewRequest) {
-        reviewService.submitForReview(reviewRequest.getPostId(), reviewRequest.getAuthor());
-        return ResponseEntity.ok("Post submitted for review");
+        logger.info("Received request to submit post for review. Post ID: {}, Author: {}",
+                reviewRequest.getPostId(), reviewRequest.getAuthor());
+        try {
+            reviewService.submitForReview(reviewRequest.getPostId(), reviewRequest.getAuthor());
+            logger.info("Post with ID: {} successfully submitted for review by Author: {}",
+                    reviewRequest.getPostId(), reviewRequest.getAuthor());
+            return ResponseEntity.ok("Post submitted for review");
+        } catch (Exception e) {
+            logger.error("Error while submitting post for review. Post ID: {}", reviewRequest.getPostId(), e);
+            return ResponseEntity.internalServerError().body("Failed to submit post for review");
+        }
     }
 
     @GetMapping
     public ResponseEntity<List<ReviewWithPostDetailsDTO>> getAllReviews() {
-        return ResponseEntity.ok(reviewService.getAllReviewsWithPostDetails());
+        logger.info("Received request to fetch all reviews with post details.");
+        try {
+            List<ReviewWithPostDetailsDTO> reviews = reviewService.getAllReviewsWithPostDetails();
+            logger.info("Successfully fetched {} reviews.", reviews.size());
+            return ResponseEntity.ok(reviews);
+        } catch (Exception e) {
+            logger.error("Error fetching reviews.", e);
+            return ResponseEntity.internalServerError().build();
+        }
     }
 
     @PutMapping("/{reviewId}/approve")
     public ResponseEntity<String> approveReview(@PathVariable Long reviewId, @RequestParam String reviewer) {
-        reviewService.approveReview(reviewId, reviewer);
-        return ResponseEntity.ok("Review approved");
+        logger.info("Received request to approve review. Review ID: {}, Reviewer: {}", reviewId, reviewer);
+        try {
+            reviewService.approveReview(reviewId, reviewer);
+            logger.info("Successfully approved review with ID: {} by Reviewer: {}", reviewId, reviewer);
+            return ResponseEntity.ok("Review approved");
+        } catch (Exception e) {
+            logger.error("Error approving review with ID: {}", reviewId, e);
+            return ResponseEntity.internalServerError().body("Failed to approve review");
+        }
     }
 
     @PutMapping("/{reviewId}/reject")
@@ -44,13 +70,29 @@ public class ReviewController {
             @PathVariable Long reviewId,
             @RequestBody RejectRequest rejectRequest
     ) {
-        reviewService.rejectReview(reviewId, rejectRequest.getReviewer(), rejectRequest.getRemarks());
-        return ResponseEntity.ok("Review rejected with remarks: " + rejectRequest.getRemarks());
+        logger.info("Received request to reject review. Review ID: {}, Reviewer: {}, Remarks: {}",
+                reviewId, rejectRequest.getReviewer(), rejectRequest.getRemarks());
+        try {
+            reviewService.rejectReview(reviewId, rejectRequest.getReviewer(), rejectRequest.getRemarks());
+            logger.info("Successfully rejected review with ID: {} by Reviewer: {} with Remarks: {}",
+                    reviewId, rejectRequest.getReviewer(), rejectRequest.getRemarks());
+            return ResponseEntity.ok("Review rejected with remarks: " + rejectRequest.getRemarks());
+        } catch (Exception e) {
+            logger.error("Error rejecting review with ID: {}", reviewId, e);
+            return ResponseEntity.internalServerError().body("Failed to reject review");
+        }
     }
 
-    // SSE Endpoint for clients to connect to and receive notifications
     @GetMapping("/notifications")
     public SseEmitter getNotifications() {
-        return reviewService.registerClient();  // Register new SSE client
+        logger.info("New client connected for notifications.");
+        try {
+            SseEmitter emitter = reviewService.registerClient();
+            logger.info("Successfully registered SSE client.");
+            return emitter;
+        } catch (Exception e) {
+            logger.error("Error registering SSE client for notifications.", e);
+            throw e;
+        }
     }
 }
