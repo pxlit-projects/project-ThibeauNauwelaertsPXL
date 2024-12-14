@@ -16,78 +16,78 @@ export class CommentsListComponent implements OnInit {
   comments: Comment[] = [];
   postId!: number;
   newComment: Comment = { id: 0, postId: 0, author: '', content: '' };
+  editMode: { [key: number]: boolean } = {}; // Track edit mode for each comment
   currentUser: string | null = '';
 
   constructor(
     private commentService: CommentService,
-    private authService: AuthService, // Inject AuthService
+    private authService: AuthService,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    // Fetch the currently logged-in username
     this.currentUser = this.authService.getUsername();
-
-    // Extract the post ID from the route
     this.route.params.subscribe((params) => {
       this.postId = +params['postId'];
       this.fetchComments();
     });
   }
 
-  /**
-   * Fetch all comments for the current post ID
-   */
   fetchComments(): void {
     this.commentService.getCommentsByPostId(this.postId).subscribe({
       next: (data) => {
-        this.comments = data; // Assign fetched comments
+        this.comments = data;
       },
       error: (err) => {
-        console.error('Failed to fetch comments:', err); // Handle errors
+        console.error('Failed to fetch comments:', err);
       },
     });
   }
 
-  /**
-   * Add a new comment to the current post
-   */
   addComment(): void {
-    const username = localStorage.getItem('currentUser') || 'Anonymous'; // Get username from AuthService or default to 'Anonymous'
+    const username = localStorage.getItem('currentUser') || 'Anonymous';
     this.newComment.postId = this.postId;
-    this.newComment.author = username; // Set the author field
+    this.newComment.author = username;
   
     this.commentService.addCommentToPost(this.postId, this.newComment).subscribe({
       next: (comment) => {
-        this.comments = [comment, ...this.comments]; // Prepend the new comment to the array
-        this.newComment.content = ''; // Clear the input
+        this.comments = [comment, ...this.comments];
+        this.newComment.content = '';
       },
       error: (err) => {
-        console.error('Failed to add comment:', err); // Handle errors
+        console.error('Failed to add comment:', err);
       },
     });
   }
   
-  /**
-   * Delete a comment by its ID
-   * @param commentId - ID of the comment to delete
-   */
+  editComment(comment: Comment): void {
+    this.commentService.updateComment(comment.id, comment).subscribe({
+      next: (updatedComment) => {
+        const index = this.comments.findIndex((c) => c.id === updatedComment.id);
+        if (index !== -1) {
+          this.comments[index] = updatedComment;
+          this.editMode[comment.id] = false; // Exit edit mode for the comment
+        }
+      },
+      error: (err) => {
+        console.error('Failed to edit comment:', err);
+      },
+    });
+  }
+
   deleteComment(commentId: number): void {
-    console.log('Comment ID to delete:', commentId); // Debugging log
-    if (!commentId) {
-      console.error('Comment ID is null or undefined.');
-      return;
-    }
-  
-    const currentUser = this.authService.getUsername() || 'guest'; // Get the username from AuthService
+    const currentUser = this.authService.getUsername() || 'guest';
     this.commentService.deleteComment(commentId, currentUser).subscribe({
       next: () => {
-        this.comments = this.comments.filter((comment) => comment.id !== commentId); // Remove the deleted comment from the list
+        this.comments = this.comments.filter((comment) => comment.id !== commentId);
       },
       error: (err) => {
-        console.error('Failed to delete comment:', err); // Handle errors
+        console.error('Failed to delete comment:', err);
       },
     });
   }
-  
+
+  toggleEditMode(commentId: number): void {
+    this.editMode[commentId] = !this.editMode[commentId];
+  }
 }

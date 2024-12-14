@@ -26,28 +26,18 @@ public class CommentController {
             @PathVariable Long postId,
             @RequestBody CommentDTO commentDTO) {
         logger.info("Received request to add a comment to post with ID: {}", postId);
-        try {
-            commentDTO.setPostId(postId);
-            CommentDTO savedComment = commentService.addCommentToPost(postId, commentDTO);
-            logger.info("Successfully added comment to post with ID: {}", postId);
-            return ResponseEntity.ok(savedComment);
-        } catch (Exception e) {
-            logger.error("Error adding comment to post with ID: {}", postId, e);
-            return ResponseEntity.internalServerError().build();
-        }
+        commentDTO.setPostId(postId);
+        CommentDTO savedComment = commentService.addCommentToPost(postId, commentDTO);
+        logger.info("Successfully added comment to post with ID: {}", postId);
+        return ResponseEntity.ok(savedComment);
     }
 
     @GetMapping("/post/{postId}")
     public ResponseEntity<List<CommentDTO>> getCommentsByPostId(@PathVariable Long postId) {
         logger.info("Received request to fetch comments for post with ID: {}", postId);
-        try {
-            List<CommentDTO> comments = commentService.getCommentsByPostId(postId);
-            logger.info("Successfully fetched {} comments for post with ID: {}", comments.size(), postId);
-            return ResponseEntity.ok(comments);
-        } catch (Exception e) {
-            logger.error("Error fetching comments for post with ID: {}", postId, e);
-            return ResponseEntity.internalServerError().build();
-        }
+        List<CommentDTO> comments = commentService.getCommentsByPostId(postId);
+        logger.info("Successfully fetched {} comments for post with ID: {}", comments.size(), postId);
+        return ResponseEntity.ok(comments);
     }
 
     @PutMapping("/{commentId}")
@@ -55,14 +45,9 @@ public class CommentController {
             @PathVariable Long commentId,
             @RequestBody CommentDTO updatedCommentDTO) {
         logger.info("Received request to update comment with ID: {}", commentId);
-        try {
-            CommentDTO updatedComment = commentService.updateComment(commentId, updatedCommentDTO);
-            logger.info("Successfully updated comment with ID: {}", commentId);
-            return ResponseEntity.ok(updatedComment);
-        } catch (Exception e) {
-            logger.error("Error updating comment with ID: {}", commentId, e);
-            return ResponseEntity.internalServerError().build();
-        }
+        CommentDTO updatedComment = commentService.updateComment(commentId, updatedCommentDTO);
+        logger.info("Successfully updated comment with ID: {}", commentId);
+        return ResponseEntity.ok(updatedComment);
     }
 
     @DeleteMapping("/{commentId}")
@@ -70,13 +55,19 @@ public class CommentController {
             @PathVariable Long commentId,
             @RequestHeader("X-User-Role") String currentUser) {
         logger.info("Received request to delete comment with ID: {} by user: {}", commentId, currentUser);
-        try {
-            commentService.deleteComment(commentId, currentUser);
-            logger.info("Successfully deleted comment with ID: {}", commentId);
-            return ResponseEntity.noContent().build();
-        } catch (Exception e) {
-            logger.error("Error deleting comment with ID: {}", commentId, e);
-            return ResponseEntity.internalServerError().build();
-        }
+        commentService.deleteComment(commentId, currentUser);
+        logger.info("Successfully deleted comment with ID: {}", commentId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/{commentId}/edit")
+    public ResponseEntity<CommentDTO> editComment(
+            @PathVariable Long commentId,
+            @RequestHeader("X-User-Role") String currentUser,
+            @RequestBody CommentDTO commentDTO) {
+        logger.info("Received request to edit comment with ID: {} by user: {}", commentId, currentUser);
+        CommentDTO updatedComment = commentService.editComment(commentId, currentUser, commentDTO);
+        logger.info("Successfully edited comment with ID: {}", commentId);
+        return ResponseEntity.ok(updatedComment);
     }
 }

@@ -5,6 +5,7 @@ import org.JavaPE.controller.DTO.CommentDTO;
 import org.JavaPE.controller.dto.PostDTO;
 import org.JavaPE.domain.Comment;
 import org.JavaPE.exception.CommentNotFoundException;
+import org.JavaPE.exception.InvalidAuthorException;
 import org.JavaPE.repository.CommentRepository;
 import org.JavaPE.controller.converter.CommentConverter;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public CommentDTO addCommentToPost(Long postId, CommentDTO commentDTO) {
-        PostDTO postDTO = postClient.getPublishedPostById(postId, "EDITOR");
+        PostDTO postDTO = postClient.getPublishedPostById(postId, "editor");
 
         if (postDTO == null) {
             throw new IllegalArgumentException("Cannot add comment. Post with ID " + postId + " is not published.");
@@ -52,13 +53,12 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public CommentDTO updateComment(Long commentId, CommentDTO updatedCommentDTO) throws Exception {
+    public CommentDTO updateComment(Long commentId, CommentDTO updatedCommentDTO) {
         Comment comment = commentRepository.findById(commentId)
                 .orElseThrow(() -> new CommentNotFoundException("Comment not found"));
 
-        // Check if the author matches
         if (!comment.getAuthor().equals(updatedCommentDTO.getAuthor())) {
-            throw new Exception("You are not authorized to update this comment");
+            throw new InvalidAuthorException("You are not authorized to update this comment");
         }
 
         // Update the content
@@ -68,18 +68,31 @@ public class CommentServiceImpl implements CommentService {
         return commentConverter.toDTO(updatedComment);
     }
 
-
     @Override
-    public void deleteComment(Long commentId, String currentUser) throws Exception {
+    public void deleteComment(Long commentId, String currentUser) {
         Comment comment = commentRepository.findById(commentId)
                 .orElseThrow(() -> new CommentNotFoundException("Comment not found"));
 
-        // Check if the author matches
         if (!comment.getAuthor().equals(currentUser)) {
-            throw new Exception("You are not authorized to delete this comment");
+            throw new InvalidAuthorException("You are not authorized to delete this comment");
         }
 
         commentRepository.delete(comment);
     }
 
+    @Override
+    public CommentDTO editComment(Long commentId, String currentUser, CommentDTO commentDTO) {
+        Comment comment = commentRepository.findById(commentId)
+                .orElseThrow(() -> new CommentNotFoundException("Comment not found"));
+
+        if (!comment.getAuthor().equals(currentUser)) {
+            throw new InvalidAuthorException("You are not authorized to edit this comment");
+        }
+
+        comment.setContent(commentDTO.getContent());
+        comment.setCreatedAt(LocalDateTime.now());
+
+        Comment updatedComment = commentRepository.save(comment);
+        return commentConverter.toDTO(updatedComment);
+    }
 }
