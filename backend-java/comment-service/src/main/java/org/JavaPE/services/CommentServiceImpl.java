@@ -9,6 +9,7 @@ import org.JavaPE.repository.CommentRepository;
 import org.JavaPE.controller.converter.CommentConverter;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,21 +28,22 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public CommentDTO addCommentToPost(Long postId, CommentDTO commentDTO) {
-        // Validate if the post is published
         PostDTO postDTO = postClient.getPublishedPostById(postId, "EDITOR");
 
         if (postDTO == null) {
             throw new IllegalArgumentException("Cannot add comment. Post with ID " + postId + " is not published.");
         }
 
-        // Create a new Comment entity and save it
         Comment comment = commentConverter.toEntity(commentDTO);
+
+        if (comment.getCreatedAt() == null) {
+            comment.setCreatedAt(LocalDateTime.now());
+        }
 
         comment = commentRepository.save(comment);
 
-        return new CommentDTO(comment.getPostId(), comment.getAuthor(), comment.getContent());
+        return commentConverter.toDTO(comment);
     }
-
 
     @Override
     public List<CommentDTO> getCommentsByPostId(Long postId) {

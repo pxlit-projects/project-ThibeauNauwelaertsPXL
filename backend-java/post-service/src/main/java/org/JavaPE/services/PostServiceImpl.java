@@ -19,9 +19,9 @@ import java.util.stream.Collectors;
 @Transactional
 public class PostServiceImpl implements PostService {
 
-    private PostRepository postRepository;
-    private PostDTOConverter postDTOConverter;
-    private ReviewClient reviewClient;
+    private final PostRepository postRepository;
+    private final PostDTOConverter postDTOConverter;
+    private final ReviewClient reviewClient;
 
     public PostServiceImpl(PostRepository postRepository, PostDTOConverter postDTOConverter, ReviewClient reviewClient) {
         this.postRepository = postRepository;
@@ -31,7 +31,6 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public PostDTO createPost(PostDTO postDTO) {
-        // Convert DTO to entity
         Post post = postDTOConverter.convertToEntity(postDTO);
         post.setStatus(PostStatus.DRAFT);
 
@@ -44,10 +43,8 @@ public class PostServiceImpl implements PostService {
     public PostDTO saveDraft(PostDTO postDTO) {
         Post post = postDTOConverter.convertToEntity(postDTO);
 
-        // Check if the post already exists in the database
         boolean isNewPost = post.getId() == null;
 
-        // Set status and timestamps
         post.setStatus(PostStatus.DRAFT);
         post.setLastModifiedDate(LocalDate.now());
 
@@ -57,7 +54,6 @@ public class PostServiceImpl implements PostService {
 
         Post savedPost = postRepository.save(post);
 
-        // Only send for review if the post is new or has been edited
         if (isNewPost || hasBeenEdited(savedPost)) {
             sendForReview(postDTOConverter.convertToDTO(savedPost));
         }
@@ -65,18 +61,14 @@ public class PostServiceImpl implements PostService {
         return postDTOConverter.convertToDTO(savedPost);
     }
 
-
-    // Helper method to determine if the post has been edited
     private boolean hasBeenEdited(Post post) {
         Post existingPost = postRepository.findById(post.getId()).orElse(null);
         if (existingPost == null) {
-            return true; // New post
+            return true;
         }
-        // Compare relevant fields to detect changes
         return !existingPost.getContent().equals(post.getContent()) ||
                 !existingPost.getTitle().equals(post.getTitle());
     }
-
 
     public void sendForReview(PostDTO post) {
         ReviewRequest reviewRequest = new ReviewRequest(post.getId(), post.getAuthor());
@@ -126,10 +118,8 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<PostDTO> getPublishedPosts() {
-        // Fetch posts with status PUBLISHED from the database
         List<Post> publishedPosts = postRepository.findByStatus(PostStatus.PUBLISHED);
 
-        // Convert the list of entities to a list of DTOs
         return publishedPosts.stream()
                 .map(postDTOConverter::convertToDTO)
                 .collect(Collectors.toList());
@@ -144,20 +134,25 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<PostDTO> getPostsFiltered(PostDTO filterDTO) {
-        String content = filterDTO.getContent();
-        String author = filterDTO.getAuthor();
-        LocalDate startDate = filterDTO.getCreatedDate();
-        LocalDate endDate = filterDTO.getLastModifiedDate();
+    public List<PostDTO> getPostsFiltered(String content, String author, LocalDate createdDate, LocalDate lastModifiedDate) {
+        PostDTO filterDTO = new PostDTO();
+        filterDTO.setContent(content);
+        filterDTO.setAuthor(author);
+        filterDTO.setCreatedDate(createdDate);
+        filterDTO.setLastModifiedDate(lastModifiedDate);
 
         List<Post> filteredPosts = postRepository.findPostsByFilters(
-                content, author, startDate, endDate
+                filterDTO.getContent(),
+                filterDTO.getAuthor(),
+                filterDTO.getCreatedDate(),
+                filterDTO.getLastModifiedDate()
         );
 
         return filteredPosts.stream()
                 .map(postDTOConverter::convertToDTO)
                 .collect(Collectors.toList());
     }
+
 
     @Override
     public PostDTO getPostById(Long id) {

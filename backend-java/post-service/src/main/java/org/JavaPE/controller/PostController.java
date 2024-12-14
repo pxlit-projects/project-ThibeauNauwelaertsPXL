@@ -23,7 +23,7 @@ public class PostController {
 
     @PostMapping
     public ResponseEntity<PostDTO> createPost(@RequestHeader(value = "X-User-Role", required = false) String role, @RequestBody PostDTO postDTO) {
-        if (!"EDITOR".equals(role)) {
+        if (!"editor".equals(role)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
 
@@ -37,13 +37,12 @@ public class PostController {
             @PathVariable Long id,
             @RequestBody PostDTO postDTO
     ) {
-        if (!"EDITOR".equals(role)) {
+        if (!"editor".equals(role)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
 
         PostDTO updatedPost = postService.editPost(id, postDTO);
 
-        // If the updated post is still a draft, send it for review
         if (PostStatus.DRAFT.toString().equals(updatedPost.getStatus())) {
             postService.sendForReview(updatedPost);
         }
@@ -81,19 +80,12 @@ public class PostController {
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate lastModifiedDate) {
 
         // Authorization check
-        if (!"EDITOR".equals(role)) {
+        if (!"editor".equals(role)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
 
-        // Create a filter DTO from query parameters
-        PostDTO filterDTO = new PostDTO();
-        filterDTO.setContent(content);
-        filterDTO.setAuthor(author);
-        filterDTO.setCreatedDate(createdDate);
-        filterDTO.setLastModifiedDate(lastModifiedDate);
-
-        // Fetch filtered posts
-        List<PostDTO> filteredPosts = postService.getPostsFiltered(filterDTO);
+        // Pass raw parameters directly to the service
+        List<PostDTO> filteredPosts = postService.getPostsFiltered(content, author, createdDate, lastModifiedDate);
         return ResponseEntity.ok(filteredPosts);
     }
 

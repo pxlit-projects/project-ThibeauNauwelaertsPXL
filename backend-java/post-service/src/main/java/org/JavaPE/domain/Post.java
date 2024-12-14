@@ -24,6 +24,6 @@ public class Post {
     private LocalDate lastModifiedDate;
 
     @Enumerated(EnumType.STRING)
-    private PostStatus status; // Status: DRAFT, PUBLISHED
+    private PostStatus status;
     private String remarks;
 }

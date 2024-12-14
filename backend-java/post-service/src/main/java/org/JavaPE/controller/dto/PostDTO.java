@@ -22,6 +22,6 @@ public class PostDTO {
     private LocalDate lastModifiedDate;
 
     @NotNull(message = "Status cannot be null")
-    private String status; // Should be "DRAFT" or "PUBLISHED"
-    private String remarks; // Add this field in your DTO
+    private String status;
+    private String remarks;
 }

@@ -1,23 +1,15 @@
 package org.JavaPE.controller.Request;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class ReviewRequest {
     private Long postId;
     private String author;
-
-    public ReviewRequest(Long postId, String author) {
-        this.postId = postId;
-        this.author = author;
-    }
-
-    public void setPostId(Long postId) {
-        this.postId = postId;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
 }
-
