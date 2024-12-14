@@ -6,6 +6,7 @@ import org.JavaPE.controller.dto.ReviewWithPostDetailsDTO;
 import org.JavaPE.services.ReviewService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
@@ -25,9 +26,17 @@ public class ReviewController {
     }
 
     @PostMapping("/submit")
-    public ResponseEntity<String> submitPostForReview(@RequestBody ReviewRequest reviewRequest) {
-        logger.info("Received request to submit post for review. Post ID: {}, Author: {}",
-                reviewRequest.getPostId(), reviewRequest.getAuthor());
+    public ResponseEntity<String> submitPostForReview(
+            @RequestHeader(value = "X-User-Role", required = false) String role,
+            @RequestBody ReviewRequest reviewRequest) {
+        logger.info("Received request to submit post for review. Post ID: {}, Author: {}, Role: {}",
+                reviewRequest.getPostId(), reviewRequest.getAuthor(), role);
+
+        if (!"editor".equals(role)) {
+            logger.warn("Unauthorized attempt to submit post for review. Role: {}", role);
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
         try {
             reviewService.submitForReview(reviewRequest.getPostId(), reviewRequest.getAuthor());
             logger.info("Post with ID: {} successfully submitted for review by Author: {}",
@@ -40,8 +49,15 @@ public class ReviewController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ReviewWithPostDetailsDTO>> getAllReviews() {
-        logger.info("Received request to fetch all reviews with post details.");
+    public ResponseEntity<List<ReviewWithPostDetailsDTO>> getAllReviews(
+            @RequestHeader(value = "X-User-Role", required = false) String role) {
+        logger.info("Received request to fetch all reviews with post details. Role: {}", role);
+
+        if (!"editor".equals(role)) {
+            logger.warn("Unauthorized attempt to fetch all reviews. Role: {}", role);
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
         try {
             List<ReviewWithPostDetailsDTO> reviews = reviewService.getAllReviewsWithPostDetails();
             logger.info("Successfully fetched {} reviews.", reviews.size());
@@ -53,8 +69,18 @@ public class ReviewController {
     }
 
     @PutMapping("/{reviewId}/approve")
-    public ResponseEntity<String> approveReview(@PathVariable Long reviewId, @RequestParam String reviewer) {
-        logger.info("Received request to approve review. Review ID: {}, Reviewer: {}", reviewId, reviewer);
+    public ResponseEntity<String> approveReview(
+            @RequestHeader(value = "X-User-Role", required = false) String role,
+            @PathVariable Long reviewId,
+            @RequestParam String reviewer) {
+        logger.info("Received request to approve review. Review ID: {}, Reviewer: {}, Role: {}",
+                reviewId, reviewer, role);
+
+        if (!"editor".equals(role)) {
+            logger.warn("Unauthorized attempt to approve review. Review ID: {}, Role: {}", reviewId, role);
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
         try {
             reviewService.approveReview(reviewId, reviewer);
             logger.info("Successfully approved review with ID: {} by Reviewer: {}", reviewId, reviewer);
@@ -67,11 +93,17 @@ public class ReviewController {
 
     @PutMapping("/{reviewId}/reject")
     public ResponseEntity<String> rejectReview(
+            @RequestHeader(value = "X-User-Role", required = false) String role,
             @PathVariable Long reviewId,
-            @RequestBody RejectRequest rejectRequest
-    ) {
-        logger.info("Received request to reject review. Review ID: {}, Reviewer: {}, Remarks: {}",
-                reviewId, rejectRequest.getReviewer(), rejectRequest.getRemarks());
+            @RequestBody RejectRequest rejectRequest) {
+        logger.info("Received request to reject review. Review ID: {}, Reviewer: {}, Remarks: {}, Role: {}",
+                reviewId, rejectRequest.getReviewer(), rejectRequest.getRemarks(), role);
+
+        if (!"editor".equals(role)) {
+            logger.warn("Unauthorized attempt to reject review. Review ID: {}, Role: {}", reviewId, role);
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
         try {
             reviewService.rejectReview(reviewId, rejectRequest.getReviewer(), rejectRequest.getRemarks());
             logger.info("Successfully rejected review with ID: {} by Reviewer: {} with Remarks: {}",
@@ -84,11 +116,12 @@ public class ReviewController {
     }
 
     @GetMapping("/notifications")
-    public SseEmitter getNotifications() {
-        logger.info("New client connected for notifications.");
+    public SseEmitter getNotifications(){
+        logger.info("New client connected for notifications");
+
         try {
             SseEmitter emitter = reviewService.registerClient();
-            logger.info("Successfully registered SSE client.");
+            logger.info("Successfully registered SSE client for notifications.");
             return emitter;
         } catch (Exception e) {
             logger.error("Error registering SSE client for notifications.", e);
