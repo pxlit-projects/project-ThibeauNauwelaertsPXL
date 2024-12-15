@@ -16,7 +16,7 @@ import { AddCommentComponent } from '../add-comment/add-comment.component';
 export class CommentsComponent implements OnInit {
   comments: Comment[] = [];
   postId!: number;
-  editMode: { [key: number]: boolean } = {};
+  editMode: { [key: number]: boolean } = {}; // Track edit mode for each comment
   currentUser: string | null = '';
 
   constructor(
@@ -48,7 +48,6 @@ export class CommentsComponent implements OnInit {
       },
     });
   }
-  
 
   onCommentAdded(): void {
     this.fetchComments();
@@ -70,8 +69,15 @@ export class CommentsComponent implements OnInit {
   }
 
   deleteComment(commentId: number): void {
-    this.commentService.deleteComment(commentId, this.currentUser || 'guest').subscribe({
+    if (!commentId) {
+      console.error('Comment ID is missing. Cannot delete.');
+      return;
+    }
+
+    const username = this.authService.getUsername() || 'guest';
+    this.commentService.deleteComment(commentId, username).subscribe({
       next: () => {
+        console.log(`Comment with ID ${commentId} deleted successfully.`);
         this.comments = this.comments.filter((comment) => comment.id !== commentId);
       },
       error: (err) => {
