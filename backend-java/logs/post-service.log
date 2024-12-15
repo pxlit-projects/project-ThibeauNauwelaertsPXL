@@ -11824,3 +11824,67 @@ feign.FeignException$NotFound: [404] during [GET] to [http://review-service/revi
 2024-12-15 19:37:49 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
 2024-12-15 19:37:57 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
 2024-12-15 19:38:04 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 19:41:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 19:42:49 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 19:43:04 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 19:46:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 19:47:49 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 19:48:04 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 19:51:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 19:52:49 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 19:53:04 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 19:56:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 19:57:49 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 19:58:04 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 20:01:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 20:02:49 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 20:03:04 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 20:06:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 20:07:49 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 20:08:04 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 20:11:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 20:12:49 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 20:13:04 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 20:15:52 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application POST-SERVICE with eureka with status DOWN
+2024-12-15 20:15:52 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1734290152856, current=DOWN, previous=UP]
+2024-12-15 20:15:52 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_POST-SERVICE/MSI:post-service:8084: registering service...
+2024-12-15 20:15:52 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_POST-SERVICE/MSI:post-service:8084 - registration status: 204
+2024-12-15 20:15:52 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15 20:15:52 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-15 20:15:52 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-15 20:15:52 INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2024-12-15 20:15:54 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application REVIEW-SERVICE with eureka with status DOWN
+2024-12-15 20:15:54 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1734290154898, current=DOWN, previous=UP]
+2024-12-15 20:15:54 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_REVIEW-SERVICE/MSI:review-service:8085: registering service...
+2024-12-15 20:15:54 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_REVIEW-SERVICE/MSI:review-service:8085 - registration status: 204
+2024-12-15 20:15:54 INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2024-12-15 20:15:55 INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2024-12-15 20:15:55 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15 20:15:55 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-15 20:15:55 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-15 20:15:55 INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2024-12-15 20:15:55 INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2024-12-15 20:15:55 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_POST-SERVICE/MSI:post-service:8084 - deregister  status: 200
+2024-12-15 20:15:55 INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2024-12-15 20:15:58 INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2024-12-15 20:15:58 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_REVIEW-SERVICE/MSI:review-service:8085 - deregister  status: 200
+2024-12-15 20:15:58 INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2024-12-15 20:16:07 INFO  org.JavaPE.PostServiceApplication - Starting PostServiceApplication using Java 21 with PID 25296 (C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service\target\classes started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java)
+2024-12-15 20:16:07 INFO  org.JavaPE.PostServiceApplication - Starting PostServiceApplication using Java 21 with PID 25296 (C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service\target\classes started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java)
+2024-12-15 20:16:07 DEBUG org.JavaPE.PostServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-15 20:16:07 DEBUG org.JavaPE.PostServiceApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2024-12-15 20:16:07 INFO  org.JavaPE.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-15 20:16:07 INFO  org.JavaPE.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-15 20:16:07 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2024-12-15 20:16:07 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=post-service, profiles=[default], label=null, version=null, state=null
+2024-12-15 20:16:08 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15 20:16:09 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 229 ms. Found 1 JPA repository interface.
+2024-12-15 20:16:09 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=1a5a92c5-8d00-33fe-87b6-febea0d96c6e
+2024-12-15 20:16:09 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-12-15 20:16:09 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2024-12-15 20:16:10 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2024-12-15 20:16:10 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+2024-12-15 20:16:10 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-12-15 20:16:10 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-15 20:16:10 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-12-15 20:16:10 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2381 ms

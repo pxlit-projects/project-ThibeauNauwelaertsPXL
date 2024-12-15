@@ -34,7 +34,7 @@ public class PostController {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
 
-        PostDTO responseDTO = postService.saveDraft(postDTO);
+        PostDTO responseDTO = postService.createOrUpdateDraft(postDTO);
         logger.info("Post created successfully with ID: {}", responseDTO.getId());
         return ResponseEntity.status(HttpStatus.CREATED).body(responseDTO);
     }

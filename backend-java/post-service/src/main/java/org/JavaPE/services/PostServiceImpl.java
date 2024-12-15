@@ -9,10 +9,12 @@ import org.JavaPE.domain.Post;
 import org.JavaPE.domain.PostStatus;
 import org.JavaPE.exception.PostNotFoundException;
 import org.JavaPE.repository.PostRepository;
+import org.JavaPE.services.PostService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -30,17 +32,7 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public PostDTO createPost(PostDTO postDTO) {
-        Post post = postDTOConverter.convertToEntity(postDTO);
-        post.setStatus(PostStatus.DRAFT);
-
-        Post savedPost = postRepository.save(post);
-
-        return postDTOConverter.convertToDTO(savedPost);
-    }
-
-    @Override
-    public PostDTO saveDraft(PostDTO postDTO) {
+    public PostDTO createOrUpdateDraft(PostDTO postDTO) {
         Post post = postDTOConverter.convertToEntity(postDTO);
 
         boolean isNewPost = post.getId() == null;
@@ -54,24 +46,26 @@ public class PostServiceImpl implements PostService {
 
         Post savedPost = postRepository.save(post);
 
-        if (isNewPost || hasBeenEdited(savedPost)) {
-            sendForReview(postDTOConverter.convertToDTO(savedPost));
+        boolean needsReview = isNewPost;
+
+        if (!isNewPost) {
+            Optional<Post> existingPostOpt = postRepository.findById(savedPost.getId());
+            if (existingPostOpt.isPresent()) {
+                Post existingPost = existingPostOpt.get();
+                needsReview = !existingPost.getContent().equals(savedPost.getContent()) ||
+                        !existingPost.getTitle().equals(savedPost.getTitle());
+            } else {
+                needsReview = true;
+            }
+        }
+        if (needsReview) {
+            sendForReview(postDTOConverter.convertToDTO(post));
         }
 
         return postDTOConverter.convertToDTO(savedPost);
     }
 
-    private boolean hasBeenEdited(Post post) {
-        Post existingPost = postRepository.findById(post.getId()).orElse(null);
-        if (existingPost == null) {
-            return true;
-        }
-        return !existingPost.getContent().equals(post.getContent()) ||
-                !existingPost.getTitle().equals(post.getTitle());
-    }
-
     public void sendForReview(PostDTO postDTO) {
-        // Save the latest version of the post before submitting for review
         Post post = postRepository.findById(postDTO.getId())
                 .orElseThrow(() -> new PostNotFoundException("Post with ID " + postDTO.getId() + " not found."));
 
@@ -122,7 +116,6 @@ public class PostServiceImpl implements PostService {
         Post post = postRepository.findById(postId)
                 .orElseThrow(() -> new PostNotFoundException("Post with ID " + postId + " not found."));
 
-        // Save the latest version of the post before publishing it
         post.setStatus(PostStatus.PUBLISHED);
         post.setLastModifiedDate(LocalDate.now());
         postRepository.save(post);
@@ -137,6 +130,7 @@ public class PostServiceImpl implements PostService {
                 .collect(Collectors.toList());
     }
 
+    @Override
     public List<PostDTO> getDraftPosts() {
         List<Post> draftPosts = postRepository.findByStatus(PostStatus.DRAFT);
 
@@ -147,17 +141,11 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<PostDTO> getPostsFiltered(String content, String author, LocalDate createdDate, LocalDate lastModifiedDate) {
-        PostDTO filterDTO = new PostDTO();
-        filterDTO.setContent(content);
-        filterDTO.setAuthor(author);
-        filterDTO.setCreatedDate(createdDate);
-        filterDTO.setLastModifiedDate(lastModifiedDate);
-
         List<Post> filteredPosts = postRepository.findPostsByFilters(
-                filterDTO.getContent(),
-                filterDTO.getAuthor(),
-                filterDTO.getCreatedDate(),
-                filterDTO.getLastModifiedDate()
+                content,
+                author,
+                createdDate,
+                lastModifiedDate
         );
 
         return filteredPosts.stream()

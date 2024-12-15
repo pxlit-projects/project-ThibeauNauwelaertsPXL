@@ -37,13 +37,13 @@ class PostControllerTest {
         PostDTO postDTO = mock(PostDTO.class);
         PostDTO responseDTO = mock(PostDTO.class);
 
-        when(postService.saveDraft(postDTO)).thenReturn(responseDTO);
+        when(postService.createOrUpdateDraft(postDTO)).thenReturn(responseDTO);
 
         ResponseEntity<PostDTO> response = postController.createPost("editor", postDTO);
 
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
         assertEquals(responseDTO, response.getBody());
-        verify(postService).saveDraft(postDTO);
+        verify(postService).createOrUpdateDraft(postDTO);
     }
 
     @Test
@@ -53,7 +53,7 @@ class PostControllerTest {
         ResponseEntity<PostDTO> response = postController.createPost("viewer", postDTO);
 
         assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
-        verify(postService, never()).saveDraft(postDTO);
+        verify(postService, never()).createOrUpdateDraft(postDTO);
     }
 
     @Test
