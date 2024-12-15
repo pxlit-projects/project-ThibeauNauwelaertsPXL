@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../../shared/services/auth.service';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { catchError, tap } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-create-post',
@@ -15,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class CreatePostComponent implements OnInit {
   postForm: FormGroup;
+  errorMessage: string | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -41,15 +44,16 @@ export class CreatePostComponent implements OnInit {
       author: this.authService.getUsername(), // Use the current username as author
     };
 
-    this.postService.createPost(newPost).subscribe(
-      (post) => {
+    this.postService.createPost(newPost).pipe(
+      tap((post) => {
         console.log('Post created:', post);
-        // Emit the post to the DraftPostsComponent
         this.router.navigate(['/drafts']); // Navigate back to drafts
-      },
-      (error) => {
+      }),
+      catchError((error) => {
         console.error('Error creating post:', error);
-      }
-    );
+        this.errorMessage = 'Failed to create post. Please try again later.';
+        return of(null);
+      })
+    ).subscribe();
   }
 }
