@@ -1,32 +1,18 @@
 package org.JavaPE.controller.dto;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 
 @Getter
+@Setter
 public class NotificationMessage implements Serializable {
     // Getters and Setters
     private Long postId;
     private String status;
     private String reviewer;
     private String remarks;
-
-    public void setPostId(Long postId) {
-        this.postId = postId;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public void setReviewer(String reviewer) {
-        this.reviewer = reviewer;
-    }
-
-    public void setRemarks(String remarks) {
-        this.remarks = remarks;
-    }
 
     @Override
     public String toString() {

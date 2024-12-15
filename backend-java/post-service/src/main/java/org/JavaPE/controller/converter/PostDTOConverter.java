@@ -17,8 +17,8 @@ public class PostDTOConverter {
         postDTO.setAuthor(post.getAuthor());
         postDTO.setCreatedDate(post.getCreatedDate());
         postDTO.setLastModifiedDate(post.getLastModifiedDate());
-        postDTO.setStatus(post.getStatus().name()); // Convert Enum to String
-        postDTO.setRemarks(post.getRemarks()); // Set the remarks
+        postDTO.setStatus(post.getStatus() != null ? post.getStatus().name() : null);
+        postDTO.setRemarks(post.getRemarks());
         return postDTO;
     }
 
