@@ -1,28 +1,28 @@
-2024-12-14 22:16:50 INFO  controller.ReviewControllerTest - Starting ReviewControllerTest using Java 21 with PID 25868 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\review-service)
-2024-12-14 22:16:50 INFO  controller.ReviewControllerTest - No active profile set, falling back to 1 default profile: "default"
-2024-12-14 22:16:50 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
-2024-12-14 22:16:50 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=review-service, profiles=[default], label=null, version=null, state=null
-2024-12-14 22:16:58 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
-2024-12-14 22:16:58 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
-2024-12-14 22:16:58 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 3 ms
-2024-12-14 22:16:58 INFO  controller.ReviewControllerTest - Started ReviewControllerTest in 10.653 seconds (process running for 12.461)
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 1, Reviewer: John, Role: editor
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 1, Reviewer: John, Role: editor
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 1 by Reviewer: John
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 1 by Reviewer: John
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Received request to reject review. Review ID: 1, Reviewer: John, Remarks: Not good enough, Role: editor
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Received request to reject review. Review ID: 1, Reviewer: John, Remarks: Not good enough, Role: editor
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Successfully rejected review with ID: 1 by Reviewer: John with Remarks: Not good enough
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Successfully rejected review with ID: 1 by Reviewer: John with Remarks: Not good enough
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 1 reviews.
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 1 reviews.
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 1, Author: Author
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 1, Author: Author
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Post with ID: 1 successfully submitted for review by Author: Author
-2024-12-14 22:16:59 INFO  o.JavaPE.controller.ReviewController - Post with ID: 1 successfully submitted for review by Author: Author
+2024-12-15 19:39:08 INFO  controller.ReviewControllerTest - Starting ReviewControllerTest using Java 21 with PID 27652 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\review-service)
+2024-12-15 19:39:08 INFO  controller.ReviewControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-15 19:39:08 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2024-12-15 19:39:08 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=review-service, profiles=[default], label=null, version=null, state=null
+2024-12-15 19:39:11 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-12-15 19:39:11 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-12-15 19:39:11 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2024-12-15 19:39:11 INFO  controller.ReviewControllerTest - Started ReviewControllerTest in 5.404 seconds (process running for 12.588)
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 1, Reviewer: John, Role: editor
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 1, Reviewer: John, Role: editor
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 1 by Reviewer: John
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 1 by Reviewer: John
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Received request to reject review. Review ID: 1, Reviewer: John, Remarks: Not good enough, Role: editor
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Received request to reject review. Review ID: 1, Reviewer: John, Remarks: Not good enough, Role: editor
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Successfully rejected review with ID: 1 by Reviewer: John with Remarks: Not good enough
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Successfully rejected review with ID: 1 by Reviewer: John with Remarks: Not good enough
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 1 reviews.
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 1 reviews.
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 1, Author: Author
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 1, Author: Author
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Post with ID: 1 successfully submitted for review by Author: Author
+2024-12-15 19:39:11 INFO  o.JavaPE.controller.ReviewController - Post with ID: 1 successfully submitted for review by Author: Author

@@ -11807,3 +11807,20 @@ feign.FeignException$NotFound: [404] during [GET] to [http://review-service/revi
 2024-12-15 19:37:00 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
 2024-12-15 19:37:00 INFO  o.JavaPE.controller.PostController - Successfully fetched 65 published posts
 2024-12-15 19:37:00 INFO  o.JavaPE.controller.PostController - Successfully fetched 65 published posts
+2024-12-15 19:37:10 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.web.context.request.async.AsyncRequestTimeoutException
+2024-12-15 19:37:10 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 19:37:15 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 19:37:15 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 19:37:15 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 19:37:15 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 19:37:21 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.web.context.request.async.AsyncRequestTimeoutException
+2024-12-15 19:37:21 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 19:37:26 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 19:37:26 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 19:37:26 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 19:37:26 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 19:37:30 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 19:37:46 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 19:37:49 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 19:37:57 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 19:38:04 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
