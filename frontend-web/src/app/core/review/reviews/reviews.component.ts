@@ -6,13 +6,14 @@ import { ReviewService, RejectRequest } from '../../../shared/services/review.se
 import { ReviewNotificationService } from '../../../shared/services/review-notification.service'; 
 import { NotificationMessage } from '../../../shared/models/notification-message.model'; 
 import { AuthService } from '../../../shared/services/auth.service'; 
+import { ReviewActionsComponent } from '../reviews-actions/reviews-actions.component';
 
 @Component({
   selector: 'app-reviews',
   standalone: true,
   templateUrl: './reviews.component.html',
   styleUrls: ['./reviews.component.css'],
-  imports: [CommonModule, NgForOf, FormsModule],
+  imports: [CommonModule, NgForOf, FormsModule, ReviewActionsComponent], // Add ReviewActionsComponent
 })
 export class ReviewsComponent implements OnInit {
   reviews: any[] = [];
@@ -51,40 +52,6 @@ export class ReviewsComponent implements OnInit {
     });
   }
 
-  approveReview(reviewId: number): void {
-    const reviewer = this.authService.getUsername() || 'Unknown';
-  
-    this.reviewService.approveReview(reviewId, reviewer).subscribe({
-      next: () => {
-        console.log(`Review ${reviewId} approved by ${reviewer}.`);
-        this.removeReviewFromList(reviewId); // Remove review from list immediately
-      },
-      error: (error) => {
-        console.error('Error approving review', error);
-        this.errorMessage = `Failed to approve review ID ${reviewId}.`;
-      },
-    });
-  }
-  
-  rejectReview(reviewId: number): void {
-    const reviewer = this.authService.getUsername() || 'Unknown';
-    const remarks = prompt('Enter remarks for rejection:');
-    if (!remarks) return;
-  
-    const rejectRequest: RejectRequest = { reviewer, remarks };
-  
-    this.reviewService.rejectReview(reviewId, rejectRequest).subscribe({
-      next: () => {
-        console.log(`Review ${reviewId} rejected by ${reviewer}.`);
-        this.removeReviewFromList(reviewId); // Remove review from list immediately
-      },
-      error: (error) => {
-        console.error('Error rejecting review', error);
-        this.errorMessage = `Failed to reject review ID ${reviewId}.`;
-      },
-    });
-  }
-
   handleReviewNotification(notification: NotificationMessage): void {
     const review = this.reviews.find((r) => r.reviewId === notification.postId);
   
@@ -98,13 +65,9 @@ export class ReviewsComponent implements OnInit {
       }
     }
   }
-  
-  private removeReviewFromList(reviewId: number): void {
+
+  removeReviewFromList(reviewId: number): void {
     console.log(`Removing review with reviewId: ${reviewId}`);
     this.reviews = this.reviews.filter((r) => r.reviewId !== reviewId);
-  }
-
-  private navigateToDrafts(): void {
-    this.router.navigate(['/drafts']);
   }
 }

@@ -1,0 +1,11 @@
+<div *ngFor="let review of reviews" class="review-item">
+    <h3>{{ review.title }}</h3>
+    <p>Status: {{ review.status }}</p>
+  
+    <app-review-actions
+      [reviewId]="review.reviewId"
+      (reviewApproved)="removeReviewFromList($event)"
+      (reviewRejected)="removeReviewFromList($event)">
+    </app-review-actions>
+  </div>
+  

@@ -41,26 +41,13 @@
           <p><strong>Reviewer:</strong> {{ review.reviewer || 'N/A' }}</p>
         </div>
 
-        <!-- Action Buttons -->
-        <div class="mt-4 flex items-center justify-between">
-          <!-- Approve Button -->
-          <button
-            *ngIf="review.status === 'PENDING'"
-            class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-            (click)="approveReview(review.reviewId)"
-          >
-            Approve
-          </button>
-
-          <!-- Reject Button -->
-          <button
-            *ngIf="review.status === 'PENDING'"
-            class="bg-red-500 text-white text-sm px-4 py-2 rounded-lg hover:bg-red-600 transition"
-            (click)="rejectReview(review.reviewId)"
-          >
-            Reject
-          </button>
-        </div>
+        <!-- Review Actions -->
+        <app-review-actions
+          *ngIf="review.status === 'PENDING'"
+          [reviewId]="review.reviewId"
+          (reviewApproved)="removeReviewFromList($event)"
+          (reviewRejected)="removeReviewFromList($event)">
+        </app-review-actions>
       </div>
     </div>
 
