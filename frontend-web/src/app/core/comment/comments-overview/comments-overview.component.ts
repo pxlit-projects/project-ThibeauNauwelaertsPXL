@@ -4,19 +4,19 @@ import { CommentService, Comment } from '../../../shared/services/comment.servic
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../../shared/services/auth.service';
+import { AddCommentComponent } from '../add-comment/add-comment.component';
 
 @Component({
   selector: 'app-comments',
   standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './comments.component.html',
-  styleUrls: ['./comments.component.css'],
+  imports: [CommonModule, FormsModule, AddCommentComponent],
+  templateUrl: './comments-overview.component.html',
+  styleUrls: ['./comments-overview.component.css'],
 })
-export class CommentsListComponent implements OnInit {
+export class CommentsComponent implements OnInit {
   comments: Comment[] = [];
   postId!: number;
-  newComment: Comment = { id: 0, postId: 0, author: '', content: '' };
-  editMode: { [key: number]: boolean } = {}; // Track edit mode for each comment
+  editMode: { [key: number]: boolean } = {};
   currentUser: string | null = '';
 
   constructor(
@@ -36,37 +36,31 @@ export class CommentsListComponent implements OnInit {
   fetchComments(): void {
     this.commentService.getCommentsByPostId(this.postId).subscribe({
       next: (data) => {
-        this.comments = data;
+        // Sort comments to show the newest first
+        this.comments = data.sort((a, b) => {
+          const dateA = new Date(a.createdAt ?? 0).getTime();
+          const dateB = new Date(b.createdAt ?? 0).getTime();
+          return dateB - dateA;
+        });
       },
       error: (err) => {
         console.error('Failed to fetch comments:', err);
       },
     });
   }
+  
 
-  addComment(): void {
-    const username = localStorage.getItem('currentUser') || 'Anonymous';
-    this.newComment.postId = this.postId;
-    this.newComment.author = username;
-  
-    this.commentService.addCommentToPost(this.postId, this.newComment).subscribe({
-      next: (comment) => {
-        this.comments = [comment, ...this.comments];
-        this.newComment.content = '';
-      },
-      error: (err) => {
-        console.error('Failed to add comment:', err);
-      },
-    });
+  onCommentAdded(): void {
+    this.fetchComments();
   }
-  
+
   editComment(comment: Comment): void {
     this.commentService.updateComment(comment.id, comment).subscribe({
       next: (updatedComment) => {
         const index = this.comments.findIndex((c) => c.id === updatedComment.id);
         if (index !== -1) {
           this.comments[index] = updatedComment;
-          this.editMode[comment.id] = false; // Exit edit mode for the comment
+          this.editMode[comment.id] = false;
         }
       },
       error: (err) => {
@@ -76,8 +70,7 @@ export class CommentsListComponent implements OnInit {
   }
 
   deleteComment(commentId: number): void {
-    const currentUser = this.authService.getUsername() || 'guest';
-    this.commentService.deleteComment(commentId, currentUser).subscribe({
+    this.commentService.deleteComment(commentId, this.currentUser || 'guest').subscribe({
       next: () => {
         this.comments = this.comments.filter((comment) => comment.id !== commentId);
       },

@@ -6,7 +6,7 @@ import { CreatePostComponent } from './core/post/create-post/create-post.compone
 import { EditPostComponent } from './core/post/edit-post/edit-post.component';
 import { DraftPostsComponent } from './core/post/drafts/drafts.component';
 import { ReviewsComponent } from './core/review/reviews/reviews.component'; // Import the ReviewsComponent
-import { CommentsListComponent } from './core/comment/comments/comments.component'; // Import the CommentsComponent
+import { CommentsComponent } from './core/comment/comments-overview/comments-overview.component'; // Import the CommentsComponent
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,7 +15,7 @@ export const routes: Routes = [
   { path: 'create-post', component: CreatePostComponent, canActivate: [AuthGuard] },
   { path: 'edit-post/:id', component: EditPostComponent },  // Route for editing posts
   { path: 'reviews', component: ReviewsComponent, canActivate: [AuthGuard] }, // Add route for ReviewsComponent
-  { path: 'comments/:postId', component: CommentsListComponent, canActivate: [AuthGuard] }, // Include postId in the path
+  { path: 'comments/:postId', component: CommentsComponent, canActivate: [AuthGuard] }, // Include postId in the path
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route
   { path: '**', redirectTo: '/login' }, // Redirect unknown routes to login
 ];

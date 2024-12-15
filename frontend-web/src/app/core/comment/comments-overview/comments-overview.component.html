@@ -1,0 +1,29 @@
+<div class="min-h-screen w-full bg-gray-100 relative flex flex-col">
+  <div class="container mx-auto p-6">
+    <h1 class="text-4xl font-bold text-center mb-8">Comments for Post #{{ postId }}</h1>
+  </div>
+
+  <!-- AddCommentComponent with postId -->
+  <app-add-comment [postId]="postId" (commentAdded)="onCommentAdded()"></app-add-comment>
+
+  <div class="flex-grow container mx-auto p-6 space-y-4">
+    <div *ngFor="let comment of comments" class="bg-white p-4 rounded shadow">
+      <div class="flex justify-between items-center mb-2">
+        <p class="font-medium text-blue-500">{{ comment.author }}</p>
+        <div class="flex space-x-4">
+          <button *ngIf="currentUser === comment.author" class="text-blue-500">
+            Edit
+          </button>
+          <button *ngIf="currentUser === comment.author" class="text-red-500">
+            Delete
+          </button>
+        </div>
+      </div>
+      <p class="text-gray-700">{{ comment.content }}</p>
+    </div>
+
+    <div *ngIf="comments.length === 0" class="text-center text-gray-500">
+      <p>No comments available for this post.</p>
+    </div>
+  </div>
+</div>
