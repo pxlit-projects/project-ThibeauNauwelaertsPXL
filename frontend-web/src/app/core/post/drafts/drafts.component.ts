@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { Post, PostService } from '../../../shared/services/post.service';
 import { Router } from '@angular/router';
 import { NotificationMessage } from '../../../shared/models/notification-message.model';
@@ -16,10 +16,16 @@ export class DraftPostsComponent implements OnInit {
   draftPosts: Post[] = [];
   errorMessage: string | null = null;
   loading: boolean = false;
+  toasts: { id: number; message: string; type: string }[] = [];
+  private toastCounter = 0;
 
   filterCriteria: Partial<Post> = {};
 
-  constructor(private postService: PostService, private router: Router) {}
+  constructor(
+    private postService: PostService, 
+    private router: Router, 
+    private ngZone: NgZone // Inject NgZone to manually trigger change detection
+  ) {}
 
   ngOnInit(): void {
     this.fetchDraftPosts();
@@ -28,17 +34,7 @@ export class DraftPostsComponent implements OnInit {
 
   fetchDraftPosts(filters: Partial<Post> = {}): void {
     this.loading = true;
-
-    // Add "DRAFT" status filter
     filters.status = 'DRAFT';
-
-    // Convert date fields to ISO strings
-    if (filters.createdDate) {
-      filters.createdDate = new Date(filters.createdDate).toISOString().split('T')[0];
-    }
-    if (filters.lastModifiedDate) {
-      filters.lastModifiedDate = new Date(filters.lastModifiedDate).toISOString().split('T')[0];
-    }
 
     this.postService.getDraftPosts(filters).subscribe({
       next: (data) => {
@@ -47,7 +43,7 @@ export class DraftPostsComponent implements OnInit {
       },
       error: (error) => {
         console.error('Error fetching drafts:', error);
-        this.errorMessage = 'Failed to load draft posts.';
+        this.showToast('Failed to load draft posts.', 'error');
         this.loading = false;
       },
     });
@@ -58,11 +54,14 @@ export class DraftPostsComponent implements OnInit {
 
     eventSource.onmessage = (event) => {
       const notification: NotificationMessage = JSON.parse(event.data);
-      this.updateDraftWithFeedback(notification);
+      this.ngZone.run(() => {
+        this.updateDraftWithFeedback(notification);
+      });
     };
 
     eventSource.onerror = (error) => {
       console.error('Error with SSE connection:', error);
+      this.showToast('Error with live updates', 'error');
     };
   }
 
@@ -75,26 +74,20 @@ export class DraftPostsComponent implements OnInit {
       this.postService.updatePost(post.id, post).subscribe({
         next: (updatedPost) => {
           console.log('Draft updated with feedback:', updatedPost);
+          this.showToast(`Post "${post.title}" updated successfully`, 'success');
         },
         error: (err) => {
           console.error('Error updating draft post:', err);
+          this.showToast(`Error updating post "${post.title}"`, 'error');
         },
       });
+    } else {
+      this.showToast(`Post with ID ${notification.postId} not found`, 'error');
     }
   }
 
   applyFilters(): void {
     const filters = { ...this.filterCriteria };
-
-    // Convert dates to ISO strings
-    if (filters.createdDate) {
-      filters.createdDate = new Date(filters.createdDate).toISOString().split('T')[0];
-    }
-    if (filters.lastModifiedDate) {
-      filters.lastModifiedDate = new Date(filters.lastModifiedDate).toISOString().split('T')[0];
-    }
-
-    // Remove empty fields
     Object.keys(filters).forEach((key) => {
       if (!filters[key as keyof Post]) {
         delete filters[key as keyof Post];
@@ -119,5 +112,28 @@ export class DraftPostsComponent implements OnInit {
 
   editPost(postId: number): void {
     this.router.navigate(['/edit-post', postId]);
+  }
+
+  /**
+   * Shows a toast message
+   * @param message The message to display
+   * @param type The type of message ('success', 'error', 'info', 'warning')
+   */
+  showToast(message: string, type: 'success' | 'error' | 'info' | 'warning' = 'info'): void {
+    const id = this.toastCounter++;
+    this.toasts.push({ id, message, type });
+
+    // Automatically remove toast after 5 seconds
+    setTimeout(() => {
+      this.removeToast(id);
+    }, 5000);
+  }
+
+  /**
+   * Removes a toast message
+   * @param id The unique ID of the toast to remove
+   */
+  removeToast(id: number): void {
+    this.toasts = this.toasts.filter(toast => toast.id !== id);
   }
 }
