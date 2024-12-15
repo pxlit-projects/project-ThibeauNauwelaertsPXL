@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { PostsComponent } from './posts/posts.component';
-import { AuthGuard } from './login/auth.guard';
-import { CreatePostComponent } from './create-post/create-post.component';
-import { EditPostComponent } from './edit-post/edit-post.component';
-import { DraftPostsComponent } from './drafts/drafts.component';
-import { ReviewsComponent } from './reviews/reviews.component'; // Import the ReviewsComponent
-import { CommentsListComponent } from './comments/comments.component'; // Import the CommentsComponent
+import { LoginComponent } from './core/login/login.component';
+import { PostsComponent } from './core/posts/posts.component';
+import { AuthGuard } from './guard/auth.guard';
+import { CreatePostComponent } from './core/create-post/create-post.component';
+import { EditPostComponent } from './core/edit-post/edit-post.component';
+import { DraftPostsComponent } from './core/drafts/drafts.component';
+import { ReviewsComponent } from './core/reviews/reviews.component'; // Import the ReviewsComponent
+import { CommentsListComponent } from './core/comments/comments.component'; // Import the CommentsComponent
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },

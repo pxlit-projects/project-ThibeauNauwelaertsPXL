@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule, NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
 import { Router } from '@angular/router'; 
-import { ReviewService, RejectRequest } from '../services/review.service'; 
-import { ReviewNotificationService } from '../services/review-notification.service'; 
-import { NotificationMessage } from '../models/notification-message.model'; 
-import { AuthService } from '../login/auth.service'; 
+import { ReviewService, RejectRequest } from '../../shared/services/review.service'; 
+import { ReviewNotificationService } from '../../shared/services/review-notification.service'; 
+import { NotificationMessage } from '../../shared/models/notification-message.model'; 
+import { AuthService } from '../../shared/services/auth.service'; 
 
 @Component({
   selector: 'app-reviews',

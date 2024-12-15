@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Post, PostService } from '../services/post.service';
+import { Post, PostService } from '../../shared/services/post.service';
 import { Router } from '@angular/router';
 import { CommonModule, NgForOf } from '@angular/common';
 import { FormsModule } from '@angular/forms';

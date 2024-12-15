@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Post, PostService } from '../services/post.service';
+import { Post, PostService } from '../../shared/services/post.service';
 import { Router } from '@angular/router';
-import { NotificationMessage } from '../models/notification-message.model';
+import { NotificationMessage } from '../../shared/models/notification-message.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
