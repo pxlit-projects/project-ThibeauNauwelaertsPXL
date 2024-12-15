@@ -1,14 +1,57 @@
 nav {
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: #2563eb; /* Old blue color */
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 1rem;
+  font-size: 1rem;
+}
+
+nav a.router-link-active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+nav .brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+nav img {
+  width: 40px; /* Profile picture or logo size */
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  a {
-    text-decoration: none;
-    color: white;
+
+  nav .nav-links {
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
-  
-  a.router-link-active {
-    font-weight: bold;
-    text-decoration: underline;
+
+  nav img {
+    margin-top: 0.5rem;
   }
-  
+}

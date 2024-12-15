@@ -3712,3 +3712,462 @@ java.lang.RuntimeException: Review not found
 2024-12-15 16:35:54 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
 2024-12-15 16:36:14 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
 2024-12-15 16:36:16 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 16:37:47 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:37:47 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:37:47 INFO  o.JavaPE.controller.PostController - Successfully fetched 10 published posts
+2024-12-15 16:37:47 INFO  o.JavaPE.controller.PostController - Successfully fetched 10 published posts
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 18, Author: admin
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 18, Author: admin
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.ReviewController - Post with ID: 18 successfully submitted for review by Author: admin
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.ReviewController - Post with ID: 18 successfully submitted for review by Author: admin
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 18
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 18
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.PostController - Successfully fetched 1 draft posts
+2024-12-15 16:37:52 INFO  o.JavaPE.controller.PostController - Successfully fetched 1 draft posts
+2024-12-15 16:37:55 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:37:55 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:37:55 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 18 and role: EDITOR
+2024-12-15 16:37:55 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 18 and role: EDITOR
+2024-12-15 16:37:55 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 18
+2024-12-15 16:37:55 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 18
+2024-12-15 16:37:55 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 1 reviews.
+2024-12-15 16:37:55 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 1 reviews.
+2024-12-15 16:37:56 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 14, Reviewer: admin, Role: editor
+2024-12-15 16:37:56 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 14, Reviewer: admin, Role: editor
+2024-12-15 16:37:56 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 14 by Reviewer: admin
+2024-12-15 16:37:56 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 14 by Reviewer: admin
+2024-12-15 16:37:56 INFO  o.JavaPE.controller.PostController - Received request to update post with ID: 18 and role: editor
+2024-12-15 16:37:56 INFO  o.JavaPE.controller.PostController - Received request to update post with ID: 18 and role: editor
+2024-12-15 16:37:56 INFO  o.JavaPE.controller.PostController - Post with ID: 18 updated successfully
+2024-12-15 16:37:56 INFO  o.JavaPE.controller.PostController - Post with ID: 18 updated successfully
+2024-12-15 16:37:58 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:37:58 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:37:58 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:37:58 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:37:58 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:37:58 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:37:58 INFO  o.JavaPE.controller.PostController - Successfully fetched 0 draft posts
+2024-12-15 16:37:58 INFO  o.JavaPE.controller.PostController - Successfully fetched 0 draft posts
+2024-12-15 16:38:00 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:38:00 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:38:00 INFO  o.JavaPE.controller.PostController - Successfully fetched 11 published posts
+2024-12-15 16:38:00 INFO  o.JavaPE.controller.PostController - Successfully fetched 11 published posts
+2024-12-15 16:38:19 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-15 16:38:19 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-15 16:38:19 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 19, Author: admin
+2024-12-15 16:38:19 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 19, Author: admin
+2024-12-15 16:38:19 INFO  o.JavaPE.controller.ReviewController - Post with ID: 19 successfully submitted for review by Author: admin
+2024-12-15 16:38:19 INFO  o.JavaPE.controller.ReviewController - Post with ID: 19 successfully submitted for review by Author: admin
+2024-12-15 16:38:19 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 19
+2024-12-15 16:38:19 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 19
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.PostController - Successfully fetched 1 draft posts
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.PostController - Successfully fetched 1 draft posts
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 1 reviews.
+2024-12-15 16:38:20 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 1 reviews.
+2024-12-15 16:38:22 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.web.context.request.async.AsyncRequestTimeoutException
+2024-12-15 16:38:22 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:38:23 INFO  o.JavaPE.controller.ReviewController - Received request to reject review. Review ID: 15, Reviewer: admin, Remarks: hell naw, Role: editor
+2024-12-15 16:38:23 INFO  o.JavaPE.controller.ReviewController - Received request to reject review. Review ID: 15, Reviewer: admin, Remarks: hell naw, Role: editor
+2024-12-15 16:38:23 INFO  o.JavaPE.controller.ReviewController - Successfully rejected review with ID: 15 by Reviewer: admin with Remarks: hell naw
+2024-12-15 16:38:23 INFO  o.JavaPE.controller.ReviewController - Successfully rejected review with ID: 15 by Reviewer: admin with Remarks: hell naw
+2024-12-15 16:38:23 INFO  o.JavaPE.controller.PostController - Received request to update post with ID: 19 and role: editor
+2024-12-15 16:38:23 INFO  o.JavaPE.controller.PostController - Received request to update post with ID: 19 and role: editor
+2024-12-15 16:38:23 INFO  o.JavaPE.controller.PostController - Post with ID: 19 updated successfully
+2024-12-15 16:38:23 INFO  o.JavaPE.controller.PostController - Post with ID: 19 updated successfully
+2024-12-15 16:38:23 INFO  o.JavaPE.controller.PostController - Post with ID: 19 is in DRAFT status, sending for review
+2024-12-15 16:38:23 INFO  o.JavaPE.controller.PostController - Post with ID: 19 is in DRAFT status, sending for review
+2024-12-15 16:38:23 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 19, Author: admin
+2024-12-15 16:38:23 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 19, Author: admin
+2024-12-15 16:38:23 INFO  o.JavaPE.controller.ReviewController - Post with ID: 19 successfully submitted for review by Author: admin
+2024-12-15 16:38:23 INFO  o.JavaPE.controller.ReviewController - Post with ID: 19 successfully submitted for review by Author: admin
+2024-12-15 16:38:25 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:38:25 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:38:25 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:38:25 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:38:25 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:38:25 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:38:25 INFO  o.JavaPE.controller.PostController - Successfully fetched 1 draft posts
+2024-12-15 16:38:25 INFO  o.JavaPE.controller.PostController - Successfully fetched 1 draft posts
+2024-12-15 16:38:27 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:38:27 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:38:27 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:38:27 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:38:28 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.web.context.request.async.AsyncRequestTimeoutException
+2024-12-15 16:38:28 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:38:30 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:38:30 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:38:30 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:38:30 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:38:30 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:38:30 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:38:30 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 1 reviews.
+2024-12-15 16:38:30 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 1 reviews.
+2024-12-15 16:38:33 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:38:33 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:38:33 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:38:33 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:38:48 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:38:48 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:38:48 INFO  o.JavaPE.controller.PostController - Successfully fetched 11 published posts
+2024-12-15 16:38:48 INFO  o.JavaPE.controller.PostController - Successfully fetched 11 published posts
+2024-12-15 16:38:50 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.web.context.request.async.AsyncRequestTimeoutException
+2024-12-15 16:38:50 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:38:51 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:38:51 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:38:51 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:38:51 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:38:51 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:38:51 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:38:51 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 1 reviews.
+2024-12-15 16:38:51 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 1 reviews.
+2024-12-15 16:38:55 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:38:55 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:38:55 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:38:55 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:38:55 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:38:58 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 20, Author: admin
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 20, Author: admin
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.ReviewController - Post with ID: 20 successfully submitted for review by Author: admin
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.ReviewController - Post with ID: 20 successfully submitted for review by Author: admin
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 20
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 20
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2024-12-15 16:39:02 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2024-12-15 16:39:04 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:39:04 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:39:04 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:39:04 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:39:04 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:39:04 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:39:04 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:39:04 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:39:04 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:39:04 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:39:04 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-15 16:39:04 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-15 16:39:04 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:39:10 INFO  o.JavaPE.controller.ReviewController - Received request to reject review. Review ID: 17, Reviewer: admin, Remarks: hell to ze naw, Role: editor
+2024-12-15 16:39:10 INFO  o.JavaPE.controller.ReviewController - Received request to reject review. Review ID: 17, Reviewer: admin, Remarks: hell to ze naw, Role: editor
+2024-12-15 16:39:10 INFO  o.JavaPE.controller.ReviewController - Successfully rejected review with ID: 17 by Reviewer: admin with Remarks: hell to ze naw
+2024-12-15 16:39:10 INFO  o.JavaPE.controller.ReviewController - Successfully rejected review with ID: 17 by Reviewer: admin with Remarks: hell to ze naw
+2024-12-15 16:39:10 INFO  o.JavaPE.controller.PostController - Received request to update post with ID: 20 and role: editor
+2024-12-15 16:39:10 INFO  o.JavaPE.controller.PostController - Received request to update post with ID: 20 and role: editor
+2024-12-15 16:39:10 INFO  o.JavaPE.controller.PostController - Post with ID: 20 updated successfully
+2024-12-15 16:39:10 INFO  o.JavaPE.controller.PostController - Post with ID: 20 updated successfully
+2024-12-15 16:39:10 INFO  o.JavaPE.controller.PostController - Post with ID: 20 is in DRAFT status, sending for review
+2024-12-15 16:39:10 INFO  o.JavaPE.controller.PostController - Post with ID: 20 is in DRAFT status, sending for review
+2024-12-15 16:39:10 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 20, Author: admin
+2024-12-15 16:39:10 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 20, Author: admin
+2024-12-15 16:39:10 INFO  o.JavaPE.controller.ReviewController - Post with ID: 20 successfully submitted for review by Author: admin
+2024-12-15 16:39:10 INFO  o.JavaPE.controller.ReviewController - Post with ID: 20 successfully submitted for review by Author: admin
+2024-12-15 16:39:14 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:39:14 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:39:14 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:39:14 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:39:14 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:39:14 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:39:14 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2024-12-15 16:39:14 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2024-12-15 16:39:26 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.web.context.request.async.AsyncRequestTimeoutException
+2024-12-15 16:39:26 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:39:32 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.web.context.request.async.AsyncRequestTimeoutException
+2024-12-15 16:39:32 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:39:44 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-15 16:40:40 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-15 16:40:54 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 16:41:10 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2024-12-15 16:41:11 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2024-12-15 16:41:14 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 16:41:16 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 21, Author: admin
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 21, Author: admin
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.ReviewController - Post with ID: 21 successfully submitted for review by Author: admin
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.ReviewController - Post with ID: 21 successfully submitted for review by Author: admin
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 21
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 21
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.PostController - Successfully fetched 3 draft posts
+2024-12-15 16:41:17 INFO  o.JavaPE.controller.PostController - Successfully fetched 3 draft posts
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 21 and role: EDITOR
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 21 and role: EDITOR
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 21
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 21
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 3 reviews.
+2024-12-15 16:41:19 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 3 reviews.
+2024-12-15 16:41:23 INFO  o.JavaPE.controller.ReviewController - Received request to reject review. Review ID: 19, Reviewer: admin, Remarks: nope pal, Role: editor
+2024-12-15 16:41:23 INFO  o.JavaPE.controller.ReviewController - Received request to reject review. Review ID: 19, Reviewer: admin, Remarks: nope pal, Role: editor
+2024-12-15 16:41:23 INFO  o.JavaPE.controller.ReviewController - Successfully rejected review with ID: 19 by Reviewer: admin with Remarks: nope pal
+2024-12-15 16:41:23 INFO  o.JavaPE.controller.ReviewController - Successfully rejected review with ID: 19 by Reviewer: admin with Remarks: nope pal
+2024-12-15 16:41:23 INFO  o.JavaPE.controller.PostController - Received request to update post with ID: 21 and role: editor
+2024-12-15 16:41:23 INFO  o.JavaPE.controller.PostController - Received request to update post with ID: 21 and role: editor
+2024-12-15 16:41:23 INFO  o.JavaPE.controller.PostController - Post with ID: 21 updated successfully
+2024-12-15 16:41:23 INFO  o.JavaPE.controller.PostController - Post with ID: 21 updated successfully
+2024-12-15 16:41:23 INFO  o.JavaPE.controller.PostController - Post with ID: 21 is in DRAFT status, sending for review
+2024-12-15 16:41:23 INFO  o.JavaPE.controller.PostController - Post with ID: 21 is in DRAFT status, sending for review
+2024-12-15 16:41:23 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 21, Author: admin
+2024-12-15 16:41:23 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 21, Author: admin
+2024-12-15 16:41:23 INFO  o.JavaPE.controller.ReviewController - Post with ID: 21 successfully submitted for review by Author: admin
+2024-12-15 16:41:23 INFO  o.JavaPE.controller.ReviewController - Post with ID: 21 successfully submitted for review by Author: admin
+2024-12-15 16:41:35 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 21 and role: editor
+2024-12-15 16:41:35 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 21 and role: editor
+2024-12-15 16:41:35 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 21
+2024-12-15 16:41:35 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 21
+2024-12-15 16:41:41 INFO  o.JavaPE.controller.PostController - Received request to update post with ID: 21 and role: editor
+2024-12-15 16:41:41 INFO  o.JavaPE.controller.PostController - Received request to update post with ID: 21 and role: editor
+2024-12-15 16:41:41 INFO  o.JavaPE.controller.PostController - Post with ID: 21 updated successfully
+2024-12-15 16:41:41 INFO  o.JavaPE.controller.PostController - Post with ID: 21 updated successfully
+2024-12-15 16:41:41 INFO  o.JavaPE.controller.PostController - Post with ID: 21 is in DRAFT status, sending for review
+2024-12-15 16:41:41 INFO  o.JavaPE.controller.PostController - Post with ID: 21 is in DRAFT status, sending for review
+2024-12-15 16:41:41 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 21, Author: admin
+2024-12-15 16:41:41 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 21, Author: admin
+2024-12-15 16:41:41 INFO  o.JavaPE.controller.ReviewController - Post with ID: 21 successfully submitted for review by Author: admin
+2024-12-15 16:41:41 INFO  o.JavaPE.controller.ReviewController - Post with ID: 21 successfully submitted for review by Author: admin
+2024-12-15 16:41:41 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.web.context.request.async.AsyncRequestTimeoutException
+2024-12-15 16:41:41 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:41:41 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:41:41 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:41:41 INFO  o.JavaPE.controller.PostController - Successfully fetched 11 published posts
+2024-12-15 16:41:41 INFO  o.JavaPE.controller.PostController - Successfully fetched 11 published posts
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 21 and role: EDITOR
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 21 and role: EDITOR
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 21
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 21
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 21 and role: EDITOR
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 21 and role: EDITOR
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 21
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 21
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 4 reviews.
+2024-12-15 16:41:43 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 4 reviews.
+2024-12-15 16:41:47 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:41:47 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:41:47 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:41:47 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:41:48 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.web.context.request.async.AsyncRequestTimeoutException
+2024-12-15 16:41:48 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:41:50 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 20, Reviewer: admin, Role: editor
+2024-12-15 16:41:50 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 20, Reviewer: admin, Role: editor
+2024-12-15 16:41:50 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 20 by Reviewer: admin
+2024-12-15 16:41:50 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 20 by Reviewer: admin
+2024-12-15 16:41:51 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 21, Reviewer: admin, Role: editor
+2024-12-15 16:41:51 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 21, Reviewer: admin, Role: editor
+2024-12-15 16:41:51 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 21 by Reviewer: admin
+2024-12-15 16:41:51 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 21 by Reviewer: admin
+2024-12-15 16:41:53 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:41:53 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:41:53 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:41:53 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:42:17 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.web.context.request.async.AsyncRequestTimeoutException
+2024-12-15 16:42:17 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:42:22 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:42:22 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:42:22 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:42:22 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:42:24 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:42:53 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:44:50 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:44:50 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:44:50 INFO  o.JavaPE.controller.PostController - Successfully fetched 12 published posts
+2024-12-15 16:44:50 INFO  o.JavaPE.controller.PostController - Successfully fetched 12 published posts
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.PostController - Successfully fetched 12 published posts
+2024-12-15 16:45:16 INFO  o.JavaPE.controller.PostController - Successfully fetched 12 published posts
+2024-12-15 16:45:20 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:45:20 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:45:20 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:45:20 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:45:20 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:45:20 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:45:20 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2024-12-15 16:45:20 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2024-12-15 16:45:20 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:45:20 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:45:20 INFO  o.JavaPE.controller.PostController - Successfully fetched 12 published posts
+2024-12-15 16:45:20 INFO  o.JavaPE.controller.PostController - Successfully fetched 12 published posts
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-15 16:45:21 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-15 16:45:32 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:45:32 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:45:32 INFO  o.JavaPE.controller.PostController - Successfully fetched 12 published posts
+2024-12-15 16:45:32 INFO  o.JavaPE.controller.PostController - Successfully fetched 12 published posts
+2024-12-15 16:45:40 INFO  o.J.controller.CommentController - Received request to fetch comments for post with ID: 15
+2024-12-15 16:45:40 INFO  o.J.controller.CommentController - Received request to fetch comments for post with ID: 15
+2024-12-15 16:45:40 INFO  o.J.controller.CommentController - Successfully fetched 9 comments for post with ID: 15
+2024-12-15 16:45:40 INFO  o.J.controller.CommentController - Successfully fetched 9 comments for post with ID: 15
+2024-12-15 16:45:45 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 11 by user: admin
+2024-12-15 16:45:45 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 11 by user: admin
+2024-12-15 16:45:45 INFO  o.J.controller.CommentController - Successfully deleted comment with ID: 11
+2024-12-15 16:45:45 INFO  o.J.controller.CommentController - Successfully deleted comment with ID: 11
+2024-12-15 16:45:45 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 10 by user: admin
+2024-12-15 16:45:45 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 10 by user: admin
+2024-12-15 16:45:45 INFO  o.J.controller.CommentController - Successfully deleted comment with ID: 10
+2024-12-15 16:45:45 INFO  o.J.controller.CommentController - Successfully deleted comment with ID: 10
+2024-12-15 16:45:46 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 9 by user: admin
+2024-12-15 16:45:46 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 9 by user: admin
+2024-12-15 16:45:46 INFO  o.J.controller.CommentController - Successfully deleted comment with ID: 9
+2024-12-15 16:45:46 INFO  o.J.controller.CommentController - Successfully deleted comment with ID: 9
+2024-12-15 16:45:46 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 8 by user: admin
+2024-12-15 16:45:46 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 8 by user: admin
+2024-12-15 16:45:46 INFO  o.J.controller.CommentController - Successfully deleted comment with ID: 8
+2024-12-15 16:45:46 INFO  o.J.controller.CommentController - Successfully deleted comment with ID: 8
+2024-12-15 16:45:50 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:45:51 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2024-12-15 16:45:54 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 16:46:14 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 16:46:16 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2024-12-15 16:46:26 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:46:26 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:46:26 INFO  o.J.controller.CommentController - Received request to fetch comments for post with ID: 15
+2024-12-15 16:46:26 INFO  o.J.controller.CommentController - Received request to fetch comments for post with ID: 15
+2024-12-15 16:46:26 INFO  o.J.controller.CommentController - Successfully fetched 5 comments for post with ID: 15
+2024-12-15 16:46:26 INFO  o.J.controller.CommentController - Successfully fetched 5 comments for post with ID: 15
+2024-12-15 16:46:26 INFO  o.JavaPE.controller.PostController - Successfully fetched 12 published posts
+2024-12-15 16:46:26 INFO  o.JavaPE.controller.PostController - Successfully fetched 12 published posts
+2024-12-15 16:46:28 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:46:28 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2024-12-15 16:46:28 INFO  o.JavaPE.controller.PostController - Successfully fetched 12 published posts
+2024-12-15 16:46:28 INFO  o.JavaPE.controller.PostController - Successfully fetched 12 published posts
+2024-12-15 16:46:28 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:46:28 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2024-12-15 16:46:28 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:46:28 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2024-12-15 16:46:28 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:46:28 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2024-12-15 16:46:28 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2024-12-15 16:46:28 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2024-12-15 16:46:29 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:46:29 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2024-12-15 16:46:29 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:46:29 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 19 and role: EDITOR
+2024-12-15 16:46:29 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:46:29 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 19
+2024-12-15 16:46:29 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:46:29 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 20 and role: EDITOR
+2024-12-15 16:46:29 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:46:29 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 20
+2024-12-15 16:46:29 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
+2024-12-15 16:46:29 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 2 reviews.
