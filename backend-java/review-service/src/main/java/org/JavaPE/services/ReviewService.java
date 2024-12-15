@@ -15,5 +15,6 @@ public interface ReviewService {
     void rejectReview(Long reviewId, String reviewer, String remarks);
     List<ReviewWithPostDetailsDTO> getAllReviewsWithPostDetails();
 
-    SseEmitter registerClient();
+     boolean hasActiveReviewForPost(Long postId);
+     SseEmitter registerClient();
 }

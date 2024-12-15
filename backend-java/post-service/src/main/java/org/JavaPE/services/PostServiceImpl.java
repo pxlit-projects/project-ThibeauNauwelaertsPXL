@@ -70,9 +70,20 @@ public class PostServiceImpl implements PostService {
                 !existingPost.getTitle().equals(post.getTitle());
     }
 
-    public void sendForReview(PostDTO post) {
-        ReviewRequest reviewRequest = new ReviewRequest(post.getId(), post.getAuthor());
-        reviewClient.submitPostForReview(reviewRequest);
+    public void sendForReview(PostDTO postDTO) {
+        // Save the latest version of the post before submitting for review
+        Post post = postRepository.findById(postDTO.getId())
+                .orElseThrow(() -> new PostNotFoundException("Post with ID " + postDTO.getId() + " not found."));
+
+        post.setTitle(postDTO.getTitle());
+        post.setContent(postDTO.getContent());
+        postRepository.save(post); // Save the updated post
+
+        boolean existingReview = reviewClient.hasActiveReviewForPost(post.getId());
+        if (!existingReview) {
+            ReviewRequest reviewRequest = new ReviewRequest(post.getId(), post.getAuthor());
+            reviewClient.submitPostForReview(reviewRequest);
+        }
     }
 
     @Override
@@ -111,6 +122,7 @@ public class PostServiceImpl implements PostService {
         Post post = postRepository.findById(postId)
                 .orElseThrow(() -> new PostNotFoundException("Post with ID " + postId + " not found."));
 
+        // Save the latest version of the post before publishing it
         post.setStatus(PostStatus.PUBLISHED);
         post.setLastModifiedDate(LocalDate.now());
         postRepository.save(post);
@@ -153,7 +165,6 @@ public class PostServiceImpl implements PostService {
                 .collect(Collectors.toList());
     }
 
-
     @Override
     public PostDTO getPostById(Long id) {
         Post post = postRepository.findById(id)
@@ -161,5 +172,4 @@ public class PostServiceImpl implements PostService {
 
         return postDTOConverter.convertToDTO(post);
     }
-
 }

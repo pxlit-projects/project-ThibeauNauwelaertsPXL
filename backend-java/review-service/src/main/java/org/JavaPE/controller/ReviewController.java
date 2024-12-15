@@ -25,6 +25,14 @@ public class ReviewController {
         this.reviewService = reviewService;
     }
 
+    @GetMapping("/has-active-review")
+    public ResponseEntity<Boolean> hasActiveReviewForPost(@RequestParam("postId") Long postId) {
+        logger.info("Checking for active review for postId: {}", postId);
+        boolean hasActiveReview = reviewService.hasActiveReviewForPost(postId);
+        logger.info("Active review for postId {}: {}", postId, hasActiveReview);
+        return ResponseEntity.ok(hasActiveReview);
+    }
+
     @PostMapping("/submit")
     public ResponseEntity<String> submitPostForReview(
             @RequestBody ReviewRequest reviewRequest) {

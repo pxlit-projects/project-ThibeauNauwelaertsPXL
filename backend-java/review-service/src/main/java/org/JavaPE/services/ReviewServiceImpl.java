@@ -47,6 +47,11 @@ public class ReviewServiceImpl implements ReviewService {
         reviewRepository.save(review);
     }
 
+    // Check if there is an active review for a post
+    public boolean hasActiveReviewForPost(Long postId) {
+        return reviewRepository.existsByPostIdAndStatus(postId, "PENDING");
+    }
+
     // Approve a review and delegate post publishing to PostService
     public void approveReview(Long reviewId, String reviewer) {
         Review review = reviewRepository.findById(reviewId)

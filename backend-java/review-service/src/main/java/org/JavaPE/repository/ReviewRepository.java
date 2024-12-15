@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface ReviewRepository extends JpaRepository<Review, Long> {
     List<Review> findByStatus(String status);
+
+    boolean existsByPostIdAndStatus(Long postId, String pending);
 }
