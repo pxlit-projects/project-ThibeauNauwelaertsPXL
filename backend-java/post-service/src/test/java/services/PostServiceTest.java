@@ -44,67 +44,49 @@ class PostServiceTest {
 
     @Test
     void testCreatePost() {
+        // Mocking PostDTO and its conversion
         PostDTO postDTO = mock(PostDTO.class);
-        Post post = mock(Post.class);
-        Post savedPost = mock(Post.class);
-        PostDTO savedPostDTO = mock(PostDTO.class);
+        when(postDTO.getId()).thenReturn(1L); // Mock ID for PostDTO
 
+        Post post = mock(Post.class);
         when(postDTOConverter.convertToEntity(postDTO)).thenReturn(post);
+
+        when(post.getId()).thenReturn(null); // Ensure post is treated as new
+        when(post.getTitle()).thenReturn("title");
+        when(post.getContent()).thenReturn("content");
+
+        Post savedPost = mock(Post.class);
         when(postRepository.save(post)).thenReturn(savedPost);
+        when(savedPost.getId()).thenReturn(1L);
+        when(savedPost.getTitle()).thenReturn("title");
+        when(savedPost.getContent()).thenReturn("content");
+
+        PostDTO savedPostDTO = mock(PostDTO.class);
         when(postDTOConverter.convertToDTO(savedPost)).thenReturn(savedPostDTO);
 
-        PostDTO result = postService.createPost(postDTO);
+        // Mocking convertToDTO for 'post' used in sendForReview
+        when(postDTOConverter.convertToDTO(post)).thenReturn(postDTO);
 
+        // Mocking postRepository.findById used in sendForReview
+        when(postRepository.findById(1L)).thenReturn(Optional.of(savedPost));
+
+        // Mocking reviewClient interactions
+        when(reviewClient.hasActiveReviewForPost(1L)).thenReturn(false);
+        doNothing().when(reviewClient).submitPostForReview(any());
+
+        // Execute the service method
+        PostDTO result = postService.createOrUpdateDraft(postDTO);
+
+        // Assertions
         assertNotNull(result);
         verify(postDTOConverter).convertToEntity(postDTO);
         verify(postRepository).save(post);
         verify(postDTOConverter).convertToDTO(savedPost);
+        verify(postDTOConverter).convertToDTO(post);
+        verify(postRepository).findById(1L);
+        verify(reviewClient).hasActiveReviewForPost(1L);
+        verify(reviewClient).submitPostForReview(any());
     }
-
-    @Test
-    void testSaveDraft() {
-        // Arrange
-        PostDTO postDTO = mock(PostDTO.class);
-        Post post = mock(Post.class);
-        Post savedPost = mock(Post.class);
-        PostDTO savedPostDTO = mock(PostDTO.class);
-
-        when(postDTO.getId()).thenReturn(1L);
-        when(postDTO.getTitle()).thenReturn("Updated Title");
-        when(postDTO.getContent()).thenReturn("Updated Content");
-
-        when(postDTOConverter.convertToEntity(postDTO)).thenReturn(post);
-
-        when(post.getId()).thenReturn(1L);
-        when(post.getTitle()).thenReturn("Old Title");
-        when(post.getContent()).thenReturn("Old Content");
-
-        when(savedPost.getId()).thenReturn(1L);
-        when(savedPost.getTitle()).thenReturn("Updated Title");
-        when(savedPost.getContent()).thenReturn("Updated Content");
-
-        when(postRepository.findById(1L)).thenReturn(Optional.of(post));
-
-        when(postRepository.save(post)).thenReturn(savedPost);
-
-        when(postDTOConverter.convertToDTO(savedPost)).thenReturn(savedPostDTO);
-
-        when(savedPostDTO.getId()).thenReturn(1L);
-
-        // Act
-        PostDTO result = postService.saveDraft(postDTO);
-
-        // Assert
-        assertNotNull(result);
-        verify(postDTOConverter).convertToEntity(postDTO);
-        verify(post).setStatus(PostStatus.DRAFT);
-        verify(post).setLastModifiedDate(any(LocalDate.class));
-        verify(postRepository, times(2)).save(post); // Expecting two saves
-        verify(postDTOConverter, times(2)).convertToDTO(savedPost); // Expecting two conversions
-        verify(postRepository, times(2)).findById(1L); // Expecting two findById calls
-    }
-
-
 
     @Test
     void testGetPublishedPostById_Success() {
