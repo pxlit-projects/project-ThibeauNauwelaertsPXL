@@ -44,23 +44,16 @@ public class PostController {
             @RequestHeader(value = "X-User-Role", required = false) String role,
             @PathVariable Long id,
             @RequestBody PostDTO postDTO) {
-        logger.info("Received request to update post with ID: {} and role: {}", id, role);
-
         if (!"editor".equals(role)) {
-            logger.warn("Unauthorized attempt to update post with ID: {}. Role: {}", id, role);
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
 
+        // Just update fields (no “new vs updated” logic):
         PostDTO updatedPost = postService.editPost(id, postDTO);
-        logger.info("Post with ID: {} updated successfully", id);
-
-        if (PostStatus.DRAFT.toString().equals(updatedPost.getStatus())) {
-            logger.info("Post with ID: {} is in DRAFT status, sending for review", id);
-            postService.sendForReview(updatedPost);
-        }
 
         return ResponseEntity.ok(updatedPost);
     }
+
 
     @GetMapping("/published")
     public ResponseEntity<List<PostDTO>> getPublishedPosts(

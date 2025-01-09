@@ -26,10 +26,13 @@ public class ReviewServiceImpl implements ReviewService {
     private final RabbitTemplate rabbitTemplate;
     private final ApplicationEventPublisher eventPublisher;
 
-    // List to hold all SSE emitters (connected clients)
     private final List<SseEmitter> emitters = new CopyOnWriteArrayList<>();
 
-    public ReviewServiceImpl(ReviewRepository reviewRepository, PostService postService, PostClient postClient, RabbitTemplate rabbitTemplate, ApplicationEventPublisher eventPublisher) {
+    public ReviewServiceImpl(ReviewRepository reviewRepository,
+                             PostService postService,
+                             PostClient postClient,
+                             RabbitTemplate rabbitTemplate,
+                             ApplicationEventPublisher eventPublisher) {
         this.reviewRepository = reviewRepository;
         this.postService = postService;
         this.postClient = postClient;
@@ -39,39 +42,51 @@ public class ReviewServiceImpl implements ReviewService {
 
     // Submit a post for review
     public void submitForReview(Long postId, String author) {
+        System.out.println("=== ReviewService: submitForReview() ===");
+        System.out.println("postId=" + postId + ", author=" + author);
+
         Review review = new Review();
         review.setPostId(postId);
         review.setAuthor(author);
         review.setStatus("PENDING");
         review.setSubmittedAt(LocalDateTime.now());
         reviewRepository.save(review);
+
+        System.out.println("Review created => ID=" + review.getId()
+                + ", postId=" + postId + ", status=PENDING");
     }
 
-    // Check if there is an active review for a post
     public boolean hasActiveReviewForPost(Long postId) {
-        return reviewRepository.existsByPostIdAndStatus(postId, "PENDING");
+        System.out.println("=== ReviewService: hasActiveReviewForPost() ===");
+        boolean exists = reviewRepository.existsByPostIdAndStatus(postId, "PENDING");
+        System.out.println("postId=" + postId + ", hasActiveReview=" + exists);
+        return exists;
     }
 
-    // Approve a review and delegate post publishing to PostService
     public void approveReview(Long reviewId, String reviewer) {
+        System.out.println("=== ReviewService: approveReview() ===");
+        System.out.println("reviewId=" + reviewId + ", reviewer=" + reviewer);
+
         Review review = reviewRepository.findById(reviewId)
                 .orElseThrow(() -> new RuntimeException("Review not found"));
 
-        // Use PostService to publish the post
+        System.out.println("Approving review => postId=" + review.getPostId());
         postService.publishPost(review.getPostId());
 
-        // Remove the review after approval
         reviewRepository.delete(review);
 
         sendNotification(review.getPostId(), "approved", reviewer, null);
     }
 
-    // Reject a review
     public void rejectReview(Long reviewId, String reviewer, String remarks) {
+        System.out.println("=== ReviewService: rejectReview() ===");
+        System.out.println("reviewId=" + reviewId
+                + ", reviewer=" + reviewer
+                + ", remarks=" + remarks);
+
         Review review = reviewRepository.findById(reviewId)
                 .orElseThrow(() -> new RuntimeException("Review not found"));
 
-        // Update review status
         review.setStatus("REJECTED");
         review.setReviewer(reviewer);
         review.setRemarks(remarks);
@@ -79,32 +94,44 @@ public class ReviewServiceImpl implements ReviewService {
 
         reviewRepository.save(review);
 
-        sendNotification(review.getPostId(), "rejected", reviewer, remarks);
+        System.out.println("Rejected review => ID=" + review.getId()
+                + ", postId=" + review.getPostId()
+                + ", remarks=" + review.getRemarks());
 
+        sendNotification(review.getPostId(), "rejected", reviewer, remarks);
     }
 
+    public void removePendingReviewForPost(Long postId) {
+        System.out.println("=== ReviewService: removePendingReviewForPost() ===");
+        System.out.println("Deleting PENDING review for postId=" + postId);
 
-    // Send notification to RabbitMQ and to SSE clients
+        reviewRepository.deleteByPostIdAndStatus(postId, "PENDING");
+    }
+
     private void sendNotification(Long postId, String status, String reviewer, String remarks) {
+        System.out.println("=== ReviewService: sendNotification() ===");
+        System.out.println("postId=" + postId
+                + ", status=" + status
+                + ", reviewer=" + reviewer
+                + ", remarks=" + remarks);
+
         NotificationMessage message = new NotificationMessage();
         message.setPostId(postId);
         message.setStatus(status);
         message.setReviewer(reviewer);
         message.setRemarks(remarks);
 
-        // Send to RabbitMQ
         rabbitTemplate.convertAndSend("notificationExchange", "notification.key", message);
         System.out.println("Notification sent to RabbitMQ: " + message);
 
-        // Publish the message to SSE clients
         publishToSseClients(message);
     }
 
-    // Publish notification to SSE clients
     private void publishToSseClients(NotificationMessage message) {
+        System.out.println("=== ReviewService: publishToSseClients() ===");
         for (SseEmitter emitter : emitters) {
             try {
-                emitter.send(message);  // Send the notification to connected clients
+                emitter.send(message);
             } catch (IOException e) {
                 emitter.completeWithError(e);
             }
@@ -112,11 +139,17 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     public List<ReviewWithPostDetailsDTO> getAllReviewsWithPostDetails() {
+        System.out.println("=== ReviewService: getAllReviewsWithPostDetails() ===");
         List<Review> reviews = reviewRepository.findAll();
 
-        // Filter out rejected reviews and combine Review and Post Details
-        return reviews.stream()
+        // ignoring REJECTED in final result
+        List<Review> filtered = reviews.stream()
                 .filter(review -> !"REJECTED".equalsIgnoreCase(review.getStatus()))
+                .collect(Collectors.toList());
+
+        System.out.println("Number of non-REJECTED reviews found: " + filtered.size());
+
+        return filtered.stream()
                 .map(review -> {
                     PostResponse postResponse = postClient.getPostById(review.getPostId(), "EDITOR");
                     return new ReviewWithPostDetailsDTO(
@@ -128,20 +161,26 @@ public class ReviewServiceImpl implements ReviewService {
                             review.getRemarks(),
                             review.getSubmittedAt() != null ? review.getSubmittedAt().toString() : null,
                             review.getReviewedAt() != null ? review.getReviewedAt().toString() : null,
-                            postResponse != null ? postResponse.getTitle() : "Unknown Title",
-                            postResponse != null ? postResponse.getContent() : "Unknown Content"
+                            (postResponse != null ? postResponse.getTitle() : "Unknown Title"),
+                            (postResponse != null ? postResponse.getContent() : "Unknown Content")
                     );
-                }).collect(Collectors.toList());
+                })
+                .collect(Collectors.toList());
     }
 
-    // Register new SSE clients
     public SseEmitter registerClient() {
+        System.out.println("=== ReviewService: registerClient() ===");
         SseEmitter emitter = new SseEmitter();
         emitters.add(emitter);
 
-        emitter.onCompletion(() -> emitters.remove(emitter));
-        emitter.onTimeout(() -> emitters.remove(emitter));
-
+        emitter.onCompletion(() -> {
+            System.out.println("SSE client onCompletion => removing emitter");
+            emitters.remove(emitter);
+        });
+        emitter.onTimeout(() -> {
+            System.out.println("SSE client onTimeout => removing emitter");
+            emitters.remove(emitter);
+        });
         return emitter;
     }
 }

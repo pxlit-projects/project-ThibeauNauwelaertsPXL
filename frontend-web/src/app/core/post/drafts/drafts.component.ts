@@ -71,19 +71,13 @@ export class DraftPostsComponent implements OnInit {
     if (post) {
       post.remarks = notification.remarks || 'No remarks';
       post.status = notification.status === 'rejected' ? 'REJECTED' : post.status;
-
-      this.postService.updatePost(post.id, post).subscribe({
-        next: (updatedPost) => {
-          console.log('Draft updated with feedback:', updatedPost);
-          this.showToast(`Post "${post.title}" updated successfully`, 'success');
-        },
-        error: (err) => {
-          console.error('Error updating draft post:', err);
-          this.showToast(`Error updating post "${post.title}"`, 'error');
-        },
-      });
-    } else {
-      this.showToast(`Post with ID ${notification.postId} not found`, 'error');
+  
+      // Instead of sending the entire old post object (which has stale title/content):
+      // either skip this call, or do a partial "PATCH" with only status + remarks if you have such an endpoint,
+      // so you don't blow away the new title/content.
+  
+      // E.g. remove or comment out the updatePost call:
+      // this.postService.updatePost(post.id, { status: post.status, remarks: post.remarks }).subscribe(...);
     }
   }
 

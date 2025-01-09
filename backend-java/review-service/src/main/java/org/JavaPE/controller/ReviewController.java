@@ -116,6 +116,12 @@ public class ReviewController {
         }
     }
 
+    @DeleteMapping("/pending/{postId}")
+    public ResponseEntity<Void> deletePendingReviewForPost(@PathVariable Long postId) {
+        reviewService.removePendingReviewForPost(postId);
+        return ResponseEntity.ok().build();
+    }
+
     @GetMapping("/notifications")
     public SseEmitter getNotifications(){
         logger.info("New client connected for notifications");

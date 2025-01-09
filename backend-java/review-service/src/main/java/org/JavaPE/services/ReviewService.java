@@ -13,6 +13,7 @@ public interface ReviewService {
     void approveReview(Long reviewId, String reviewer);
 
     void rejectReview(Long reviewId, String reviewer, String remarks);
+    void removePendingReviewForPost(Long postId);
     List<ReviewWithPostDetailsDTO> getAllReviewsWithPostDetails();
 
      boolean hasActiveReviewForPost(Long postId);
