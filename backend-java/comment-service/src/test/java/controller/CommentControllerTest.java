@@ -5,38 +5,37 @@ import org.JavaPE.controller.DTO.CommentDTO;
 import org.JavaPE.services.CommentService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.InjectMocks;
-import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.test.web.servlet.ResultActions;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-class CommentControllerTest {
+@WebMvcTest(CommentController.class)
+@ContextConfiguration(classes = {CommentController.class})
+public class CommentControllerTest {
 
+    @Autowired
     private MockMvc mockMvc;
 
-    @InjectMocks
-    private CommentController commentController;
-
-    @Mock
+    @MockBean
     private CommentService commentService;
 
     private CommentDTO commentDTO;
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(this);
-        mockMvc = MockMvcBuilders.standaloneSetup(commentController).build();
-
+        // Initialize a sample CommentDTO object
         commentDTO = new CommentDTO(1L, 1L, "Author", "Test Content", LocalDateTime.now());
     }
 
@@ -46,10 +45,12 @@ class CommentControllerTest {
         Long postId = 1L;
         when(commentService.addCommentToPost(eq(postId), any(CommentDTO.class))).thenReturn(commentDTO);
 
+        String commentContent = "{\"author\": \"Author\", \"content\": \"Test Content\"}";
+
         // Act
         ResultActions result = mockMvc.perform(post("/comments/post/{postId}", postId)
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"author\": \"Author\", \"content\": \"Test Content\"}"));
+                .content(commentContent));
 
         // Assert
         result.andExpect(status().isOk())
@@ -58,7 +59,7 @@ class CommentControllerTest {
                 .andExpect(jsonPath("$.author").value(commentDTO.getAuthor()))
                 .andExpect(jsonPath("$.content").value(commentDTO.getContent()));
 
-        verify(commentService).addCommentToPost(eq(postId), any(CommentDTO.class));
+        verify(commentService, times(1)).addCommentToPost(eq(postId), any(CommentDTO.class));
     }
 
     @Test
@@ -77,7 +78,7 @@ class CommentControllerTest {
                 .andExpect(jsonPath("$[0].author").value(commentDTO.getAuthor()))
                 .andExpect(jsonPath("$[0].content").value(commentDTO.getContent()));
 
-        verify(commentService).getCommentsByPostId(postId);
+        verify(commentService, times(1)).getCommentsByPostId(postId);
     }
 
     @Test
@@ -86,10 +87,12 @@ class CommentControllerTest {
         Long commentId = 1L;
         when(commentService.updateComment(eq(commentId), any(CommentDTO.class))).thenReturn(commentDTO);
 
+        String updateContent = "{\"author\": \"Author\", \"content\": \"Updated Content\"}";
+
         // Act
         ResultActions result = mockMvc.perform(put("/comments/{commentId}", commentId)
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"author\": \"Author\", \"content\": \"Updated Content\"}"));
+                .content(updateContent));
 
         // Assert
         result.andExpect(status().isOk())
@@ -98,7 +101,7 @@ class CommentControllerTest {
                 .andExpect(jsonPath("$.author").value(commentDTO.getAuthor()))
                 .andExpect(jsonPath("$.content").value(commentDTO.getContent()));
 
-        verify(commentService).updateComment(eq(commentId), any(CommentDTO.class));
+        verify(commentService, times(1)).updateComment(eq(commentId), any(CommentDTO.class));
     }
 
     @Test
@@ -106,6 +109,7 @@ class CommentControllerTest {
         // Arrange
         Long commentId = 1L;
         String currentUser = "Author";
+        doNothing().when(commentService).deleteComment(commentId, currentUser);
 
         // Act
         ResultActions result = mockMvc.perform(delete("/comments/{commentId}", commentId)
@@ -114,7 +118,7 @@ class CommentControllerTest {
         // Assert
         result.andExpect(status().isNoContent());
 
-        verify(commentService).deleteComment(commentId, currentUser);
+        verify(commentService, times(1)).deleteComment(commentId, currentUser);
     }
 
     @Test
@@ -124,11 +128,13 @@ class CommentControllerTest {
         String currentUser = "Author";
         when(commentService.editComment(eq(commentId), eq(currentUser), any(CommentDTO.class))).thenReturn(commentDTO);
 
+        String editContent = "{\"author\": \"Author\", \"content\": \"Edited Content\"}";
+
         // Act
         ResultActions result = mockMvc.perform(put("/comments/{commentId}/edit", commentId)
                 .header("X-User-Role", currentUser)
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"author\": \"Author\", \"content\": \"Edited Content\"}"));
+                .content(editContent));
 
         // Assert
         result.andExpect(status().isOk())
@@ -137,6 +143,6 @@ class CommentControllerTest {
                 .andExpect(jsonPath("$.author").value(commentDTO.getAuthor()))
                 .andExpect(jsonPath("$.content").value(commentDTO.getContent()));
 
-        verify(commentService).editComment(eq(commentId), eq(currentUser), any(CommentDTO.class));
+        verify(commentService, times(1)).editComment(eq(commentId), eq(currentUser), any(CommentDTO.class));
     }
 }
