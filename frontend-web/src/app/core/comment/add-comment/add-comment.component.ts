@@ -13,8 +13,8 @@ import { Comment } from '../../../shared/models/comment.model';
   styleUrls: ['./add-comment.component.css'],
 })
 export class AddCommentComponent {
-  @Input() postId!: number; // Input to receive the postId from CommentsComponent
-  @Output() commentAdded = new EventEmitter<void>(); // Notify parent when a comment is added
+  @Input() postId!: number; 
+  @Output() commentAdded = new EventEmitter<void>(); 
 
   newComment: Comment = { id: 0, postId: 0, author: '', content: '' };
 
@@ -35,8 +35,8 @@ export class AddCommentComponent {
 
     this.commentService.addCommentToPost(this.newComment.postId, this.newComment).subscribe({
       next: () => {
-        this.newComment.content = ''; // Clear the textarea after successful submission
-        this.commentAdded.emit(); // Notify the parent to refresh the comment list
+        this.newComment.content = '';
+        this.commentAdded.emit(); 
       },
       error: (err) => {
         console.error('Failed to add comment:', err);

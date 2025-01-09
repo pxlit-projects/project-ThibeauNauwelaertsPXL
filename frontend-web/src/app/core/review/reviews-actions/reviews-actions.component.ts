@@ -25,7 +25,7 @@ export class ReviewActionsComponent {
     this.reviewService.approveReview(this.reviewId, reviewer).subscribe({
       next: () => {
         console.log(`Review ${this.reviewId} approved.`);
-        this.reviewApproved.emit(this.reviewId); // Notify parent component
+        this.reviewApproved.emit(this.reviewId);
       },
       error: (error) => {
         console.error(`Error approving review ${this.reviewId}:`, error);

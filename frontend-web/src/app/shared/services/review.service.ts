@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Review } from '../models/review.model';
 import { RejectRequest } from '../models/reject-request.model';
-import { ReviewRequest } from '../models/review-request.model';
+import { ReviewRequest } from '../models/ReviewRequest.model';
 
 @Injectable({
   providedIn: 'root',

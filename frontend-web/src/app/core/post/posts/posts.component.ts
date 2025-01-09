@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../../shared/services/post.service';
 import { Router } from '@angular/router';
-import { Post } from '../../../shared/models/post.model';
 import { FormsModule } from '@angular/forms';
+import { Post } from '../../../shared/models/post.model';
 
 @Component({
   selector: 'app-posts',

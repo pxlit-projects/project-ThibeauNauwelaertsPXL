@@ -115,11 +115,6 @@ export class DraftPostsComponent implements OnInit {
     this.router.navigate(['/edit-post', postId]);
   }
 
-  /**
-   * Shows a toast message
-   * @param message The message to display
-   * @param type The type of message ('success', 'error', 'info', 'warning')
-   */
   showToast(message: string, type: 'success' | 'error' | 'info' | 'warning' = 'info'): void {
     const id = this.toastCounter++;
     this.toasts.push({ id, message, type });
@@ -130,10 +125,6 @@ export class DraftPostsComponent implements OnInit {
     }, 5000);
   }
 
-  /**
-   * Removes a toast message
-   * @param id The unique ID of the toast to remove
-   */
   removeToast(id: number): void {
     this.toasts = this.toasts.filter(toast => toast.id !== id);
   }
