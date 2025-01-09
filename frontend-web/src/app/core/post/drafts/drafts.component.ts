@@ -1,15 +1,16 @@
 import { Component, OnInit, NgZone } from '@angular/core';
-import { Post, PostService } from '../../../shared/services/post.service';
+import { PostService } from '../../../shared/services/post.service';
 import { Router } from '@angular/router';
 import { NotificationMessage } from '../../../shared/models/notification-message.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Post } from '../../../shared/models/post.model';
 
 @Component({
   selector: 'app-draft-posts',
   templateUrl: './drafts.component.html',
   styleUrls: ['./drafts.component.css'],
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule, CommonModule],
   standalone: true,
 })
 export class DraftPostsComponent implements OnInit {

@@ -10,53 +10,65 @@
     </div>
 
     <!-- Draft Posts Section -->
-    <div *ngIf="draftPosts.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div *ngFor="let post of draftPosts" class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300">
-        <h3 class="text-2xl font-bold text-blue-500 mb-4 cursor-pointer" (click)="editPost(post.id)">
-          {{ post.title || 'Untitled Draft' }}
-        </h3>
-        <p class="text-gray-700 mb-4">{{ post.content || 'No content available.' }}</p>
-        <p class="text-gray-500 text-sm">Author: {{ post.author || 'Unknown' }}</p>
-        <p class="text-gray-500 text-sm">Created: <time>{{ post.createdDate || 'N/A' }}</time></p>
-        <p class="text-gray-500 text-sm">Last Modified: <time>{{ post.lastModifiedDate || 'N/A' }}</time></p>
-        <p>
-          Status:
+    @if (draftPosts.length > 0) {
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (post of draftPosts; track post) {
+          <div class="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300">
+            <h3 class="text-2xl font-bold text-blue-500 mb-4 cursor-pointer" (click)="editPost(post.id)">
+              {{ post.title || 'Untitled Draft' }}
+            </h3>
+            <p class="text-gray-700 mb-4">{{ post.content || 'No content available.' }}</p>
+            <p class="text-gray-500 text-sm">Author: {{ post.author || 'Unknown' }}</p>
+            <p class="text-gray-500 text-sm">Created: <time>{{ post.createdDate || 'N/A' }}</time></p>
+            <p class="text-gray-500 text-sm">Last Modified: <time>{{ post.lastModifiedDate || 'N/A' }}</time></p>
+            <p>
+              Status:
           <span [ngClass]="{
             'text-red-500 font-bold': post.status === 'REJECTED',
             'text-green-500 font-bold': post.status === 'APPROVED',
             'text-yellow-500 font-bold': post.status === 'PENDING'
           }">
-            {{ post.status || 'PENDING' }}
-          </span>
-        </p>
-        <p *ngIf="post.remarks" class="text-sm text-red-500">Remarks: {{ post.remarks || 'None' }}</p>
-        <div *ngIf="post.status === 'REJECTED'" class="mt-4">
-          <p class="text-sm text-gray-700 italic mb-2">This post was rejected. Please edit to resubmit.</p>
-          <button class="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600 transition" (click)="editPost(post.id)">
-            Edit Post
-          </button>
-        </div>
+                {{ post.status || 'PENDING' }}
+              </span>
+            </p>
+            @if (post.remarks) {
+              <p class="text-sm text-red-500">Remarks: {{ post.remarks || 'None' }}</p>
+            }
+            @if (post.status === 'REJECTED') {
+              <div class="mt-4">
+                <p class="text-sm text-gray-700 italic mb-2">This post was rejected. Please edit to resubmit.</p>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600 transition" (click)="editPost(post.id)">
+                  Edit Post
+                </button>
+              </div>
+            }
+          </div>
+        }
       </div>
-    </div>
+    }
 
-    <div *ngIf="draftPosts.length === 0" class="text-center mt-12">
-      <p class="text-2xl font-semibold text-gray-700">No draft posts available.</p>
-      <p class="text-gray-500 mt-4">Start creating draft posts to manage your content!</p>
-    </div>
+    @if (draftPosts.length === 0) {
+      <div class="text-center mt-12">
+        <p class="text-2xl font-semibold text-gray-700">No draft posts available.</p>
+        <p class="text-gray-500 mt-4">Start creating draft posts to manage your content!</p>
+      </div>
+    }
 
     <!-- Toast Notifications -->
     <div class="fixed bottom-4 right-4 space-y-4 z-50">
-      <div *ngFor="let toast of toasts" 
+      @for (toast of toasts; track toast) {
+        <div
            [ngClass]="{
              'bg-green-500 text-white': toast.type === 'success',
              'bg-red-500 text-white': toast.type === 'error',
              'bg-yellow-500 text-white': toast.type === 'warning',
              'bg-blue-500 text-white': toast.type === 'info'
            }" 
-           class="flex items-center p-4 rounded shadow-lg">
-        <span class="flex-1">{{ toast.message }}</span>
-        <button class="ml-4 text-white hover:text-gray-100 focus:outline-none" (click)="removeToast(toast.id)">✕</button>
-      </div>
+          class="flex items-center p-4 rounded shadow-lg">
+          <span class="flex-1">{{ toast.message }}</span>
+          <button class="ml-4 text-white hover:text-gray-100 focus:outline-none" (click)="removeToast(toast.id)">✕</button>
+        </div>
+      }
     </div>
   </div>
 </div>

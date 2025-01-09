@@ -3,57 +3,58 @@
     <h1 class="text-3xl font-extrabold text-center text-gray-800 mb-8">Reviews</h1>
 
     <!-- Display Reviews -->
-    <div *ngIf="reviews.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div
-        *ngFor="let review of reviews"
-        class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
-      >
-        <!-- Post Title -->
-        <h3 class="text-lg font-semibold text-blue-600 mb-2">{{ review.postTitle }}</h3>
-
-        <!-- Post Content -->
-        <p class="text-gray-800 text-sm mb-4">
-          <strong>Content:</strong> {{ review.postContent }}
-        </p>
-
-        <!-- Review Status -->
-        <p class="mb-3 text-sm">
-          <strong>Status:</strong>
-          <span
+    @if (reviews.length > 0) {
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (review of reviews; track review) {
+          <div
+            class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
+            <!-- Post Title -->
+            <h3 class="text-lg font-semibold text-blue-600 mb-2">{{ review.postTitle }}</h3>
+            <!-- Post Content -->
+            <p class="text-gray-800 text-sm mb-4">
+              <strong>Content:</strong> {{ review.postContent }}
+            </p>
+            <!-- Review Status -->
+            <p class="mb-3 text-sm">
+              <strong>Status:</strong>
+              <span
             [ngClass]="{
               'text-yellow-600': review.status === 'PENDING',
               'text-green-600': review.status === 'APPROVED'
             }"
-          >
-            {{ review.status }}
-          </span>
-        </p>
-
-        <!-- Remarks -->
-        <p class="text-gray-600 text-sm mb-4">
-          <strong>Remarks:</strong> {{ review.remarks || 'None' }}
-        </p>
-
-        <!-- Author and Metadata -->
-        <div class="text-gray-500 text-sm border-t pt-3">
-          <p><strong>Author:</strong> {{ review.author || 'Unknown' }}</p>
-          <p><strong>Submitted At:</strong> {{ review.submittedAt | date: 'MMM d, y, h:mm a' }}</p>
-          <p><strong>Reviewer:</strong> {{ review.reviewer || 'N/A' }}</p>
-        </div>
-
-        <!-- Review Actions -->
-        <app-review-actions
-          *ngIf="review.status === 'PENDING'"
-          [reviewId]="review.reviewId"
-          (reviewApproved)="removeReviewFromList($event)"
-          (reviewRejected)="removeReviewFromList($event)">
-        </app-review-actions>
+                >
+                {{ review.status }}
+              </span>
+            </p>
+            <!-- Remarks -->
+            <p class="text-gray-600 text-sm mb-4">
+              <strong>Remarks:</strong> {{ review.remarks || 'None' }}
+            </p>
+            <!-- Author and Metadata -->
+            <div class="text-gray-500 text-sm border-t pt-3">
+              <p><strong>Author:</strong> {{ review.author || 'Unknown' }}</p>
+              <p><strong>Submitted At:</strong> {{ review.submittedAt | date: 'MMM d, y, h:mm a' }}</p>
+              <p><strong>Reviewer:</strong> {{ review.reviewer || 'N/A' }}</p>
+            </div>
+            <!-- Review Actions -->
+            @if (review.status === 'PENDING') {
+              <app-review-actions
+                [reviewId]="review.reviewId"
+                (reviewApproved)="removeReviewFromList($event)"
+                (reviewRejected)="removeReviewFromList($event)">
+              </app-review-actions>
+            }
+          </div>
+        }
       </div>
-    </div>
+    }
 
     <!-- No Reviews Available -->
-    <div *ngIf="!loading && reviews.length === 0" class="text-center text-gray-500 mt-10">
-      No reviews available.
-    </div>
+    @if (!loading && reviews.length === 0) {
+      <div class="text-center text-gray-500 mt-10">
+        No reviews available.
+      </div>
+    }
   </div>
 </div>

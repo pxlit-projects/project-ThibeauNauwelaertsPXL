@@ -1,7 +1,7 @@
 <div class="min-h-screen w-full bg-blue-500 flex items-center justify-center">
   <div class="max-w-lg w-full bg-white p-6 rounded-lg shadow-lg">
     <h1 class="text-3xl font-bold text-center mb-6 text-blue-600">Edit Post</h1>
-    
+
     <form [formGroup]="postForm" (ngSubmit)="updatePost()">
       <!-- Title Field -->
       <div class="mb-4">
@@ -11,34 +11,38 @@
           formControlName="title"
           class="w-full p-3 mt-2 border border-gray-300 rounded-lg"
           placeholder="Enter post title"
-        />
-        <div *ngIf="postForm.get('title')?.invalid && postForm.get('title')?.touched" class="text-red-500 text-sm">
-          Title is required.
+          />
+          @if (postForm.get('title')?.invalid && postForm.get('title')?.touched) {
+            <div class="text-red-500 text-sm">
+              Title is required.
+            </div>
+          }
         </div>
-      </div>
 
-      <!-- Content Field -->
-      <div class="mb-4">
-        <label for="content" class="block text-gray-700 font-medium">Content</label>
-        <textarea
-          id="content"
-          formControlName="content"
-          class="w-full p-3 mt-2 border border-gray-300 rounded-lg"
-          placeholder="Enter post content"
-        ></textarea>
-        <div *ngIf="postForm.get('content')?.invalid && postForm.get('content')?.touched" class="text-red-500 text-sm">
-          Content is required.
+        <!-- Content Field -->
+        <div class="mb-4">
+          <label for="content" class="block text-gray-700 font-medium">Content</label>
+          <textarea
+            id="content"
+            formControlName="content"
+            class="w-full p-3 mt-2 border border-gray-300 rounded-lg"
+            placeholder="Enter post content"
+          ></textarea>
+          @if (postForm.get('content')?.invalid && postForm.get('content')?.touched) {
+            <div class="text-red-500 text-sm">
+              Content is required.
+            </div>
+          }
         </div>
-      </div>
 
-      <!-- Submit Button -->
-      <button
-        type="submit"
-        class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
-        [disabled]="postForm.invalid"
-      >
-        Update Post
-      </button>
-    </form>
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+          [disabled]="postForm.invalid"
+          >
+          Update Post
+        </button>
+      </form>
+    </div>
   </div>
-</div>

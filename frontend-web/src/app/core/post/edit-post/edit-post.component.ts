@@ -7,12 +7,12 @@ import {
 } from '@angular/forms';
 import { Post, PostService } from '../../../shared/services/post.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 import { AuthService } from '../../../shared/services/auth.service';
 
 @Component({
   selector: 'app-edit-post',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule],
   standalone: true,
   templateUrl: './edit-post.component.html',
   styleUrls: ['./edit-post.component.css'],

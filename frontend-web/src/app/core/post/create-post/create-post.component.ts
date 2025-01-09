@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Post, PostService } from '../../../shared/services/post.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../shared/services/auth.service';
-import { CommonModule } from '@angular/common';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { catchError, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -11,7 +11,7 @@ import { of } from 'rxjs';
 @Component({
   selector: 'app-create-post',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './create-post.component.html',
   styleUrls: ['./create-post.component.css'],
 })

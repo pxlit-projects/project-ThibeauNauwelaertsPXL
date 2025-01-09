@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { ReviewService, RejectRequest } from '../../../shared/services/review.service';
+import { ReviewService } from '../../../shared/services/review.service';
 import { AuthService } from '../../../shared/services/auth.service';
+import { RejectRequest } from '../../../shared/models/reject-request.model';
 
 @Component({
   selector: 'app-review-actions',

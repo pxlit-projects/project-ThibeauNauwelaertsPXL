@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post, PostService } from '../../../shared/services/post.service';
 import { Router } from '@angular/router';
-import { CommonModule, NgForOf } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css'],
   standalone: true,
-  imports: [CommonModule, NgForOf, FormsModule],
+  imports: [FormsModule],
 })
 export class PostsComponent implements OnInit {
   posts: Post[] = [];

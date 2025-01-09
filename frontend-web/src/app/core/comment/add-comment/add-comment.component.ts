@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { CommentService, Comment } from '../../../shared/services/comment.service';
 import { AuthService } from '../../../shared/services/auth.service';
@@ -7,7 +7,7 @@ import { AuthService } from '../../../shared/services/auth.service';
 @Component({
   selector: 'app-add-comment',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule],
   templateUrl: './add-comment.component.html',
   styleUrls: ['./add-comment.component.css'],
 })

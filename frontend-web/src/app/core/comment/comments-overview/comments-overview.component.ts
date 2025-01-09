@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CommentService, Comment } from '../../../shared/services/comment.service';
-import { CommonModule } from '@angular/common';
+import { CommentService } from '../../../shared/services/comment.service';
+import { Comment } from '../../../shared/models/comment.model';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../../shared/services/auth.service';
 import { AddCommentComponent } from '../add-comment/add-comment.component';
@@ -9,7 +9,7 @@ import { AddCommentComponent } from '../add-comment/add-comment.component';
 @Component({
   selector: 'app-comments',
   standalone: true,
-  imports: [CommonModule, FormsModule, AddCommentComponent],
+  imports: [FormsModule, AddCommentComponent],
   templateUrl: './comments-overview.component.html',
   styleUrls: ['./comments-overview.component.css'],
 })

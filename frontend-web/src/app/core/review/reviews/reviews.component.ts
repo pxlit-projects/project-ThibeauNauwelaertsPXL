@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule, NgForOf } from '@angular/common';
+import { If, For } from '@angular/common'; 
 import { FormsModule } from '@angular/forms'; 
 import { Router } from '@angular/router'; 
 import { ReviewService, RejectRequest } from '../../../shared/services/review.service'; 
@@ -13,7 +13,7 @@ import { ReviewActionsComponent } from '../reviews-actions/reviews-actions.compo
   standalone: true,
   templateUrl: './reviews.component.html',
   styleUrls: ['./reviews.component.css'],
-  imports: [CommonModule, NgForOf, FormsModule, ReviewActionsComponent], // Add ReviewActionsComponent
+  imports: [FormsModule, If, For],
 })
 export class ReviewsComponent implements OnInit {
   reviews: any[] = [];

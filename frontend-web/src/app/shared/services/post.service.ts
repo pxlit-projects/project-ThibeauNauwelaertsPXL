@@ -2,17 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
-export interface Post {
-  id: number;
-  title: string;
-  content: string;
-  status: string; // e.g., "PUBLISHED", "DRAFT"
-  remarks?: string; 
-  createdDate?: string;
-  lastModifiedDate?: string;
-  author?: string;
-}
+import { Post } from '../models/post.model';
 
 @Injectable({
   providedIn: 'root',

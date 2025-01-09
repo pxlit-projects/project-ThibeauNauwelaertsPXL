@@ -7,32 +7,44 @@
   <app-add-comment [postId]="postId" (commentAdded)="onCommentAdded()"></app-add-comment>
 
   <div class="flex-grow container mx-auto p-6 space-y-4">
-    <div *ngFor="let comment of comments" class="bg-white p-4 rounded shadow">
-      <div class="flex justify-between items-center mb-2">
-        <p class="font-medium text-blue-500">{{ comment.author }}</p>
-        <div class="flex space-x-4">
-          <button *ngIf="currentUser === comment.author" class="text-blue-500" (click)="toggleEditMode(comment.id)">
-            {{ editMode[comment.id] ? 'Cancel' : 'Edit' }}
-          </button>
-          <button *ngIf="currentUser === comment.author" class="text-red-500" (click)="deleteComment(comment.id)">
-            Delete
-          </button>
+    @for (comment of comments; track comment) {
+      <div class="bg-white p-4 rounded shadow">
+        <div class="flex justify-between items-center mb-2">
+          <p class="font-medium text-blue-500">{{ comment.author }}</p>
+          <div class="flex space-x-4">
+            @if (currentUser === comment.author) {
+              <button class="text-blue-500" (click)="toggleEditMode(comment.id)">
+                {{ editMode[comment.id] ? 'Cancel' : 'Edit' }}
+              </button>
+            }
+            @if (currentUser === comment.author) {
+              <button class="text-red-500" (click)="deleteComment(comment.id)">
+                Delete
+              </button>
+            }
+          </div>
         </div>
+        @if (editMode[comment.id]) {
+          <div>
+            <textarea
+              [(ngModel)]="comment.content"
+              class="w-full p-2 border border-gray-300 rounded-lg"
+            ></textarea>
+            <button class="bg-blue-500 text-white px-4 py-2 mt-2" (click)="editComment(comment)">
+              Save
+            </button>
+          </div>
+        }
+        @if (!editMode[comment.id]) {
+          <p class="text-gray-700">{{ comment.content }}</p>
+        }
       </div>
-      <div *ngIf="editMode[comment.id]">
-        <textarea
-          [(ngModel)]="comment.content"
-          class="w-full p-2 border border-gray-300 rounded-lg"
-        ></textarea>
-        <button class="bg-blue-500 text-white px-4 py-2 mt-2" (click)="editComment(comment)">
-          Save
-        </button>
-      </div>
-      <p *ngIf="!editMode[comment.id]" class="text-gray-700">{{ comment.content }}</p>
-    </div>
+    }
 
-    <div *ngIf="comments.length === 0" class="text-center text-gray-500">
-      <p>No comments available for this post.</p>
-    </div>
+    @if (comments.length === 0) {
+      <div class="text-center text-gray-500">
+        <p>No comments available for this post.</p>
+      </div>
+    }
   </div>
 </div>

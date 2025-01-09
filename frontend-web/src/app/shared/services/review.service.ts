@@ -2,27 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
-export interface Review {
-  id: number;
-  postId: number;
-  author: string;
-  status: string; // e.g., "PENDING", "APPROVED", "REJECTED"
-  submittedAt?: string;
-  reviewer?: string;
-  reviewedAt?: string;
-  remarks?: string;
-}
-
-export interface ReviewRequest {
-  postId: number;
-  author: string;
-}
-
-export interface RejectRequest {
-  reviewer: string;
-  remarks: string;
-}
+import { Review } from '../models/review.model';
+import { RejectRequest } from '../models/reject-request.model';
+import { ReviewRequest } from '../models/review-request.model';
 
 @Injectable({
   providedIn: 'root',
@@ -75,7 +57,7 @@ export class ReviewService {
       .put(`${this.baseUrl}/${reviewId}/approve`, null, {
         headers,
         params: { reviewer },
-        responseType: 'text', // Tell Angular to expect a text response
+        responseType: 'text',
       })
       .pipe(
         catchError((error) =>
@@ -95,7 +77,7 @@ export class ReviewService {
     return this.http
       .put(`${this.baseUrl}/${reviewId}/reject`, rejectRequest, {
         headers,
-        responseType: 'text', // Expect a text response
+        responseType: 'text',
       })
       .pipe(
         catchError((error) =>
