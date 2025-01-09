@@ -2,13 +2,14 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CommentsComponent } from './comments-overview.component';
 import { ActivatedRoute } from '@angular/router';
 import { of, throwError } from 'rxjs';
-import { CommentService, Comment } from '../../../shared/services/comment.service';
+import { CommentService } from '../../../shared/services/comment.service';
 import { AuthService } from '../../../shared/services/auth.service';
 import { provideHttpClient } from '@angular/common/http'; // New import
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AddCommentComponent } from '../add-comment/add-comment.component';
-import { RouterTestingModule } from '@angular/router/testing';
+import { Comment } from '../../../shared/models/comment.model';
+
 
 describe('CommentsComponent', () => {
   let component: CommentsComponent;
@@ -35,7 +36,6 @@ describe('CommentsComponent', () => {
       imports: [
         CommonModule,
         FormsModule,
-        RouterTestingModule,
         AddCommentComponent,
         CommentsComponent
       ],

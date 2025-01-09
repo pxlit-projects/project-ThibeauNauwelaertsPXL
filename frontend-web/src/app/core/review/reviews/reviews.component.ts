@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { If, For } from '@angular/common'; 
 import { FormsModule } from '@angular/forms'; 
 import { Router } from '@angular/router'; 
-import { ReviewService, RejectRequest } from '../../../shared/services/review.service'; 
+import { CommonModule } from '@angular/common';
+import { ReviewService, } from '../../../shared/services/review.service'; 
 import { ReviewNotificationService } from '../../../shared/services/review-notification.service'; 
 import { NotificationMessage } from '../../../shared/models/notification-message.model'; 
 import { AuthService } from '../../../shared/services/auth.service'; 
-import { ReviewActionsComponent } from '../reviews-actions/reviews-actions.component';
-
+import { ReviewActionsComponent } from  '../reviews-actions/reviews-actions.component';
 @Component({
   selector: 'app-reviews',
   standalone: true,
   templateUrl: './reviews.component.html',
   styleUrls: ['./reviews.component.css'],
-  imports: [FormsModule, If, For],
+  imports: [FormsModule, CommonModule, ReviewActionsComponent],
 })
 export class ReviewsComponent implements OnInit {
   reviews: any[] = [];

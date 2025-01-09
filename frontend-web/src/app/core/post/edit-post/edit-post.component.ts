@@ -5,10 +5,10 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Post, PostService } from '../../../shared/services/post.service';
+import {PostService } from '../../../shared/services/post.service';
 import { Router, ActivatedRoute } from '@angular/router';
-
 import { AuthService } from '../../../shared/services/auth.service';
+import { Post } from '../../../shared/models/post.model';
 
 @Component({
   selector: 'app-edit-post',

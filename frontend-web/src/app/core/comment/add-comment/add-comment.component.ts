@@ -1,8 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
-import { CommentService, Comment } from '../../../shared/services/comment.service';
+import { CommentService } from '../../../shared/services/comment.service';
 import { AuthService } from '../../../shared/services/auth.service';
+import { Comment } from '../../../shared/models/comment.model';
 
 @Component({
   selector: 'app-add-comment',
