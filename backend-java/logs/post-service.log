@@ -25657,3 +25657,460 @@ java.lang.RuntimeException: Review not found
 2025-01-10 00:58:40 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 6 reviews.
 2025-01-10 00:58:40 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 6 reviews.
 2025-01-10 00:58:53 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 6 reviews.
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 6 reviews.
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 6 reviews.
+2025-01-10 00:59:37 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 6 reviews.
+2025-01-10 00:59:50 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-01-10 01:01:17 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 6 reviews.
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 6 reviews.
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 6 reviews.
+2025-01-10 01:03:32 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 6 reviews.
+2025-01-10 01:03:53 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-01-10 01:04:50 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-01-10 01:06:17 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-01-10 01:06:30 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:06:30 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:06:30 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:06:30 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:06:35 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:06:35 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:06:35 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:06:35 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 6 reviews.
+2025-01-10 01:06:37 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 6 reviews.
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 74, Author: editor2
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 74, Author: editor2
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.ReviewController - Post with ID: 74 successfully submitted for review by Author: editor2
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.ReviewController - Post with ID: 74 successfully submitted for review by Author: editor2
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 74
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 74
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.PostController - Successfully fetched 13 draft posts
+2025-01-10 01:06:41 INFO  o.JavaPE.controller.PostController - Successfully fetched 13 draft posts
+2025-01-10 01:06:43 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 74 and role: editor
+2025-01-10 01:06:43 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 74 and role: editor
+2025-01-10 01:06:43 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 74
+2025-01-10 01:06:43 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 74
+2025-01-10 01:06:46 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 74, Author: editor2
+2025-01-10 01:06:46 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 74, Author: editor2
+2025-01-10 01:06:46 INFO  o.JavaPE.controller.ReviewController - Post with ID: 74 successfully submitted for review by Author: editor2
+2025-01-10 01:06:46 INFO  o.JavaPE.controller.ReviewController - Post with ID: 74 successfully submitted for review by Author: editor2
+2025-01-10 01:06:46 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:06:46 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:06:46 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:06:46 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:06:49 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 01:06:49 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 01:06:49 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 01:06:49 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 01:06:49 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 01:06:49 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 01:06:49 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 01:06:49 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 01:06:49 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 01:06:49 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 01:06:49 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 01:06:49 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 74 and role: EDITOR
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 74 and role: EDITOR
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 74
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 74
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 7 reviews.
+2025-01-10 01:06:50 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 7 reviews.
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 75, Author: editor2
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 75, Author: editor2
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.ReviewController - Post with ID: 75 successfully submitted for review by Author: editor2
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.ReviewController - Post with ID: 75 successfully submitted for review by Author: editor2
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 75
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 75
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.PostController - Successfully fetched 14 draft posts
+2025-01-10 01:07:11 INFO  o.JavaPE.controller.PostController - Successfully fetched 14 draft posts
+2025-01-10 01:07:12 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2025-01-10 01:07:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 75 and role: editor
+2025-01-10 01:07:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 75 and role: editor
+2025-01-10 01:07:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 75
+2025-01-10 01:07:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 75
+2025-01-10 01:07:14 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 75, Author: editor2
+2025-01-10 01:07:14 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 75, Author: editor2
+2025-01-10 01:07:14 INFO  o.JavaPE.controller.ReviewController - Post with ID: 75 successfully submitted for review by Author: editor2
+2025-01-10 01:07:14 INFO  o.JavaPE.controller.ReviewController - Post with ID: 75 successfully submitted for review by Author: editor2
+2025-01-10 01:07:14 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:07:14 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:07:14 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:07:14 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:07:18 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:07:18 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:07:18 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:07:18 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:07:41 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2025-01-10 01:08:53 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 74 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 74 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 74
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 74
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 75 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 75 and role: EDITOR
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 75
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 75
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 8 reviews.
+2025-01-10 01:09:19 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 8 reviews.
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 76, Author: editor2
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 76, Author: editor2
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.ReviewController - Post with ID: 76 successfully submitted for review by Author: editor2
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.ReviewController - Post with ID: 76 successfully submitted for review by Author: editor2
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 76
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 76
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.PostController - Successfully fetched 15 draft posts
+2025-01-10 01:09:37 INFO  o.JavaPE.controller.PostController - Successfully fetched 15 draft posts
+2025-01-10 01:09:42 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: editor
+2025-01-10 01:09:42 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: editor
+2025-01-10 01:09:42 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:09:42 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:09:44 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 76, Author: editor2
+2025-01-10 01:09:44 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 76, Author: editor2
+2025-01-10 01:09:44 INFO  o.JavaPE.controller.ReviewController - Post with ID: 76 successfully submitted for review by Author: editor2
+2025-01-10 01:09:44 INFO  o.JavaPE.controller.ReviewController - Post with ID: 76 successfully submitted for review by Author: editor2
+2025-01-10 01:09:44 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:09:44 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:09:44 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:09:44 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:09:48 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2025-01-10 01:09:48 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2025-01-10 01:09:48 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2025-01-10 01:09:48 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2025-01-10 01:09:48 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-10 01:09:48 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-10 01:09:48 INFO  o.JavaPE.controller.PostController - Successfully fetched 15 draft posts
+2025-01-10 01:09:48 INFO  o.JavaPE.controller.PostController - Successfully fetched 15 draft posts
+2025-01-10 01:09:50 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 74 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 74 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 74
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 74
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 75 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 75 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 75
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 75
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: EDITOR
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 9 reviews.
+2025-01-10 01:09:54 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 9 reviews.
+2025-01-10 01:10:00 INFO  o.JavaPE.controller.ReviewController - Received request to reject review. Review ID: 94, Reviewer: editor2, Remarks: pissende gooner, Role: editor
+2025-01-10 01:10:00 INFO  o.JavaPE.controller.ReviewController - Received request to reject review. Review ID: 94, Reviewer: editor2, Remarks: pissende gooner, Role: editor
+2025-01-10 01:10:00 INFO  o.JavaPE.controller.ReviewController - Successfully rejected review with ID: 94 by Reviewer: editor2 with Remarks: pissende gooner
+2025-01-10 01:10:00 INFO  o.JavaPE.controller.ReviewController - Successfully rejected review with ID: 94 by Reviewer: editor2 with Remarks: pissende gooner
+2025-01-10 01:10:00 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: editor
+2025-01-10 01:10:00 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: editor
+2025-01-10 01:10:00 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: editor
+2025-01-10 01:10:00 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: editor
+2025-01-10 01:10:00 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:10:00 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:10:00 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:10:00 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:10:03 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: editor
+2025-01-10 01:10:03 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: editor
+2025-01-10 01:10:03 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:10:03 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:10:08 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.web.context.request.async.AsyncRequestTimeoutException
+2025-01-10 01:10:08 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
+2025-01-10 01:10:08 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 76, Author: editor2
+2025-01-10 01:10:08 INFO  o.JavaPE.controller.ReviewController - Received request to submit post for review. Post ID: 76, Author: editor2
+2025-01-10 01:10:08 INFO  o.JavaPE.controller.ReviewController - Post with ID: 76 successfully submitted for review by Author: editor2
+2025-01-10 01:10:08 INFO  o.JavaPE.controller.ReviewController - Post with ID: 76 successfully submitted for review by Author: editor2
+2025-01-10 01:10:09 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:10:09 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:10:09 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:10:09 INFO  o.JavaPE.controller.PostController - Successfully fetched 34 published posts
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.ReviewController - Received request to fetch all reviews with post details. Role: editor
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 64 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 64
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 65 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 65
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 66 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 66
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 67 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 67
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 70 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 70
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 71 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 71
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 74 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 74 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 74
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 74
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 75 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 75 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 75
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 75
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: EDITOR
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 9 reviews.
+2025-01-10 01:10:12 INFO  o.JavaPE.controller.ReviewController - Successfully fetched 9 reviews.
+2025-01-10 01:10:13 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2025-01-10 01:10:13 INFO  o.JavaPE.controller.ReviewController - New client connected for notifications
+2025-01-10 01:10:13 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2025-01-10 01:10:13 INFO  o.JavaPE.controller.ReviewController - Successfully registered SSE client for notifications.
+2025-01-10 01:10:15 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 95, Reviewer: editor2, Role: editor
+2025-01-10 01:10:15 INFO  o.JavaPE.controller.ReviewController - Received request to approve review. Review ID: 95, Reviewer: editor2, Role: editor
+2025-01-10 01:10:15 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 95 by Reviewer: editor2
+2025-01-10 01:10:15 INFO  o.JavaPE.controller.ReviewController - Successfully approved review with ID: 95 by Reviewer: editor2
+2025-01-10 01:10:15 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: editor
+2025-01-10 01:10:15 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: editor
+2025-01-10 01:10:15 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: editor
+2025-01-10 01:10:15 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 76 and role: editor
+2025-01-10 01:10:15 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:10:15 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:10:15 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:10:15 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 76
+2025-01-10 01:10:17 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:10:17 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-10 01:10:17 INFO  o.JavaPE.controller.PostController - Successfully fetched 35 published posts
+2025-01-10 01:10:17 INFO  o.JavaPE.controller.PostController - Successfully fetched 35 published posts
+2025-01-10 01:10:19 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.web.context.request.async.AsyncRequestTimeoutException
+2025-01-10 01:10:19 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.context.request.async.AsyncRequestTimeoutException]
