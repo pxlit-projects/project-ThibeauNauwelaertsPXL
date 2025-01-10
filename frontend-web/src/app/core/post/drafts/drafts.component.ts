@@ -67,18 +67,30 @@ export class DraftPostsComponent implements OnInit {
   }
 
   updateDraftWithFeedback(notification: NotificationMessage): void {
-    const post = this.draftPosts.find((p) => p.id === notification.postId);
-    if (post) {
-      post.remarks = notification.remarks || 'No remarks';
-      post.status = notification.status === 'rejected' ? 'REJECTED' : post.status;
+    const localPost = this.draftPosts.find((p) => p.id === notification.postId);
+    if (!localPost) return;
   
-      // Instead of sending the entire old post object (which has stale title/content):
-      // either skip this call, or do a partial "PATCH" with only status + remarks if you have such an endpoint,
-      // so you don't blow away the new title/content.
+    // Just display remarks in the UI for now
+    localPost.remarks = notification.remarks || 'No remarks';
+    localPost.status = notification.status === 'rejected' ? 'REJECTED' : localPost.status;
+    this.showToast(`Post rejected with remarks: ${localPost.remarks}`, 'info');
   
-      // E.g. remove or comment out the updatePost call:
-      // this.postService.updatePost(post.id, { status: post.status, remarks: post.remarks }).subscribe(...);
-    }
+    // Now actually save remarks in DB (without losing the updated content):
+    // 1) fetch the real post from the server
+    this.postService.getPostById(localPost.id).subscribe({
+      next: (freshPost) => {
+        // 2) merge the new remarks and status
+        freshPost.remarks = localPost.remarks;
+        freshPost.status = localPost.status;
+  
+        // 3) update the server with the merged data
+        this.postService.updatePost(localPost.id, freshPost).subscribe({
+          next: (saved) => console.log('Remarks/status saved without losing content:', saved),
+          error: (err) => console.error('Error saving remarks to DB:', err)
+        });
+      },
+      error: (err) => console.error('Failed to fetch latest post from server:', err),
+    });  
   }
 
   applyFilters(): void {
