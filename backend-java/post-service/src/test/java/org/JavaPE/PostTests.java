@@ -3,6 +3,7 @@ package org.JavaPE;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.JavaPE.client.ReviewClient;
+import org.JavaPE.controller.Request.ReviewRequest;
 import org.JavaPE.controller.dto.PostDTO;
 import org.JavaPE.domain.Post;
 import org.JavaPE.domain.PostStatus;
@@ -73,8 +74,8 @@ public class PostTests {
 
     @Test
     public void testCreatePost() throws Exception {
-        Mockito.when(reviewClient.hasActiveReviewForPost(Mockito.anyLong()))
-                .thenReturn(true);
+        // Since 'hasActiveReviewForPost' is not called during post creation,
+        // remove its mocking and verification.
 
         Post post = new Post(
                 null,
@@ -97,8 +98,12 @@ public class PostTests {
 
         Assertions.assertEquals(1, postRepository.findAll().size());
 
+        // Verify that 'deletePendingReviewForPost' and 'submitPostForReview' are called
         Mockito.verify(reviewClient, Mockito.times(1))
-                .hasActiveReviewForPost(Mockito.anyLong());
+                .deletePendingReviewForPost(Mockito.anyLong());
+
+        Mockito.verify(reviewClient, Mockito.times(1))
+                .submitPostForReview(Mockito.any(ReviewRequest.class));
     }
 
     /**
@@ -128,10 +133,6 @@ public class PostTests {
 
         String updatedPostAsJson = objectMapper.writeValueAsString(updatedPostDTO);
 
-        // Mock ReviewClient behavior
-        Mockito.when(reviewClient.hasActiveReviewForPost(existingPost.getId()))
-                .thenReturn(false);
-
         // Act: Perform PUT request
         mockMvc.perform(MockMvcRequestBuilders.put("/posts/{id}", existingPost.getId())
                         .contentType(MediaType.APPLICATION_JSON)
@@ -145,9 +146,12 @@ public class PostTests {
         Assertions.assertEquals("Updated Content", updatedPost.getContent());
         Assertions.assertEquals("Updated remarks", updatedPost.getRemarks());
 
-        // Verify ReviewClient was called
+        // Verify ReviewClient interactions
         Mockito.verify(reviewClient, Mockito.times(1))
-                .hasActiveReviewForPost(existingPost.getId());
+                .deletePendingReviewForPost(existingPost.getId());
+
+        Mockito.verify(reviewClient, Mockito.times(1))
+                .submitPostForReview(Mockito.any(ReviewRequest.class));
     }
 
     /**

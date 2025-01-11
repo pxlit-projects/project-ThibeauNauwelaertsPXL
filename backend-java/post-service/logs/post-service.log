@@ -1,0 +1,492 @@
+2025-01-11 19:42:12 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-01-11 19:42:12 INFO  org.JavaPE.PostTests - Starting PostTests using Java 21 with PID 24604 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service)
+2025-01-11 19:42:12 INFO  org.JavaPE.PostTests - Starting PostTests using Java 21 with PID 24604 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service)
+2025-01-11 19:42:12 DEBUG org.JavaPE.PostTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-01-11 19:42:12 DEBUG org.JavaPE.PostTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-01-11 19:42:12 INFO  org.JavaPE.PostTests - The following 1 profile is active: "test"
+2025-01-11 19:42:12 INFO  org.JavaPE.PostTests - The following 1 profile is active: "test"
+2025-01-11 19:42:12 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2025-01-11 19:42:12 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=post-service, profiles=[default], label=null, version=null, state=null
+2025-01-11 19:42:12 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2025-01-11 19:42:12 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=post-service, profiles=[test], label=null, version=null, state=null
+2025-01-11 19:42:14 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-11 19:42:15 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 492 ms. Found 1 JPA repository interface.
+2025-01-11 19:42:16 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=7bcc7f12-f106-3c82-8c7b-5f47ed6ce9b8
+2025-01-11 19:42:18 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-01-11 19:42:18 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-01-11 19:42:18 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-11 19:42:18 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-01-11 19:42:18 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-11 19:42:19 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-11 19:42:19 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-11 19:42:19 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3884e858
+2025-01-11 19:42:19 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-11 19:42:20 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-11 19:42:20 WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-11 19:42:22 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-11 19:42:22 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-11 19:42:22 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-11 19:42:24 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-11 19:42:25 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-11 19:42:25 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-11 19:42:25 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-11 19:42:26 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-01-11 19:42:26 INFO  org.JavaPE.PostTests - Started PostTests in 15.696 seconds (process running for 39.03)
+2025-01-11 19:42:26 INFO  org.JavaPE.PostTests - Started PostTests in 15.696 seconds (process running for 39.03)
+2025-01-11 19:42:26 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: null
+2025-01-11 19:42:26 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: null
+2025-01-11 19:42:26 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch post with ID: 1. Role is missing.
+2025-01-11 19:42:26 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch post with ID: 1. Role is missing.
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch filtered posts with role: editor
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch filtered posts with role: editor
+2025-01-11 19:42:27 DEBUG o.JavaPE.controller.PostController - Filter parameters - Title: null, Author: author1, Created Date: 2023-01-01, Last Modified Date: 2023-03-02
+2025-01-11 19:42:27 DEBUG o.JavaPE.controller.PostController - Filter parameters - Title: null, Author: author1, Created Date: 2023-01-01, Last Modified Date: 2023-03-02
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 filtered posts
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 filtered posts
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 999 and role: editor
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 999 and role: editor
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: null
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: null
+2025-01-11 19:42:27 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch published posts. Role is missing.
+2025-01-11 19:42:27 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch published posts. Role is missing.
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: null
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: null
+2025-01-11 19:42:27 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch draft posts. Role is missing.
+2025-01-11 19:42:27 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch draft posts. Role is missing.
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 7
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 7
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Successfully fetched published post with ID: 7
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Successfully fetched published post with ID: 7
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch filtered posts with role: null
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch filtered posts with role: null
+2025-01-11 19:42:27 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch filtered posts. Role: null
+2025-01-11 19:42:27 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch filtered posts. Role: null
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 999
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 999
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 8
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 8
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 9 and role: editor
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 9 and role: editor
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 9
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 9
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 16
+2025-01-11 19:42:27 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 16
+2025-01-11 19:42:29 INFO  controller.PostControllerTest - Starting PostControllerTest using Java 21 with PID 24604 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service)
+2025-01-11 19:42:29 INFO  controller.PostControllerTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-11 19:42:29 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2025-01-11 19:42:29 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=post-service, profiles=[default], label=null, version=null, state=null
+2025-01-11 19:42:30 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-11 19:42:30 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-11 19:42:30 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2025-01-11 19:42:30 INFO  controller.PostControllerTest - Started PostControllerTest in 0.852 seconds (process running for 42.969)
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: null
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: null
+2025-01-11 19:42:30 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch published posts. Role is missing.
+2025-01-11 19:42:30 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch published posts. Role is missing.
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: null
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: null
+2025-01-11 19:42:30 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch draft posts. Role is missing.
+2025-01-11 19:42:30 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch draft posts. Role is missing.
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 1
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 1
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Successfully fetched published post with ID: 1
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Successfully fetched published post with ID: 1
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: null
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: null
+2025-01-11 19:42:30 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch post with ID: 1. Role is missing.
+2025-01-11 19:42:30 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch post with ID: 1. Role is missing.
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 1
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 1
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: viewer
+2025-01-11 19:42:30 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: viewer
+2025-01-11 19:42:30 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to create a post. Role: viewer
+2025-01-11 19:42:30 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to create a post. Role: viewer
+2025-01-11 19:42:30 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-11 19:42:30 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3884e858 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:42:30 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@16b080ad (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:42:30 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5bdf2132 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:42:30 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@72eb8563 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:42:30 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@70ed9948 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:42:30 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@58e885e8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:42:30 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5973e171 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:42:30 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5583df2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:42:30 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@46118142 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:42:30 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@206bbba (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:43:00 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08S01
+2025-01-11 19:43:00 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - HikariPool-1 - Connection is not available, request timed out after 30009ms (total=0, active=0, idle=0, waiting=0)
+2025-01-11 19:43:00 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2025-01-11 19:43:00 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [HikariPool-1 - Connection is not available, request timed out after 30009ms (total=0, active=0, idle=0, waiting=0)] [n/a]
+2025-01-11 19:43:00 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-01-11 19:43:00 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-01-11 19:46:29 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-01-11 19:46:29 INFO  org.JavaPE.PostTests - Starting PostTests using Java 21 with PID 26068 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service)
+2025-01-11 19:46:29 INFO  org.JavaPE.PostTests - Starting PostTests using Java 21 with PID 26068 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service)
+2025-01-11 19:46:29 DEBUG org.JavaPE.PostTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-01-11 19:46:29 DEBUG org.JavaPE.PostTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-01-11 19:46:29 INFO  org.JavaPE.PostTests - The following 1 profile is active: "test"
+2025-01-11 19:46:29 INFO  org.JavaPE.PostTests - The following 1 profile is active: "test"
+2025-01-11 19:46:29 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2025-01-11 19:46:29 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=post-service, profiles=[default], label=null, version=null, state=null
+2025-01-11 19:46:29 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2025-01-11 19:46:29 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=post-service, profiles=[test], label=null, version=null, state=null
+2025-01-11 19:46:31 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-11 19:46:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 254 ms. Found 1 JPA repository interface.
+2025-01-11 19:46:32 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=7bcc7f12-f106-3c82-8c7b-5f47ed6ce9b8
+2025-01-11 19:46:35 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-01-11 19:46:35 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-01-11 19:46:36 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-11 19:46:37 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-01-11 19:46:37 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-11 19:46:38 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-11 19:46:38 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-11 19:46:39 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@60c68c7b
+2025-01-11 19:46:39 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-11 19:46:39 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-11 19:46:39 WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-11 19:46:42 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-11 19:46:42 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-11 19:46:44 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-11 19:46:47 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-11 19:46:49 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-11 19:46:49 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-11 19:46:49 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 4 ms
+2025-01-11 19:46:49 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-01-11 19:46:50 INFO  org.JavaPE.PostTests - Started PostTests in 22.554 seconds (process running for 39.017)
+2025-01-11 19:46:50 INFO  org.JavaPE.PostTests - Started PostTests in 22.554 seconds (process running for 39.017)
+2025-01-11 19:46:51 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-11 19:46:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@60c68c7b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:46:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3ac7d1f8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:46:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@a89f917 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:46:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@670a4be3 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:46:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3701334b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:46:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@33cd7c42 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:46:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@76c97a6d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:46:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@43297204 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:46:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7d0c9a41 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:46:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@257bd6ce (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:47:21 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08S01
+2025-01-11 19:47:21 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - HikariPool-1 - Connection is not available, request timed out after 30007ms (total=0, active=0, idle=0, waiting=0)
+2025-01-11 19:47:21 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2025-01-11 19:47:21 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [HikariPool-1 - Connection is not available, request timed out after 30007ms (total=0, active=0, idle=0, waiting=0)] [n/a]
+2025-01-11 19:47:21 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-01-11 19:47:22 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-01-11 19:53:00 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-01-11 19:53:00 INFO  org.JavaPE.PostTests - Starting PostTests using Java 21 with PID 7364 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service)
+2025-01-11 19:53:00 INFO  org.JavaPE.PostTests - Starting PostTests using Java 21 with PID 7364 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service)
+2025-01-11 19:53:00 DEBUG org.JavaPE.PostTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-01-11 19:53:00 DEBUG org.JavaPE.PostTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-01-11 19:53:00 INFO  org.JavaPE.PostTests - The following 1 profile is active: "test"
+2025-01-11 19:53:00 INFO  org.JavaPE.PostTests - The following 1 profile is active: "test"
+2025-01-11 19:53:00 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2025-01-11 19:53:00 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=post-service, profiles=[default], label=null, version=null, state=null
+2025-01-11 19:53:00 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2025-01-11 19:53:00 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=post-service, profiles=[test], label=null, version=null, state=null
+2025-01-11 19:53:02 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-11 19:53:03 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 701 ms. Found 1 JPA repository interface.
+2025-01-11 19:53:04 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=7bcc7f12-f106-3c82-8c7b-5f47ed6ce9b8
+2025-01-11 19:53:06 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-01-11 19:53:06 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-01-11 19:53:07 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-11 19:53:07 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-01-11 19:53:07 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-11 19:53:07 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-11 19:53:07 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-11 19:53:08 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4f78adf
+2025-01-11 19:53:08 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-11 19:53:08 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-11 19:53:08 WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-11 19:53:10 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-11 19:53:10 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-11 19:53:11 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-11 19:53:14 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-11 19:53:15 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-11 19:53:15 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-11 19:53:15 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2025-01-11 19:53:15 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-01-11 19:53:16 INFO  org.JavaPE.PostTests - Started PostTests in 18.423 seconds (process running for 38.524)
+2025-01-11 19:53:16 INFO  org.JavaPE.PostTests - Started PostTests in 18.423 seconds (process running for 38.524)
+2025-01-11 19:53:16 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: null
+2025-01-11 19:53:16 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: null
+2025-01-11 19:53:16 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch post with ID: 1. Role is missing.
+2025-01-11 19:53:16 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch post with ID: 1. Role is missing.
+2025-01-11 19:53:16 INFO  o.JavaPE.controller.PostController - Received request to fetch filtered posts with role: editor
+2025-01-11 19:53:16 INFO  o.JavaPE.controller.PostController - Received request to fetch filtered posts with role: editor
+2025-01-11 19:53:16 DEBUG o.JavaPE.controller.PostController - Filter parameters - Title: null, Author: author1, Created Date: 2023-01-01, Last Modified Date: 2023-03-02
+2025-01-11 19:53:16 DEBUG o.JavaPE.controller.PostController - Filter parameters - Title: null, Author: author1, Created Date: 2023-01-01, Last Modified Date: 2023-03-02
+2025-01-11 19:53:16 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 filtered posts
+2025-01-11 19:53:16 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 filtered posts
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 999 and role: editor
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 999 and role: editor
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: null
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: null
+2025-01-11 19:53:17 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch published posts. Role is missing.
+2025-01-11 19:53:17 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch published posts. Role is missing.
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: null
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: null
+2025-01-11 19:53:17 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch draft posts. Role is missing.
+2025-01-11 19:53:17 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch draft posts. Role is missing.
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 7
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 7
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Successfully fetched published post with ID: 7
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Successfully fetched published post with ID: 7
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch filtered posts with role: null
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch filtered posts with role: null
+2025-01-11 19:53:17 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch filtered posts. Role: null
+2025-01-11 19:53:17 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch filtered posts. Role: null
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 999
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 999
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 8
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 8
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 9 and role: editor
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 9 and role: editor
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 9
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 9
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 16
+2025-01-11 19:53:17 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 16
+2025-01-11 19:53:19 INFO  controller.PostControllerTest - Starting PostControllerTest using Java 21 with PID 7364 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service)
+2025-01-11 19:53:19 INFO  controller.PostControllerTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-11 19:53:19 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2025-01-11 19:53:19 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=post-service, profiles=[default], label=null, version=null, state=null
+2025-01-11 19:53:20 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-11 19:53:20 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-11 19:53:20 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-11 19:53:20 INFO  controller.PostControllerTest - Started PostControllerTest in 0.883 seconds (process running for 42.617)
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: null
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: null
+2025-01-11 19:53:20 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch published posts. Role is missing.
+2025-01-11 19:53:20 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch published posts. Role is missing.
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: null
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: null
+2025-01-11 19:53:20 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch draft posts. Role is missing.
+2025-01-11 19:53:20 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch draft posts. Role is missing.
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 1
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 1
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Successfully fetched published post with ID: 1
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Successfully fetched published post with ID: 1
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: null
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: null
+2025-01-11 19:53:20 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch post with ID: 1. Role is missing.
+2025-01-11 19:53:20 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch post with ID: 1. Role is missing.
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 1
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 1
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: viewer
+2025-01-11 19:53:20 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: viewer
+2025-01-11 19:53:20 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to create a post. Role: viewer
+2025-01-11 19:53:20 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to create a post. Role: viewer
+2025-01-11 19:53:20 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-11 19:53:20 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4f78adf (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:53:20 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@796dd19b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:53:20 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@79f1772 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:53:20 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@21fd4a1b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:53:20 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3e342b20 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:53:20 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1e9054fd (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:53:20 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3c373d64 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:53:20 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4602631d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:53:20 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4b6ed922 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:53:20 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@b055022 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 19:53:50 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08S01
+2025-01-11 19:53:50 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - HikariPool-1 - Connection is not available, request timed out after 30011ms (total=0, active=0, idle=0, waiting=0)
+2025-01-11 19:53:50 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2025-01-11 19:53:50 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [HikariPool-1 - Connection is not available, request timed out after 30011ms (total=0, active=0, idle=0, waiting=0)] [n/a]
+2025-01-11 19:53:50 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-01-11 19:53:51 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-01-11 19:59:42 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-01-11 19:59:42 INFO  org.JavaPE.PostTests - Starting PostTests using Java 21 with PID 19704 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service)
+2025-01-11 19:59:42 INFO  org.JavaPE.PostTests - Starting PostTests using Java 21 with PID 19704 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service)
+2025-01-11 19:59:42 DEBUG org.JavaPE.PostTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-01-11 19:59:42 DEBUG org.JavaPE.PostTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-01-11 19:59:42 INFO  org.JavaPE.PostTests - The following 1 profile is active: "test"
+2025-01-11 19:59:42 INFO  org.JavaPE.PostTests - The following 1 profile is active: "test"
+2025-01-11 19:59:42 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2025-01-11 19:59:42 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=post-service, profiles=[default], label=null, version=null, state=null
+2025-01-11 19:59:42 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2025-01-11 19:59:42 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=post-service, profiles=[test], label=null, version=null, state=null
+2025-01-11 19:59:45 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-11 19:59:45 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 535 ms. Found 1 JPA repository interface.
+2025-01-11 19:59:46 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=7bcc7f12-f106-3c82-8c7b-5f47ed6ce9b8
+2025-01-11 19:59:48 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-01-11 19:59:48 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-01-11 19:59:49 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-11 19:59:49 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-01-11 19:59:49 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-11 19:59:50 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-11 19:59:50 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-11 19:59:50 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b0636d9
+2025-01-11 19:59:50 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-11 19:59:50 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-11 19:59:50 WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-11 19:59:53 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-11 19:59:53 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-11 19:59:53 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-11 19:59:56 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-11 19:59:57 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-11 19:59:57 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-11 19:59:57 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2025-01-11 19:59:58 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-01-11 19:59:58 INFO  org.JavaPE.PostTests - Started PostTests in 17.954 seconds (process running for 40.658)
+2025-01-11 19:59:58 INFO  org.JavaPE.PostTests - Started PostTests in 17.954 seconds (process running for 40.658)
+2025-01-11 19:59:58 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: null
+2025-01-11 19:59:58 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: null
+2025-01-11 19:59:58 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch post with ID: 1. Role is missing.
+2025-01-11 19:59:58 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch post with ID: 1. Role is missing.
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch filtered posts with role: editor
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch filtered posts with role: editor
+2025-01-11 19:59:59 DEBUG o.JavaPE.controller.PostController - Filter parameters - Title: null, Author: author1, Created Date: 2023-01-01, Last Modified Date: 2023-03-02
+2025-01-11 19:59:59 DEBUG o.JavaPE.controller.PostController - Filter parameters - Title: null, Author: author1, Created Date: 2023-01-01, Last Modified Date: 2023-03-02
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 filtered posts
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 filtered posts
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 999 and role: editor
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 999 and role: editor
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: null
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: null
+2025-01-11 19:59:59 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch published posts. Role is missing.
+2025-01-11 19:59:59 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch published posts. Role is missing.
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: null
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: null
+2025-01-11 19:59:59 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch draft posts. Role is missing.
+2025-01-11 19:59:59 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch draft posts. Role is missing.
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 7
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 7
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Successfully fetched published post with ID: 7
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Successfully fetched published post with ID: 7
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch filtered posts with role: null
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch filtered posts with role: null
+2025-01-11 19:59:59 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch filtered posts. Role: null
+2025-01-11 19:59:59 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch filtered posts. Role: null
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 999
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 999
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 8
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 8
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 9 and role: editor
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 9 and role: editor
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 9
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 9
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 16
+2025-01-11 19:59:59 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 16
+2025-01-11 20:00:01 INFO  controller.PostControllerTest - Starting PostControllerTest using Java 21 with PID 19704 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\post-service)
+2025-01-11 20:00:01 INFO  controller.PostControllerTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-11 20:00:01 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2025-01-11 20:00:01 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=post-service, profiles=[default], label=null, version=null, state=null
+2025-01-11 20:00:02 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-11 20:00:02 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-11 20:00:02 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-11 20:00:02 INFO  controller.PostControllerTest - Started PostControllerTest in 0.917 seconds (process running for 44.893)
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: null
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: null
+2025-01-11 20:00:02 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch published posts. Role is missing.
+2025-01-11 20:00:02 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch published posts. Role is missing.
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: editor
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Successfully fetched post with ID: 1
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to fetch published posts with role: editor
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 published posts
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: editor
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Successfully fetched 2 draft posts
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: null
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to fetch draft posts with role: null
+2025-01-11 20:00:02 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch draft posts. Role is missing.
+2025-01-11 20:00:02 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch draft posts. Role is missing.
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 1
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to fetch published post with ID: 1
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Successfully fetched published post with ID: 1
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Successfully fetched published post with ID: 1
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: null
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to fetch post with ID: 1 and role: null
+2025-01-11 20:00:02 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch post with ID: 1. Role is missing.
+2025-01-11 20:00:02 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to fetch post with ID: 1. Role is missing.
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: editor
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 1
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Post created successfully with ID: 1
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: viewer
+2025-01-11 20:00:02 INFO  o.JavaPE.controller.PostController - Received request to create a post with role: viewer
+2025-01-11 20:00:02 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to create a post. Role: viewer
+2025-01-11 20:00:02 WARN  o.JavaPE.controller.PostController - Unauthorized attempt to create a post. Role: viewer
+2025-01-11 20:00:02 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-11 20:00:02 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6b0636d9 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:00:02 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4fc4a9d4 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:00:02 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1a2acc7d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:00:02 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2ddb312d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:00:02 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@149643c1 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:00:02 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7ac1327e (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:00:02 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1d9123a4 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:00:02 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@59269c34 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:00:02 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@97f21fd (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:00:02 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@768ed83f (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:00:33 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08S01
+2025-01-11 20:00:33 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - HikariPool-1 - Connection is not available, request timed out after 30031ms (total=0, active=0, idle=0, waiting=0)
+2025-01-11 20:00:33 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2025-01-11 20:00:33 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [HikariPool-1 - Connection is not available, request timed out after 30031ms (total=0, active=0, idle=0, waiting=0)] [n/a]
+2025-01-11 20:00:33 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-01-11 20:00:33 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

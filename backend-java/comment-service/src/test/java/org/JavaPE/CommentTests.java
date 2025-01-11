@@ -31,11 +31,9 @@ import static org.mockito.ArgumentMatchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-/**
- * Integration tests for the CommentController.
- */
+
 @SpringBootTest(
-        classes = CommentServiceApplication.class, // Replace with the appropriate main application class
+        classes = CommentServiceApplication.class,
         properties = {
                 "eureka.client.enabled=false",
                 "spring.cloud.discovery.enabled=false",

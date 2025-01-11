@@ -1,6 +1,8 @@
 package org.JavaPE.listeners;
 
 import org.JavaPE.controller.dto.NotificationMessage;
+import org.JavaPE.domain.Review;
+import org.JavaPE.services.ReviewService;
 import org.JavaPE.services.ReviewServiceImpl;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
@@ -8,10 +10,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class NotificationListener {
 
-    private final ReviewServiceImpl reviewService;
+    private final ReviewService reviewService;
 
     // Inject your service
-    public NotificationListener(ReviewServiceImpl reviewService) {
+    public NotificationListener(ReviewService reviewService) {
         this.reviewService = reviewService;
     }
 

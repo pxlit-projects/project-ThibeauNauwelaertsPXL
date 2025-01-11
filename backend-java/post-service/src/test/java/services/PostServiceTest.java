@@ -63,15 +63,12 @@ class PostServiceTest {
 
         PostDTO savedPostDTO = mock(PostDTO.class);
         when(postDTOConverter.convertToDTO(savedPost)).thenReturn(savedPostDTO);
+        when(savedPostDTO.getId()).thenReturn(1L);
 
-        // Mocking convertToDTO for 'post' used in sendForReview
-        when(postDTOConverter.convertToDTO(post)).thenReturn(postDTO);
-
-        // Mocking postRepository.findById used in sendForReview
         when(postRepository.findById(1L)).thenReturn(Optional.of(savedPost));
 
         // Mocking reviewClient interactions
-        when(reviewClient.hasActiveReviewForPost(1L)).thenReturn(false);
+        doNothing().when(reviewClient).deletePendingReviewForPost(1L);
         doNothing().when(reviewClient).submitPostForReview(any());
 
         // Execute the service method
@@ -81,10 +78,9 @@ class PostServiceTest {
         assertNotNull(result);
         verify(postDTOConverter).convertToEntity(postDTO);
         verify(postRepository).save(post);
-        verify(postDTOConverter).convertToDTO(savedPost);
-        verify(postDTOConverter).convertToDTO(post);
+        verify(postDTOConverter, times(2)).convertToDTO(savedPost);
         verify(postRepository).findById(1L);
-        verify(reviewClient).hasActiveReviewForPost(1L);
+        verify(reviewClient).deletePendingReviewForPost(1L);
         verify(reviewClient).submitPostForReview(any());
     }
 

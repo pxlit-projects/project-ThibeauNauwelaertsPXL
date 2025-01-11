@@ -1,5 +1,6 @@
 package org.JavaPE.services;
 
+import org.JavaPE.controller.dto.NotificationMessage;
 import org.JavaPE.controller.dto.ReviewWithPostDetailsDTO;
 import org.JavaPE.domain.Review;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
@@ -17,5 +18,6 @@ public interface ReviewService {
     List<ReviewWithPostDetailsDTO> getAllReviewsWithPostDetails();
 
      boolean hasActiveReviewForPost(Long postId);
+     void publishToSseClients(NotificationMessage message);
      SseEmitter registerClient();
 }

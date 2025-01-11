@@ -14,8 +14,6 @@ import org.mockito.*;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
-import java.io.IOException;
-import java.lang.reflect.Method;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -39,6 +37,9 @@ class ReviewServiceTest {
 
     @Mock
     private RabbitTemplate rabbitTemplate;
+
+    @Mock
+    private Review mockReview; // Mocked Review instance
 
     @BeforeEach
     void setUp() {
@@ -71,19 +72,19 @@ class ReviewServiceTest {
         Long reviewId = 1L;
         String reviewer = "John";
 
-        Review review = new Review();
-        review.setId(reviewId);
-        review.setPostId(2L);
-        review.setStatus("PENDING");
+        // Configure mockReview behavior
+        when(mockReview.getId()).thenReturn(reviewId);
+        when(mockReview.getPostId()).thenReturn(2L);
+        when(mockReview.getStatus()).thenReturn("PENDING");
 
-        when(reviewRepository.findById(reviewId)).thenReturn(Optional.of(review));
+        when(reviewRepository.findById(reviewId)).thenReturn(Optional.of(mockReview));
 
         // Act
         reviewService.approveReview(reviewId, reviewer);
 
         // Assert
-        verify(postService).publishPost(review.getPostId());
-        verify(reviewRepository).delete(review);
+        verify(postService).publishPost(2L);
+        verify(reviewRepository).delete(mockReview);
 
         ArgumentCaptor<NotificationMessage> captor = ArgumentCaptor.forClass(NotificationMessage.class);
         verify(rabbitTemplate).convertAndSend(eq("notificationExchange"), eq("notification.key"), captor.capture());
@@ -91,7 +92,7 @@ class ReviewServiceTest {
 
         assertEquals("approved", message.getStatus());
         assertEquals(reviewer, message.getReviewer());
-        assertEquals(review.getPostId(), message.getPostId());
+        assertEquals(2L, message.getPostId());
     }
 
     @Test
@@ -111,23 +112,24 @@ class ReviewServiceTest {
         String reviewer = "Jane";
         String remarks = "Not good enough";
 
-        Review review = new Review();
-        review.setId(reviewId);
-        review.setPostId(2L);
-        review.setStatus("PENDING");
+        // Configure mockReview behavior
+        when(mockReview.getId()).thenReturn(reviewId);
+        when(mockReview.getPostId()).thenReturn(2L);
+        when(mockReview.getStatus()).thenReturn("PENDING");
 
-        when(reviewRepository.findById(reviewId)).thenReturn(Optional.of(review));
+        when(reviewRepository.findById(reviewId)).thenReturn(Optional.of(mockReview));
 
         // Act
         reviewService.rejectReview(reviewId, reviewer, remarks);
 
         // Assert
-        assertEquals("REJECTED", review.getStatus());
-        assertEquals(reviewer, review.getReviewer());
-        assertEquals(remarks, review.getRemarks());
-        assertNotNull(review.getReviewedAt());
+        // Verify setters are called on mockReview
+        verify(mockReview).setStatus("REJECTED");
+        verify(mockReview).setReviewer(reviewer);
+        verify(mockReview).setRemarks(remarks);
+        verify(mockReview).setReviewedAt(any(LocalDateTime.class));
 
-        verify(reviewRepository).save(review);
+        verify(reviewRepository).save(mockReview);
 
         ArgumentCaptor<NotificationMessage> captor = ArgumentCaptor.forClass(NotificationMessage.class);
         verify(rabbitTemplate).convertAndSend(eq("notificationExchange"), eq("notification.key"), captor.capture());
@@ -151,8 +153,12 @@ class ReviewServiceTest {
     @Test
     void testGetAllReviewsWithPostDetails() {
         // Arrange
-        Review review = new Review(1L, 2L, "Author", "PENDING", null, null, LocalDateTime.now(), null);
-        when(reviewRepository.findAll()).thenReturn(List.of(review));
+        when(reviewRepository.findAll()).thenReturn(List.of(mockReview));
+
+        // Configure mockReview behavior
+        when(mockReview.getStatus()).thenReturn("PENDING");
+        when(mockReview.getPostId()).thenReturn(2L);
+        when(mockReview.getAuthor()).thenReturn("Author");
 
         PostResponse postResponse = new PostResponse(2L, "Post Title", "Post Content", "Author");
         when(postClient.getPostById(2L, "EDITOR")).thenReturn(postResponse);
@@ -170,8 +176,10 @@ class ReviewServiceTest {
     @Test
     void testGetAllReviewsWithPostDetails_RejectedFilteredOut() {
         // Arrange
-        Review review = new Review(1L, 2L, "Author", "REJECTED", null, null, LocalDateTime.now(), null);
-        when(reviewRepository.findAll()).thenReturn(List.of(review));
+        when(reviewRepository.findAll()).thenReturn(List.of(mockReview));
+
+        // Configure mockReview behavior
+        when(mockReview.getStatus()).thenReturn("REJECTED");
 
         // Act
         List<ReviewWithPostDetailsDTO> result = reviewService.getAllReviewsWithPostDetails();

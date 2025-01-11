@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.*;
 public interface ReviewClient {
     @PostMapping("/submit")
     void submitPostForReview(@RequestBody ReviewRequest reviewRequest);
+
+    @GetMapping("/has-active-review")
+    boolean hasActiveReviewForPost(@RequestParam("postId") Long postId);
     @DeleteMapping("/pending/{postId}")
     void deletePendingReviewForPost(@PathVariable("postId") Long postId);
 }
