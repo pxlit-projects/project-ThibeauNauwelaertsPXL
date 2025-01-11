@@ -14,9 +14,11 @@ import org.mockito.*;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -41,10 +43,24 @@ class ReviewServiceTest {
     @Mock
     private Review mockReview; // Mocked Review instance
 
+    @Mock
+    private SseEmitter mockEmitter1;
+
+    @Mock
+    private SseEmitter mockEmitter2;
+
+    @Captor
+    private ArgumentCaptor<Review> reviewCaptor;
+
+    @Captor
+    private ArgumentCaptor<NotificationMessage> notificationCaptor;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
     }
+
+    // Existing tests...
 
     @Test
     void testSubmitForReview() {
@@ -56,9 +72,8 @@ class ReviewServiceTest {
         reviewService.submitForReview(postId, author);
 
         // Assert
-        ArgumentCaptor<Review> captor = ArgumentCaptor.forClass(Review.class);
-        verify(reviewRepository).save(captor.capture());
-        Review savedReview = captor.getValue();
+        verify(reviewRepository).save(reviewCaptor.capture());
+        Review savedReview = reviewCaptor.getValue();
 
         assertEquals(postId, savedReview.getPostId());
         assertEquals(author, savedReview.getAuthor());
@@ -86,13 +101,13 @@ class ReviewServiceTest {
         verify(postService).publishPost(2L);
         verify(reviewRepository).delete(mockReview);
 
-        ArgumentCaptor<NotificationMessage> captor = ArgumentCaptor.forClass(NotificationMessage.class);
-        verify(rabbitTemplate).convertAndSend(eq("notificationExchange"), eq("notification.key"), captor.capture());
-        NotificationMessage message = captor.getValue();
+        verify(rabbitTemplate).convertAndSend(eq("notificationExchange"), eq("notification.key"), notificationCaptor.capture());
+        NotificationMessage message = notificationCaptor.getValue();
 
         assertEquals("approved", message.getStatus());
         assertEquals(reviewer, message.getReviewer());
         assertEquals(2L, message.getPostId());
+        assertNull(message.getRemarks());
     }
 
     @Test
@@ -101,7 +116,8 @@ class ReviewServiceTest {
         when(reviewRepository.findById(1L)).thenReturn(Optional.empty());
 
         // Act & Assert
-        assertThrows(RuntimeException.class, () -> reviewService.approveReview(1L, "John"));
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> reviewService.approveReview(1L, "John"));
+        assertEquals("Review not found", exception.getMessage());
         verify(reviewRepository, never()).delete(any());
     }
 
@@ -131,13 +147,13 @@ class ReviewServiceTest {
 
         verify(reviewRepository).save(mockReview);
 
-        ArgumentCaptor<NotificationMessage> captor = ArgumentCaptor.forClass(NotificationMessage.class);
-        verify(rabbitTemplate).convertAndSend(eq("notificationExchange"), eq("notification.key"), captor.capture());
-        NotificationMessage message = captor.getValue();
+        verify(rabbitTemplate).convertAndSend(eq("notificationExchange"), eq("notification.key"), notificationCaptor.capture());
+        NotificationMessage message = notificationCaptor.getValue();
 
         assertEquals("rejected", message.getStatus());
         assertEquals(reviewer, message.getReviewer());
         assertEquals(remarks, message.getRemarks());
+        assertEquals(2L, message.getPostId());
     }
 
     @Test
@@ -146,7 +162,8 @@ class ReviewServiceTest {
         when(reviewRepository.findById(1L)).thenReturn(Optional.empty());
 
         // Act & Assert
-        assertThrows(RuntimeException.class, () -> reviewService.rejectReview(1L, "Jane", "Invalid content"));
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> reviewService.rejectReview(1L, "Jane", "Invalid content"));
+        assertEquals("Review not found", exception.getMessage());
         verify(reviewRepository, never()).save(any());
     }
 
@@ -168,9 +185,10 @@ class ReviewServiceTest {
 
         // Assert
         assertEquals(1, result.size());
-        assertEquals("Post Title", result.get(0).getPostTitle());
-        assertEquals("Post Content", result.get(0).getPostContent());
-        assertEquals("Author", result.get(0).getAuthor());
+        ReviewWithPostDetailsDTO dto = result.get(0);
+        assertEquals("Post Title", dto.getPostTitle());
+        assertEquals("Post Content", dto.getPostContent());
+        assertEquals("Author", dto.getAuthor());
     }
 
     @Test
@@ -195,5 +213,167 @@ class ReviewServiceTest {
 
         // Assert
         assertNotNull(emitter);
+        verifyNoInteractions(mockEmitter1, mockEmitter2); // No interactions with mock emitters yet
     }
+
+    // New Test Methods
+
+    /**
+     * Tests that hasActiveReviewForPost returns true when a PENDING review exists.
+     */
+    @Test
+    void testHasActiveReviewForPost_WhenExists() {
+        // Arrange
+        Long postId = 1L;
+        when(reviewRepository.existsByPostIdAndStatus(postId, "PENDING")).thenReturn(true);
+
+        // Act
+        boolean hasActive = reviewService.hasActiveReviewForPost(postId);
+
+        // Assert
+        assertTrue(hasActive);
+        verify(reviewRepository).existsByPostIdAndStatus(postId, "PENDING");
+    }
+
+    /**
+     * Tests that hasActiveReviewForPost returns false when no PENDING review exists.
+     */
+    @Test
+    void testHasActiveReviewForPost_WhenNotExists() {
+        // Arrange
+        Long postId = 1L;
+        when(reviewRepository.existsByPostIdAndStatus(postId, "PENDING")).thenReturn(false);
+
+        // Act
+        boolean hasActive = reviewService.hasActiveReviewForPost(postId);
+
+        // Assert
+        assertFalse(hasActive);
+        verify(reviewRepository).existsByPostIdAndStatus(postId, "PENDING");
+    }
+
+    /**
+     * Tests that removePendingReviewForPost successfully deletes a PENDING review.
+     */
+    @Test
+    void testRemovePendingReviewForPost_WhenExists() {
+        // Arrange
+        Long postId = 1L;
+        doNothing().when(reviewRepository).deleteByPostIdAndStatus(postId, "PENDING");
+
+        // Act
+        reviewService.removePendingReviewForPost(postId);
+
+        // Assert
+        verify(reviewRepository).deleteByPostIdAndStatus(postId, "PENDING");
+    }
+
+    /**
+     * Tests that removePendingReviewForPost behaves correctly when no PENDING review exists.
+     * Assuming the repository method does nothing in this case.
+     */
+    @Test
+    void testRemovePendingReviewForPost_WhenNotExists() {
+        // Arrange
+        Long postId = 1L;
+        doNothing().when(reviewRepository).deleteByPostIdAndStatus(postId, "PENDING");
+
+        // Act
+        reviewService.removePendingReviewForPost(postId);
+
+        // Assert
+        verify(reviewRepository).deleteByPostIdAndStatus(postId, "PENDING");
+        // Additional assertions can be added if the method has different behaviors based on existence
+    }
+
+
+    /**
+     * Tests that registerClient correctly adds an emitter and handles its completion.
+     */
+    @Test
+    void testRegisterClient_AddsEmitter() {
+        // Arrange
+        ReviewServiceImpl spyService = Mockito.spy(reviewService);
+        SseEmitter newEmitter = new SseEmitter();
+
+        // Act
+        SseEmitter registeredEmitter = spyService.registerClient();
+
+        assertNotNull(registeredEmitter);
+        verify(spyService).registerClient();
+    }
+
+    @Test
+    void testGetAllReviewsWithPostDetails_PostClientReturnsNull() {
+        // Arrange
+        when(reviewRepository.findAll()).thenReturn(List.of(mockReview));
+
+        // Configure mockReview behavior
+        when(mockReview.getStatus()).thenReturn("PENDING");
+        when(mockReview.getPostId()).thenReturn(2L);
+        when(mockReview.getAuthor()).thenReturn("Author");
+
+        // Simulate postClient returning null
+        when(postClient.getPostById(2L, "EDITOR")).thenReturn(null);
+
+        // Act
+        List<ReviewWithPostDetailsDTO> result = reviewService.getAllReviewsWithPostDetails();
+
+        // Assert
+        assertEquals(1, result.size());
+        ReviewWithPostDetailsDTO dto = result.get(0);
+        assertEquals("Unknown Title", dto.getPostTitle());
+        assertEquals("Unknown Content", dto.getPostContent());
+        assertEquals("Author", dto.getAuthor());
+    }
+    @Test
+    void testGetAllReviewsWithPostDetails_PostClientThrowsException() {
+        // Arrange
+        when(reviewRepository.findAll()).thenReturn(List.of(mockReview));
+
+        // Configure mockReview behavior
+        when(mockReview.getStatus()).thenReturn("PENDING");
+        when(mockReview.getPostId()).thenReturn(2L);
+        when(mockReview.getAuthor()).thenReturn("Author");
+
+        // Simulate postClient throwing an exception
+        when(postClient.getPostById(2L, "EDITOR")).thenThrow(new RuntimeException("Post retrieval failed"));
+
+        // Act
+        List<ReviewWithPostDetailsDTO> result = reviewService.getAllReviewsWithPostDetails();
+
+        // Assert
+        assertEquals(1, result.size());
+        ReviewWithPostDetailsDTO dto = result.get(0);
+        assertEquals("Unknown Title", dto.getPostTitle());
+        assertEquals("Unknown Content", dto.getPostContent());
+        assertEquals("Author", dto.getAuthor());
+    }
+
+    @Test
+    void testApproveReview_AlreadyApproved() {
+        // Arrange
+        Long reviewId = 1L;
+        String reviewer = "John";
+
+        when(mockReview.getId()).thenReturn(reviewId);
+        when(mockReview.getPostId()).thenReturn(2L);
+        when(mockReview.getStatus()).thenReturn("APPROVED"); // Already approved
+
+        when(reviewRepository.findById(reviewId)).thenReturn(Optional.of(mockReview));
+
+        reviewService.approveReview(reviewId, reviewer);
+
+        verify(postService).publishPost(2L);
+        verify(reviewRepository).delete(mockReview);
+
+        verify(rabbitTemplate).convertAndSend(eq("notificationExchange"), eq("notification.key"), notificationCaptor.capture());
+        NotificationMessage message = notificationCaptor.getValue();
+
+        assertEquals("approved", message.getStatus());
+        assertEquals(reviewer, message.getReviewer());
+        assertEquals(2L, message.getPostId());
+        assertNull(message.getRemarks());
+    }
+
 }
