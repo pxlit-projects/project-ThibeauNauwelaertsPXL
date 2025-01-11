@@ -3,22 +3,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Comment } from '../models/comment.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CommentService {
-  private baseUrl = 'http://localhost:8083/comment/comments';
+  private baseUrl = environment.commentUrl;
   private authToken =
     'Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9FRElUT1IifQ.WyhcB0Og8qV2HPLMlc5gG5wkl3F5oqhZ0R_Dd3pZeqo';
 
   constructor(private http: HttpClient) {}
 
-  /**
-   * Add a comment to a post
-   * @param postId ID of the post
-   * @param comment The comment to be added
-   */
   addCommentToPost(postId: number, comment: Comment): Observable<Comment> {
     const headers = this.createHeaders();
     return this.http
@@ -30,10 +26,6 @@ export class CommentService {
       );
   }
 
-  /**
-   * Get comments for a specific post
-   * @param postId ID of the post
-   */
   getCommentsByPostId(postId: number): Observable<Comment[]> {
     const headers = this.createHeaders();
     return this.http
@@ -45,11 +37,6 @@ export class CommentService {
       );
   }
 
-  /**
-   * Update an existing comment
-   * @param commentId ID of the comment
-   * @param updatedComment Updated comment details
-   */
   updateComment(commentId: number, updatedComment: Comment): Observable<Comment> {
     const headers = this.createHeaders();
     return this.http
@@ -61,11 +48,6 @@ export class CommentService {
       );
   }
 
-  /**
-   * Delete a comment
-   * @param commentId ID of the comment to delete
-   * @param currentUser Current user's username
-   */
   deleteComment(commentId: number, currentUser: string): Observable<void> {
     const headers = this.createHeaders().set('X-User-Role', currentUser);
     return this.http
@@ -77,9 +59,6 @@ export class CommentService {
       );
   }
 
-  /**
-   * Create headers for the HTTP requests
-   */
   private createHeaders(): HttpHeaders {
     return new HttpHeaders({
       'Content-Type': 'application/json',
@@ -87,11 +66,6 @@ export class CommentService {
     });
   }
 
-  /**
-   * Handle HTTP errors
-   * @param error The HTTP error
-   * @param message A custom error message
-   */
   private handleError(error: any, message: string): Observable<never> {
     console.error(message, error);
     return throwError(() => new Error(message));
