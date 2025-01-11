@@ -35,7 +35,6 @@
             <div class="text-gray-500 text-sm border-t pt-3">
               <p><strong>Author:</strong> {{ review.author || 'Unknown' }}</p>
               <p><strong>Submitted At:</strong> {{ review.submittedAt | date: 'MMM d, y, h:mm a' }}</p>
-              <p><strong>Reviewer:</strong> {{ review.reviewer || 'N/A' }}</p>
             </div>
             <!-- Review Actions -->
             @if (review.status === 'PENDING') {

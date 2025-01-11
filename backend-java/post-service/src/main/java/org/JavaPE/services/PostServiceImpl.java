@@ -148,14 +148,14 @@ public class PostServiceImpl implements PostService {
                 .collect(Collectors.toList());
     }
 
-    @Override
-    public List<PostDTO> getPostsFiltered(String content, String author, LocalDate createdDate, LocalDate lastModifiedDate) {
+    public List<PostDTO> getPostsFiltered(String title, String author, LocalDate createdDate, LocalDate lastModifiedDate) {
         List<Post> filteredPosts = postRepository.findPostsByFilters(
-                content,
-                author,
+                title != null && !title.trim().isEmpty() ? title.trim() : null,
+                author != null && !author.trim().isEmpty() ? author.trim() : null,
                 createdDate,
                 lastModifiedDate
         );
+
         return filteredPosts.stream()
                 .map(postDTOConverter::convertToDTO)
                 .collect(Collectors.toList());

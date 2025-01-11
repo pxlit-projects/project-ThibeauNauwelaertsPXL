@@ -123,11 +123,9 @@ public class ReviewServiceImpl implements ReviewService {
 
         rabbitTemplate.convertAndSend("notificationExchange", "notification.key", message);
         System.out.println("Notification sent to RabbitMQ: " + message);
-
-        publishToSseClients(message);
     }
 
-    private void publishToSseClients(NotificationMessage message) {
+    public void publishToSseClients(NotificationMessage message) {
         System.out.println("=== ReviewService: publishToSseClients() ===");
         for (SseEmitter emitter : emitters) {
             try {

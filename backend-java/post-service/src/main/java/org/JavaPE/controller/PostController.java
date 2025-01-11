@@ -88,7 +88,7 @@ public class PostController {
     @GetMapping("/filtered")
     public ResponseEntity<List<PostDTO>> getFilteredPosts(
             @RequestHeader(value = "X-User-Role", required = false) String role,
-            @RequestParam(required = false) String content,
+            @RequestParam(required = false) String title,
             @RequestParam(required = false) String author,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate createdDate,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate lastModifiedDate) {
@@ -99,10 +99,10 @@ public class PostController {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
 
-        logger.debug("Filter parameters - Content: {}, Author: {}, Created Date: {}, Last Modified Date: {}",
-                content, author, createdDate, lastModifiedDate);
+        logger.debug("Filter parameters - Title: {}, Author: {}, Created Date: {}, Last Modified Date: {}",
+                title, author, createdDate, lastModifiedDate);
 
-        List<PostDTO> filteredPosts = postService.getPostsFiltered(content, author, createdDate, lastModifiedDate);
+        List<PostDTO> filteredPosts = postService.getPostsFiltered(title, author, createdDate, lastModifiedDate);
         logger.info("Successfully fetched {} filtered posts", filteredPosts.size());
         return ResponseEntity.ok(filteredPosts);
     }

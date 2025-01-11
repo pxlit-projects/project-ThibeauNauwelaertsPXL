@@ -15,12 +15,12 @@ public interface PostRepository extends JpaRepository<Post, Long> {
     List<Post> findByStatus(@Param("status") PostStatus status);
 
     @Query("SELECT p FROM Post p WHERE " +
-            "(:content IS NULL OR p.content LIKE %:content%) AND " +
-            "(:author IS NULL OR p.author LIKE %:author%) AND " +
+            "(:title IS NULL OR LOWER(p.title) LIKE LOWER(CONCAT('%', :title, '%'))) AND " +
+            "(:author IS NULL OR LOWER(p.author) LIKE LOWER(CONCAT('%', :author, '%'))) AND " +
             "(:startDate IS NULL OR p.createdDate >= :startDate) AND " +
             "(:endDate IS NULL OR p.createdDate <= :endDate)")
     List<Post> findPostsByFilters(
-            @Param("content") String content,
+            @Param("title") String title,
             @Param("author") String author,
             @Param("startDate") LocalDate startDate,
             @Param("endDate") LocalDate endDate
