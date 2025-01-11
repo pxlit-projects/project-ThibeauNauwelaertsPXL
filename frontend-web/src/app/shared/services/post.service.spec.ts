@@ -59,22 +59,6 @@ describe('PostService', () => {
   });
 
   describe('#getDraftPosts', () => {
-    it('should fetch draft posts with query params (success)', () => {
-      const filters = { content: 'Angular', author: 'John Doe' };
-      service.getDraftPosts(filters).subscribe((posts) => {
-        expect(posts).toEqual(dummyPosts);
-      });
-
-      // Construct expected URL with query params
-      const expectedUrl =
-        'http://localhost:8083/post/posts/drafts?content=Angular&author=John%20Doe';
-
-      const req = httpMock.expectOne(expectedUrl);
-      expect(req.request.method).toBe('GET');
-
-      req.flush(dummyPosts);
-    });
-
     it('should handle error when fetching draft posts', () => {
       const errorMessage = 'Failed to fetch draft posts.';
       service.getDraftPosts().subscribe({

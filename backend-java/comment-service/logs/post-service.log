@@ -1293,3 +1293,134 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 2025-01-11 20:11:19 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [HikariPool-1 - Connection is not available, request timed out after 30016ms (total=0, active=0, idle=0, waiting=0)] [n/a]
 2025-01-11 20:11:19 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2025-01-11 20:11:19 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-01-11 20:48:33 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-01-11 20:48:33 INFO  org.JavaPE.CommentTests - Starting CommentTests using Java 21 with PID 10612 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\comment-service)
+2025-01-11 20:48:33 INFO  org.JavaPE.CommentTests - Starting CommentTests using Java 21 with PID 10612 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\comment-service)
+2025-01-11 20:48:33 DEBUG org.JavaPE.CommentTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-01-11 20:48:33 DEBUG org.JavaPE.CommentTests - Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-01-11 20:48:33 INFO  org.JavaPE.CommentTests - The following 1 profile is active: "test"
+2025-01-11 20:48:33 INFO  org.JavaPE.CommentTests - The following 1 profile is active: "test"
+2025-01-11 20:48:33 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2025-01-11 20:48:33 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=comment-service, profiles=[default], label=null, version=null, state=null
+2025-01-11 20:48:33 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2025-01-11 20:48:33 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=comment-service, profiles=[test], label=null, version=null, state=null
+2025-01-11 20:48:35 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-11 20:48:35 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 385 ms. Found 3 JPA repository interfaces.
+2025-01-11 20:48:36 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=a2a6e95d-ecbd-33f1-9424-d118dd508c43
+2025-01-11 20:48:38 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-01-11 20:48:38 WARN  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2025-01-11 20:48:38 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-11 20:48:38 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-01-11 20:48:38 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-11 20:48:39 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-11 20:48:39 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-11 20:48:39 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e50e308
+2025-01-11 20:48:39 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-11 20:48:39 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-11 20:48:39 WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-11 20:48:42 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-11 20:48:42 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-11 20:48:42 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-11 20:48:44 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-11 20:48:44 INFO  o.s.c.o.FeignClientFactoryBean - For 'review-service' URL not provided. Will try picking an instance via load-balancing.
+2025-01-11 20:48:44 INFO  o.s.c.o.FeignClientFactoryBean - For 'post-service' URL not provided. Will try picking an instance via load-balancing.
+2025-01-11 20:48:46 WARN  o.s.b.a.f.FreeMarkerAutoConfiguration - Cannot find template location: [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-01-11 20:48:46 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-11 20:48:46 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-11 20:48:46 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-11 20:48:46 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-01-11 20:48:46 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-01-11 20:48:46 INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2025-01-11 20:48:46 INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#605bfc81:0/SimpleConnection@6ae0c053 [delegate=amqp://guest@127.0.0.1:5672/, localPort=58130]
+2025-01-11 20:48:47 INFO  org.JavaPE.CommentTests - Started CommentTests in 15.765 seconds (process running for 33.962)
+2025-01-11 20:48:47 INFO  org.JavaPE.CommentTests - Started CommentTests in 15.765 seconds (process running for 33.962)
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 104 by user: user6
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 104 by user: user6
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to update comment with ID: 102
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to update comment with ID: 102
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 1000 by user: user5
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 1000 by user: user5
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to update comment with ID: 101
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to update comment with ID: 101
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Successfully updated comment with ID: 101
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Successfully updated comment with ID: 101
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 103 by user: user4
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 103 by user: user4
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Successfully deleted comment with ID: 103
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Successfully deleted comment with ID: 103
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to fetch comments for post with ID: 1
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to fetch comments for post with ID: 1
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Successfully fetched 2 comments for post with ID: 1
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Successfully fetched 2 comments for post with ID: 1
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to add a comment to post with ID: 1
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to add a comment to post with ID: 1
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Successfully added comment to post with ID: 1
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Successfully added comment to post with ID: 1
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to update comment with ID: 999
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to update comment with ID: 999
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to fetch comments for post with ID: 1
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to fetch comments for post with ID: 1
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Successfully fetched 2 comments for post with ID: 1
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Successfully fetched 2 comments for post with ID: 1
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to edit comment with ID: 106 by user: user9
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to edit comment with ID: 106 by user: user9
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to fetch comments for post with ID: 3
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to fetch comments for post with ID: 3
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Successfully fetched 0 comments for post with ID: 3
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Successfully fetched 0 comments for post with ID: 3
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to edit comment with ID: 105 by user: user7
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to edit comment with ID: 105 by user: user7
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Successfully edited comment with ID: 105
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Successfully edited comment with ID: 105
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to edit comment with ID: 2000 by user: user8
+2025-01-11 20:48:47 INFO  o.J.controller.CommentController - Received request to edit comment with ID: 2000 by user: user8
+2025-01-11 20:48:49 INFO  controller.CommentControllerTest - Starting CommentControllerTest using Java 21 with PID 10612 (started by thibe in C:\Users\thibe\Documents\Toegepaste informatica\FullstackJava\project-ThibeauNauwelaertsPXL\backend-java\comment-service)
+2025-01-11 20:48:49 INFO  controller.CommentControllerTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-11 20:48:49 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8080/
+2025-01-11 20:48:49 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=comment-service, profiles=[default], label=null, version=null, state=null
+2025-01-11 20:48:50 WARN  o.s.b.a.f.FreeMarkerAutoConfiguration - Cannot find template location: [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2025-01-11 20:48:50 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2025-01-11 20:48:50 INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2025-01-11 20:48:50 INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2025-01-11 20:48:50 INFO  controller.CommentControllerTest - Started CommentControllerTest in 0.635 seconds (process running for 37.019)
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Received request to edit comment with ID: 1 by user: Author
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Received request to edit comment with ID: 1 by user: Author
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Successfully edited comment with ID: 1
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Successfully edited comment with ID: 1
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 1 by user: Author
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Received request to delete comment with ID: 1 by user: Author
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Successfully deleted comment with ID: 1
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Successfully deleted comment with ID: 1
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Received request to update comment with ID: 1
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Received request to update comment with ID: 1
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Successfully updated comment with ID: 1
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Successfully updated comment with ID: 1
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Received request to add a comment to post with ID: 1
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Received request to add a comment to post with ID: 1
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Successfully added comment to post with ID: 1
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Successfully added comment to post with ID: 1
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Received request to fetch comments for post with ID: 1
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Received request to fetch comments for post with ID: 1
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Successfully fetched 1 comments for post with ID: 1
+2025-01-11 20:48:50 INFO  o.J.controller.CommentController - Successfully fetched 1 comments for post with ID: 1
+2025-01-11 20:48:50 INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2025-01-11 20:48:51 INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2025-01-11 20:48:51 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-11 20:48:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@e50e308 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:48:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@20e071ae (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:48:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@5b51915a (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:48:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3004adf2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:48:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@37b325ba (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:48:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@67db4b80 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:48:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@54d412cd (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:48:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3309a38a (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:48:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1e3444c4 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:48:51 WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@758d2146 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-01-11 20:49:21 WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08S01
+2025-01-11 20:49:21 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - HikariPool-1 - Connection is not available, request timed out after 30006ms (total=0, active=0, idle=0, waiting=0)
+2025-01-11 20:49:21 ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2025-01-11 20:49:21 WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [HikariPool-1 - Connection is not available, request timed out after 30006ms (total=0, active=0, idle=0, waiting=0)] [n/a]
+2025-01-11 20:49:21 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-01-11 20:49:21 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
