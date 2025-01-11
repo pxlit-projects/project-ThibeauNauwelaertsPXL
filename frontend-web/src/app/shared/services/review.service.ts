@@ -16,11 +16,6 @@ export class ReviewService {
 
   constructor(private http: HttpClient) {}
 
-  /**
-   * Submit a post for review
-   * @param reviewRequest The review request payload
-   * @returns Observable<string>
-   */
   submitPostForReview(reviewRequest: ReviewRequest): Observable<string> {
     const headers = this.createHeaders();
     return this.http
@@ -32,10 +27,6 @@ export class ReviewService {
       );
   }
 
-  /**
-   * Get all reviews
-   * @returns Observable<Review[]>
-   */
   getAllReviews(): Observable<Review[]> {
     const headers = this.createHeaders();
     return this.http
@@ -45,12 +36,6 @@ export class ReviewService {
       );
   }  
 
-  /**
-   * Approve a review
-   * @param reviewId The ID of the review to approve
-   * @param reviewer The reviewer approving the review
-   * @returns Observable<string>
-   */
   approveReview(reviewId: number, reviewer: string): Observable<string> {
     const headers = this.createHeaders();
     return this.http
@@ -66,12 +51,6 @@ export class ReviewService {
       );
   }
 
-  /**
-   * Reject a review
-   * @param reviewId The ID of the review to reject
-   * @param rejectRequest The reject request payload
-   * @returns Observable<string>
-   */
   rejectReview(reviewId: number, rejectRequest: RejectRequest): Observable<string> {
     const headers = this.createHeaders();
     return this.http
@@ -86,10 +65,6 @@ export class ReviewService {
       );
   }  
 
-  /**
-   * Create HTTP headers
-   * @returns HttpHeaders
-   */
   private createHeaders(): HttpHeaders {
     return new HttpHeaders({
       'Content-Type': 'application/json',
@@ -97,12 +72,6 @@ export class ReviewService {
     });
   }
 
-  /**
-   * Handle HTTP errors
-   * @param error The HTTP error
-   * @param message A custom error message
-   * @returns Observable<never>
-   */
   private handleError(error: any, message: string): Observable<never> {
     console.error(message, error);
     return throwError(() => new Error(message));

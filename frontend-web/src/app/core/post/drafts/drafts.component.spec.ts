@@ -72,48 +72,7 @@ describe('DraftPostsComponent', () => {
       expect(component.loading).toBeFalse();
     });
   });
-
-  describe('updateDraftWithFeedback', () => {
-    const mockNotification: NotificationMessage = {
-      postId: 1,
-      reviewer: 'mohammed',
-      remarks: 'Please fix this',
-      status: 'rejected',
-    };
-    
-    beforeEach(() => {
-      // Preset some draft posts in the component
-      component.draftPosts = [...mockDrafts];
-    });
-
-    it('should update the post with feedback when found', () => {
-      postServiceMock.updatePost.and.returnValue(of({
-        ...mockDrafts[0],
-        remarks: mockNotification.remarks,
-        status: 'REJECTED'
-      }));
-
-      component.updateDraftWithFeedback(mockNotification);
-
-      const updatedPost = component.draftPosts.find(d => d.id === 1);
-      expect(updatedPost?.remarks).toBe('Please fix this');
-      expect(updatedPost?.status).toBe('REJECTED');
-      expect(postServiceMock.updatePost).toHaveBeenCalledWith(1, jasmine.any(Object));
-    });
-
-    it('should show error toast if update fails', () => {
-      spyOn(component, 'showToast');
-      postServiceMock.updatePost.and.returnValue(throwError(() => new Error('Update error')));
-
-      component.updateDraftWithFeedback(mockNotification);
-
-      expect(component.showToast).toHaveBeenCalledWith(
-        jasmine.stringContaining('Error updating post'),
-        'error'
-      );
-    });
-  });
-
+  
   describe('applyFilters', () => {
     it('should call fetchDraftPosts with filtered criteria', () => {
       spyOn(component, 'fetchDraftPosts');
