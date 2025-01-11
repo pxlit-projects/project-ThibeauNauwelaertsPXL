@@ -326,29 +326,6 @@ class ReviewServiceTest {
         assertEquals("Unknown Content", dto.getPostContent());
         assertEquals("Author", dto.getAuthor());
     }
-    @Test
-    void testGetAllReviewsWithPostDetails_PostClientThrowsException() {
-        // Arrange
-        when(reviewRepository.findAll()).thenReturn(List.of(mockReview));
-
-        // Configure mockReview behavior
-        when(mockReview.getStatus()).thenReturn("PENDING");
-        when(mockReview.getPostId()).thenReturn(2L);
-        when(mockReview.getAuthor()).thenReturn("Author");
-
-        // Simulate postClient throwing an exception
-        when(postClient.getPostById(2L, "EDITOR")).thenThrow(new RuntimeException("Post retrieval failed"));
-
-        // Act
-        List<ReviewWithPostDetailsDTO> result = reviewService.getAllReviewsWithPostDetails();
-
-        // Assert
-        assertEquals(1, result.size());
-        ReviewWithPostDetailsDTO dto = result.get(0);
-        assertEquals("Unknown Title", dto.getPostTitle());
-        assertEquals("Unknown Content", dto.getPostContent());
-        assertEquals("Author", dto.getAuthor());
-    }
 
     @Test
     void testApproveReview_AlreadyApproved() {
