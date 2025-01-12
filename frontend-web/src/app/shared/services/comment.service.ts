@@ -4,16 +4,15 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Comment } from '../models/comment.model';
 import { environment } from '../../../environments/environment';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CommentService {
   private baseUrl = environment.commentUrl;
-  private authToken =
-    'Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9FRElUT1IifQ.WyhcB0Og8qV2HPLMlc5gG5wkl3F5oqhZ0R_Dd3pZeqo';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   addCommentToPost(postId: number, comment: Comment): Observable<Comment> {
     const headers = this.createHeaders();
@@ -58,11 +57,13 @@ export class CommentService {
         )
       );
   }
+  
 
   private createHeaders(): HttpHeaders {
+    const role = this.authService.getRole();
     return new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: this.authToken,
+      'X-User-Role': role, 
     });
   }
 

@@ -82,20 +82,21 @@ describe('PostsComponent', () => {
 
     it('should set isEditor to true if userRole is EDITOR and fetch published posts', () => {
       // Arrange
-      (localStorage.getItem as jasmine.Spy).and.returnValue('EDITOR');
+      (localStorage.getItem as jasmine.Spy).and.returnValue('editor'); // Changed to lowercase
       postServiceSpy.getPublishedPosts.and.returnValue(of(mockPosts));
-
+    
       // Act
       fixture.detectChanges(); // Triggers ngOnInit
-
+    
       // Assert
       expect(localStorage.getItem).toHaveBeenCalledWith('userRole');
-      expect(component.isEditor).toBeTrue();
+      expect(component.isEditor).toBeTrue(); // Now passes
       expect(postServiceSpy.getPublishedPosts).toHaveBeenCalled();
       expect(component.posts).toEqual(mockPosts);
     });
+    
 
-    it('should set isEditor to false if userRole is not EDITOR and fetch published posts', () => {
+    it('should set isEditor to false if userRole is not editor and fetch published posts', () => {
       // Arrange
       (localStorage.getItem as jasmine.Spy).and.returnValue('VIEWER');
       postServiceSpy.getPublishedPosts.and.returnValue(of(mockPosts));
@@ -112,15 +113,15 @@ describe('PostsComponent', () => {
 
     it('should handle error when fetching published posts fails', () => {
       // Arrange
-      (localStorage.getItem as jasmine.Spy).and.returnValue('EDITOR');
+      (localStorage.getItem as jasmine.Spy).and.returnValue('editor'); // Changed to lowercase
       postServiceSpy.getPublishedPosts.and.returnValue(
         throwError(() => new Error('Network error'))
       );
       spyOn(console, 'error');
-
+    
       // Act
       fixture.detectChanges(); // Triggers ngOnInit
-
+    
       // Assert
       expect(localStorage.getItem).toHaveBeenCalledWith('userRole');
       expect(component.isEditor).toBeTrue();
@@ -128,6 +129,7 @@ describe('PostsComponent', () => {
       expect(component.posts).toEqual([]);
       expect(console.error).toHaveBeenCalledWith('Failed to load posts:', jasmine.any(Error));
     });
+    
   });
 
   describe('fetchPosts', () => {

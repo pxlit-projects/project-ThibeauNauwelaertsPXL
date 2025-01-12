@@ -20,7 +20,7 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
     const role = localStorage.getItem('userRole') || 'VIEWER';
-    this.isEditor = role === 'EDITOR';
+    this.isEditor = role === 'editor';
     this.fetchPosts();
   }
 

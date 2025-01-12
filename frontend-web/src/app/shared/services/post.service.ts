@@ -4,16 +4,14 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Post } from '../models/post.model';
 import { environment } from '../../../environments/environment';
-
+import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root',
 })
 export class PostService {
   private baseUrl = environment.postUrl;
-  private authToken =
-    'Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9FRElUT1IifQ.WyhcB0Og8qV2HPLMlc5gG5wkl3F5oqhZ0R_Dd3pZeqo';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   getPublishedPosts(): Observable<Post[]> {
     const headers = this.createHeaders();
@@ -102,14 +100,15 @@ export class PostService {
       );
   }
   
-  
-
   private createHeaders(): HttpHeaders {
+    const role = this.authService.getRole();
+    console.log('Creating headers with role:', role);
     return new HttpHeaders({
       'Content-Type': 'application/json',
-      'X-User-Role': 'editor',
+      'X-User-Role': role,
     });
   }
+  
 
   /**
    * Handle HTTP errors

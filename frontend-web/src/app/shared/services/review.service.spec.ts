@@ -7,10 +7,12 @@ import { ReviewService } from './review.service';
 import { Review } from '../models/review.model';
 import { ReviewRequest } from '../models/ReviewRequest.model';
 import { RejectRequest } from '../models/reject-request.model';
+import { AuthService } from './auth.service'; // Make sure to import AuthService
 
 describe('ReviewService', () => {
   let service: ReviewService;
   let httpMock: HttpTestingController;
+  let mockAuthService: Partial<AuthService>;
 
   // Corrected dummy data matching the Review interface
   const dummyReviews: Review[] = [
@@ -37,9 +39,17 @@ describe('ReviewService', () => {
   const dummyResponseMessage = 'Operation successful';
 
   beforeEach(() => {
+    // Create a mock AuthService that returns 'editor' for getRole()
+    mockAuthService = {
+      getRole: jasmine.createSpy('getRole').and.returnValue('editor'),
+    };
+
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [ReviewService],
+      providers: [
+        ReviewService,
+        { provide: AuthService, useValue: mockAuthService }, // Provide the mock AuthService
+      ],
     });
 
     service = TestBed.inject(ReviewService);
@@ -66,6 +76,7 @@ describe('ReviewService', () => {
       expect(req.request.method).toBe('POST');
       expect(req.request.body).toEqual(reviewRequest);
       expect(req.request.headers.get('Content-Type')).toBe('application/json');
+      // Updated header check
       expect(req.request.headers.get('X-User-Role')).toBe('editor');
 
       req.flush(dummyResponseMessage);
@@ -102,6 +113,7 @@ describe('ReviewService', () => {
       const req = httpMock.expectOne('http://localhost:8083/review/reviews');
       expect(req.request.method).toBe('GET');
       expect(req.request.headers.get('Content-Type')).toBe('application/json');
+      // Updated header check
       expect(req.request.headers.get('X-User-Role')).toBe('editor');
 
       req.flush(dummyReviews);
@@ -141,6 +153,7 @@ describe('ReviewService', () => {
       expect(req.request.method).toBe('PUT');
       expect(req.request.body).toBeNull();
       expect(req.request.headers.get('Content-Type')).toBe('application/json');
+      // Updated header check
       expect(req.request.headers.get('X-User-Role')).toBe('editor');
 
       req.flush(dummyResponseMessage);
@@ -185,6 +198,7 @@ describe('ReviewService', () => {
       expect(req.request.method).toBe('PUT');
       expect(req.request.body).toEqual(rejectRequest);
       expect(req.request.headers.get('Content-Type')).toBe('application/json');
+      // Updated header check
       expect(req.request.headers.get('X-User-Role')).toBe('editor');
 
       req.flush(dummyResponseMessage);
@@ -221,6 +235,8 @@ describe('ReviewService', () => {
 
       const req = httpMock.expectOne('http://localhost:8083/review/reviews');
       expect(req.request.method).toBe('GET');
+      // Updated header check
+      expect(req.request.headers.get('X-User-Role')).toBe('editor');
 
       req.flush([]);
     });
@@ -242,6 +258,8 @@ describe('ReviewService', () => {
       const req = httpMock.expectOne('http://localhost:8083/review/reviews/submit');
       expect(req.request.method).toBe('POST');
       expect(req.request.body).toEqual(incompleteReviewRequest);
+      // Updated header check
+      expect(req.request.headers.get('X-User-Role')).toBe('editor');
 
       req.flush(dummyResponseMessage);
     });
