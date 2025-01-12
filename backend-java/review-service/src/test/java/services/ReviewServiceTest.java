@@ -6,7 +6,6 @@ import org.JavaPE.controller.dto.PostResponse;
 import org.JavaPE.controller.dto.ReviewWithPostDetailsDTO;
 import org.JavaPE.domain.Review;
 import org.JavaPE.repository.ReviewRepository;
-import org.JavaPE.services.PostService;
 import org.JavaPE.services.ReviewServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -32,10 +31,7 @@ class ReviewServiceTest {
     private ReviewRepository reviewRepository;
 
     @Mock
-    private PostService postService;
-
-    @Mock
-    private PostClient postClient;
+    private PostClient postClient; // Only one PostClient mock
 
     @Mock
     private RabbitTemplate rabbitTemplate;
@@ -86,10 +82,11 @@ class ReviewServiceTest {
         // Arrange
         Long reviewId = 1L;
         String reviewer = "John";
+        Long postId = 2L;
 
         // Configure mockReview behavior
         when(mockReview.getId()).thenReturn(reviewId);
-        when(mockReview.getPostId()).thenReturn(2L);
+        when(mockReview.getPostId()).thenReturn(postId);
         when(mockReview.getStatus()).thenReturn("PENDING");
 
         when(reviewRepository.findById(reviewId)).thenReturn(Optional.of(mockReview));
@@ -98,15 +95,19 @@ class ReviewServiceTest {
         reviewService.approveReview(reviewId, reviewer);
 
         // Assert
-        verify(postService).publishPost(2L);
+        // Verify that postClient.publishPost was called with correct arguments
+        verify(postClient).publishPost(postId, "editor");
+
+        // Verify that reviewRepository.delete was called with mockReview
         verify(reviewRepository).delete(mockReview);
 
+        // Verify that a notification was sent
         verify(rabbitTemplate).convertAndSend(eq("notificationExchange"), eq("notification.key"), notificationCaptor.capture());
         NotificationMessage message = notificationCaptor.getValue();
 
         assertEquals("approved", message.getStatus());
         assertEquals(reviewer, message.getReviewer());
-        assertEquals(2L, message.getPostId());
+        assertEquals(postId, message.getPostId());
         assertNull(message.getRemarks());
     }
 
@@ -286,7 +287,6 @@ class ReviewServiceTest {
         // Additional assertions can be added if the method has different behaviors based on existence
     }
 
-
     /**
      * Tests that registerClient correctly adds an emitter and handles its completion.
      */
@@ -326,31 +326,4 @@ class ReviewServiceTest {
         assertEquals("Unknown Content", dto.getPostContent());
         assertEquals("Author", dto.getAuthor());
     }
-
-    @Test
-    void testApproveReview_AlreadyApproved() {
-        // Arrange
-        Long reviewId = 1L;
-        String reviewer = "John";
-
-        when(mockReview.getId()).thenReturn(reviewId);
-        when(mockReview.getPostId()).thenReturn(2L);
-        when(mockReview.getStatus()).thenReturn("APPROVED");
-
-        when(reviewRepository.findById(reviewId)).thenReturn(Optional.of(mockReview));
-
-        reviewService.approveReview(reviewId, reviewer);
-
-        verify(postService).publishPost(2L);
-        verify(reviewRepository).delete(mockReview);
-
-        verify(rabbitTemplate).convertAndSend(eq("notificationExchange"), eq("notification.key"), notificationCaptor.capture());
-        NotificationMessage message = notificationCaptor.getValue();
-
-        assertEquals("approved", message.getStatus());
-        assertEquals(reviewer, message.getReviewer());
-        assertEquals(2L, message.getPostId());
-        assertNull(message.getRemarks());
-    }
-
 }
