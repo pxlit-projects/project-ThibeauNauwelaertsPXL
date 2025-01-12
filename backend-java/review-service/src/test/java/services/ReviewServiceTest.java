@@ -335,7 +335,7 @@ class ReviewServiceTest {
 
         when(mockReview.getId()).thenReturn(reviewId);
         when(mockReview.getPostId()).thenReturn(2L);
-        when(mockReview.getStatus()).thenReturn("APPROVED"); // Already approved
+        when(mockReview.getStatus()).thenReturn("APPROVED");
 
         when(reviewRepository.findById(reviewId)).thenReturn(Optional.of(mockReview));
 

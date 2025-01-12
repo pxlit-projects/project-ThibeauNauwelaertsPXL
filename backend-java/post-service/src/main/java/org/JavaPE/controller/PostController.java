@@ -29,7 +29,7 @@ public class PostController {
             @RequestBody PostDTO postDTO) {
         logger.info("Received request to create a post with role: {}", role);
 
-        if (!"editor".equals(role)) {
+        if (!role.equals("editor")) {
             logger.warn("Unauthorized attempt to create a post. Role: {}", role);
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
@@ -135,5 +135,29 @@ public class PostController {
         PostDTO post = postService.getPostById(id);
         logger.info("Successfully fetched post with ID: {}", id);
         return ResponseEntity.ok(post);
+    }
+
+    @PostMapping("/{id}/publish")
+    public ResponseEntity<Void> publishPost(
+            @RequestHeader(value = "X-User-Role", required = false) String role,
+            @PathVariable Long id) {
+        logger.info("Received request to publish post with ID: {} by role: {}", id, role);
+
+        if (!"editor".equals(role)) {
+            logger.warn("Unauthorized attempt to publish post with ID: {}. Role: {}", id, role);
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
+        try {
+            postService.publishPost(id);
+            logger.info("Post with ID: {} published successfully.", id);
+            return ResponseEntity.ok().build();
+        } catch (org.JavaPE.exception.PostNotFoundException e) {
+            logger.error("Post with ID: {} not found. Cannot publish.", id);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        } catch (Exception e) {
+            logger.error("Error occurred while publishing post with ID: {}. Error: {}", id, e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
 }

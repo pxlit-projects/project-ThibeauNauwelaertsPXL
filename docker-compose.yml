@@ -1,1 +1,54 @@
-# This file will contain a script in orde to start up the system (all microservices) 
+version: "3.9"
+services:
+  # MySQL Service
+  mysql-post:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: postservice_db
+      MYSQL_USER: student
+      MYSQL_PASSWORD: student
+    ports:
+      - "3306:3306"
+    container_name: mysql-post
+
+  mysql-comment:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: commentservice_db
+      MYSQL_USER: student
+      MYSQL_PASSWORD: student
+    ports:
+      - "3307:3306"
+    container_name: mysql-comment
+
+  mysql-review:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: reviewservice_db
+      MYSQL_USER: student
+      MYSQL_PASSWORD: student
+    ports:
+      - "3308:3306"
+    container_name: mysql-review
+
+  # RabbitMQ Service
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq-containerPE
+    ports:
+      - "5672:5672"  # RabbitMQ service port
+      - "15672:15672"  # RabbitMQ management console
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+  frontend:
+    build:
+      context: ./frontend-web
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "4200:80"

@@ -21,7 +21,6 @@ import java.util.stream.Collectors;
 public class ReviewServiceImpl implements ReviewService {
 
     private final ReviewRepository reviewRepository;
-    private final PostService postService;
     private final PostClient postClient;
     private final RabbitTemplate rabbitTemplate;
     private final ApplicationEventPublisher eventPublisher;
@@ -29,12 +28,10 @@ public class ReviewServiceImpl implements ReviewService {
     private final List<SseEmitter> emitters = new CopyOnWriteArrayList<>();
 
     public ReviewServiceImpl(ReviewRepository reviewRepository,
-                             PostService postService,
                              PostClient postClient,
                              RabbitTemplate rabbitTemplate,
                              ApplicationEventPublisher eventPublisher) {
         this.reviewRepository = reviewRepository;
-        this.postService = postService;
         this.postClient = postClient;
         this.rabbitTemplate = rabbitTemplate;
         this.eventPublisher = eventPublisher;
@@ -71,12 +68,14 @@ public class ReviewServiceImpl implements ReviewService {
                 .orElseThrow(() -> new RuntimeException("Review not found"));
 
         System.out.println("Approving review => postId=" + review.getPostId());
-        postService.publishPost(review.getPostId());
+
+        postClient.publishPost(review.getPostId(), "editor");
 
         reviewRepository.delete(review);
 
         sendNotification(review.getPostId(), "approved", reviewer, null);
     }
+
 
     public void rejectReview(Long reviewId, String reviewer, String remarks) {
         System.out.println("=== ReviewService: rejectReview() ===");
